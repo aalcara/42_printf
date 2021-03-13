@@ -19,5 +19,5 @@ void print_ints(int num, ...)
 
 int main(void)
 {
-	print_ints(8, 3, 4, 63, 6);
+	print_ints(4, 3, 4, 63, 6);
 }
