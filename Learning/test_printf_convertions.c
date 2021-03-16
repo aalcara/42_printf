@@ -2,7 +2,7 @@
 
 /**
 * ? deal with these conversions: cspdiuxX%
-*
+* *Format tags prototype is %|flags| |width| |.precision| |length| |specifier|
 */
 
 int main(void)
@@ -14,10 +14,15 @@ int main(void)
 	float			pi = 3.14159265;
 
 	printf("============ char ============");
-	printf("\nflag     c:\tch = |%c|", ch);
+	printf("\treturn: %d", printf("\nflag     c:\tch = |%c|", ch));
+	printf("\nflag    -c:\tch = |%-c|", ch);
 	printf("\nflag    *c:\tch = |%*c|", 10, ch);
 	printf("\nflag   -*c:\tch = |%-*c|", 10, ch);
-
+	printf("\nflag   *-c:\tch = |%*-c|", 10, ch);
+	printf("\nflag   10c:\tch = |%10c|", ch);
+	printf("\nflag  -10c:\tch = |%-10c|", ch);
+	printf("\nflag  10-c:\tch = |%10-c|", ch);
+	/*
 	printf("\n\n============ string ============");
 	printf("\nflag     s:\td = |%s|", d);
 	printf("\nflag    *s:\td = |%*s|", 10, d);
@@ -58,6 +63,6 @@ int main(void)
 	printf("\nflag 0*.*f:\tpi = |%0*.*f|", 10, 5, pi);
 	printf("\nflag -*.*f:\tpi = |%-*.*f|", 10, 5, pi);
 
-
+*/
 	return (printf("\n"));
 }

@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:28:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/13 19:11:44 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/15 19:23:19 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 int			putstr_before_percent(const char *str)
 {
-	char		*aux_str;
 	int			i;
 
 	while (str[i] != '%')
 	{
-
+		ft_putchar(str[i]);
 		i++;
 	}
-
+	return (i);
 }
 
 int			recursive_printf(const char *str, va_list args, int lenght)
@@ -36,9 +35,8 @@ int			recursive_printf(const char *str, va_list args, int lenght)
 		return (lenght + ft_strlen(str));
 	}
 	lenght += putstr_before_percent(str);
-
-
-
+	lenght += select_specifier(&percent_sign, args);
+	//todo call recursive printf, starting at first char after specifier
 	return 0;
 }
 

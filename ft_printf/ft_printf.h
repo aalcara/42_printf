@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:20:03 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/13 19:10:45 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/15 19:28:51 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 # include "../libft/libft.h"
 # include <stdarg.h>
 
+typedef struct ft_printf_flags
+{
+	int			left_aligned;
+	int			min_widht;
+} t_flags;
+
 int			ft_printf(const char *str, ...);
-
-
-
+int			select_specifier(char **percent_sign, va_list args);
 
 # endif
