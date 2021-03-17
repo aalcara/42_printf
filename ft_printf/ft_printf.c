@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:28:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/17 15:39:17 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:21:49 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ int			putstr_before_percent(const char *str)
 {
 	int			i;
 
+	i = 0;
+	// printf("\nl:21\tentrou putstr_before_percent");//
 	while (str[i] != '%')
 	{
-		ft_putchar(str[i]);
+		write(1, &str[i], 1);
 		i++;
 	}
 	return (i);

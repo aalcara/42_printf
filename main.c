@@ -5,15 +5,20 @@ int main(void)
 {
 	char c = 'A';
 	char d = '!';
-	char *str = "9876";
+	// char *str = "9876";
 
 	printf("\n---- only input str ---- \n");
 	printf("\treturn :%d\n", printf("test"));
 	printf("\treturn :%d\n", ft_printf("test"));
 
-	printf("\n---- chars without flag ----\n");
+	printf("\n---- one char without flag ----\n");
+	printf("\treturn :%d\n", printf("test%c",d));
+	printf("\treturn :%d\n", ft_printf("test%c",d));
+
+	printf("\n---- multiplus chars without flag ----\n");
 	printf("\treturn :%d\n", printf("%ct%ce%cs%ct", c, d, c, d));
 	printf("\treturn :%d\n", ft_printf("%ct%ce%cs%ct", c, d, c, d));
+
 
 	printf("\n---- chars with flag * (10) ----\n");
 	printf("\treturn :%d\n", printf("t%*ces%*ct", 2, d, 3, c));
