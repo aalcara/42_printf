@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:28:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/17 14:32:47 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/17 15:39:17 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int			recursive_printf(const char *str, va_list args, int lenght)
 	lenght += select_flags(&percent_sign, args);
 	// printf("\nl:41\tpercent_sign = %s", percent_sign);//
 	lenght = recursive_printf(percent_sign, args, lenght);
-	//todo call recursive printf, starting at first char after specifier
 	return (lenght);
 }
 

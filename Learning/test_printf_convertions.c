@@ -19,7 +19,9 @@ int main(void)
 	printf("\treturn: %d", printf("\nflag     c:\tch = |%c|", ch));
 	printf("\treturn: %d", printf("\nflag    -c:\tch = |%-c|", ch));
 	printf("\treturn: %d", printf("\nflag    *c:\tch = |%*c|", 10, ch));
-	printf("\treturn: %d", printf("\nflag   -*c:\tch = |%-*c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag   *0c:\tch = |%*0c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag   0*c:\tch = |%0*c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag  -0*c:\tch = |%-0*c|", 10, ch));
 	printf("\treturn: %d", printf("\nflag   *-c:\tch = |%*-c|", 10, ch));
 	printf("\treturn: %d", printf("\nflag   10c:\tch = |%10c|", ch));
 	printf("\treturn: %d", printf("\nflag  -10c:\tch = |%-10c|", ch));

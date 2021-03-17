@@ -6,27 +6,37 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/17 15:18:52 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/17 16:35:43 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
 
-static void		reset_flags(t_flags flags)
+static void		reset_flags(t_flags *flags)
 {
-	flags.left_aligned = 0;
-	flags.min_widht = 0;
+	flags->left_aligned = 0;
+	flags->min_width = 0;
 }
 
 int				printf_char(t_flags flags, va_list args)
 {
 	char		c;
+	int			i;
 
 	// printf("\nl:20\tEntrou funcao print_char");//
+	i = 0;
 	c = va_arg(args, int);
-	ft_putchar(c);
-	return (1);
+	if (flags.left_aligned == 1)
+		ft_putchar(c);
+	while (i < flags.min_width - 1)
+	{
+		ft_putchar(' ');
+		i++;
+	}
+	if (flags.left_aligned == 0)
+		ft_putchar(c);
+	return (i + 1);
 }
 
 int				select_specifier(char specifier, t_flags flags, va_list args)
@@ -48,14 +58,14 @@ int				select_flags(char **percent_sign, va_list args)
 	int			lenght;
 
 	i = 1;
-	reset_flags(flags);
+	reset_flags(&flags);
 	// printf("\nl:45\tInício while");//
 	while (ft_strchr("-*.", *((*percent_sign) + i)))
 	{
 		if (*((*percent_sign) + i) == '-')
 			flags.left_aligned = 1;
-		if (*((*percent_sign) + i) == '*')
-			get_min_width
+		else if (*((*percent_sign) + i) == '*')
+			flags.min_width = va_arg(args, int);
 		i++;
 	}
 	specifier = *((*percent_sign) + i);
@@ -63,5 +73,4 @@ int				select_flags(char **percent_sign, va_list args)
 	lenght = select_specifier(specifier, flags, args);
 	*percent_sign = ((*percent_sign) + i + 1);
 	return (lenght);
-
 }
