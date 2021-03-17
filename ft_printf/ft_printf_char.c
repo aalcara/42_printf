@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 15:20:03 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/17 19:27:59 by aalcara-         ###   ########.fr       */
+/*   Created: 2021/03/17 19:27:29 by aalcara-          #+#    #+#             */
+/*   Updated: 2021/03/17 19:29:51 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "../libft/libft.h"
-# include <stdarg.h>
-
-typedef struct ft_printf_flags
+int				printf_char(t_flags flags, va_list args)
 {
-	int			left_aligned;
-	int			min_width;
-} t_flags;
+	char		c;
+	int			i;
 
-int			ft_printf(const char *str, ...);
-int			select_flags(char **percent_sign, va_list args);
-int			printf_char(t_flags flags, va_list args);
-
-# endif
+	// printf("\nl:20\tEntrou funcao print_char");//
+	i = 0;
+	c = va_arg(args, int);
+	if (flags.left_aligned == 1)
+		ft_putchar(c);
+	while (i < flags.min_width - 1)
+	{
+		ft_putchar(' ');
+		i++;
+	}
+	if (flags.left_aligned == 0)
+		ft_putchar(c);
+	return (i + 1);
+}
