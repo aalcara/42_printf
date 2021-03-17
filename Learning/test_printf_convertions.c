@@ -26,6 +26,8 @@ int main(void)
 	printf("\treturn: %d", printf("\nflag  10-c:\tch = |%10-c|", ch));
 	printf("\treturn: %d", printf("\nflag  *5-c:\tch = |%*5-c|", 10, ch));
 	printf("\treturn: %d", printf("\nflag  5*-c:\tch = |%5*-c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag  *5*-c:\tch = |%*5*-c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag  *55-c:\tch = |%*55-c|", 10, ch));
 	/*
 	printf("\n\n============ string ============");
 	printf("\nflag     s:\td = |%s|", d);
