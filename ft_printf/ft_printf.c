@@ -6,11 +6,12 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:28:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/15 19:23:19 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/17 14:32:47 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int			putstr_before_percent(const char *str)
 {
@@ -27,7 +28,6 @@ int			putstr_before_percent(const char *str)
 int			recursive_printf(const char *str, va_list args, int lenght)
 {
 	char		*percent_sign;
-	char		*aux_str;
 
 	if (!(percent_sign = ft_strchr(str, '%')))
 	{
@@ -35,9 +35,12 @@ int			recursive_printf(const char *str, va_list args, int lenght)
 		return (lenght + ft_strlen(str));
 	}
 	lenght += putstr_before_percent(str);
-	lenght += select_specifier(&percent_sign, args);
+	// printf("\nl:38\trecursivePrintf test");//
+	lenght += select_flags(&percent_sign, args);
+	// printf("\nl:41\tpercent_sign = %s", percent_sign);//
+	lenght = recursive_printf(percent_sign, args, lenght);
 	//todo call recursive printf, starting at first char after specifier
-	return 0;
+	return (lenght);
 }
 
 

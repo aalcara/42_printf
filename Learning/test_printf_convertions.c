@@ -13,15 +13,18 @@ int main(void)
 	unsigned int	unsignum = 155324;
 	float			pi = 3.14159265;
 
-	printf("============ char ============");
+	printf("\treturn: %d", printf("%c", "asda"));
+
+	printf("\n\n============ char ============");
 	printf("\treturn: %d", printf("\nflag     c:\tch = |%c|", ch));
-	printf("\nflag    -c:\tch = |%-c|", ch);
-	printf("\nflag    *c:\tch = |%*c|", 10, ch);
-	printf("\nflag   -*c:\tch = |%-*c|", 10, ch);
-	printf("\nflag   *-c:\tch = |%*-c|", 10, ch);
-	printf("\nflag   10c:\tch = |%10c|", ch);
-	printf("\nflag  -10c:\tch = |%-10c|", ch);
-	printf("\nflag  10-c:\tch = |%10-c|", ch);
+	printf("\treturn: %d", printf("\nflag    -c:\tch = |%-c|", ch));
+	printf("\treturn: %d", printf("\nflag    *c:\tch = |%*c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag   -*c:\tch = |%-*c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag   *-c:\tch = |%*-c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag   10c:\tch = |%10c|", ch));
+	printf("\treturn: %d", printf("\nflag  -10c:\tch = |%-10c|", ch));
+	printf("\treturn: %d", printf("\nflag  10-c:\tch = |%10-c|", ch));
+	printf("\treturn: %d", printf("\nflag  *10-c:\tch = |%*10-c|", 10, ch));
 	/*
 	printf("\n\n============ string ============");
 	printf("\nflag     s:\td = |%s|", d);
@@ -63,6 +66,6 @@ int main(void)
 	printf("\nflag 0*.*f:\tpi = |%0*.*f|", 10, 5, pi);
 	printf("\nflag -*.*f:\tpi = |%-*.*f|", 10, 5, pi);
 
-*/
+	*/
 	return (printf("\n"));
 }
