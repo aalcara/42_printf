@@ -8,12 +8,12 @@
 int main(void)
 {
 	char			ch = 65;
-	char			*d = "ABCDEFGH";
-	int				num = -12541;
-	unsigned int	unsignum = 155324;
-	float			pi = 3.14159265;
+	// char			*d = "ABCDEFGH";
+	// int				num = -12541;
+	//unsigned int	unsignum = 155324;
+	//float			pi = 3.14159265;
 
-	printf("\treturn: %d", printf("%c", "asda"));
+	//printf("\treturn: %d", printf("%c", "asda"));
 
 	printf("\n\n============ char ============");
 	//printf("\treturn: %d", printf("\nflag     c:\tch = |%c|", ch));
