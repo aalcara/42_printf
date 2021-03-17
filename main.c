@@ -27,6 +27,10 @@ int main(void)
 	printf("\treturn :%d\n", printf("t%-*ces%-*ct", 5, d, 3, c));
 	printf("\treturn :%d\n", ft_printf("t%-*ces%-*ct", 5, d, 3, c));
 
+		printf("\n---- chars with flag *- (10) ----\n");
+	printf("\treturn :%d\n", printf("t%*-ces%*-ct", 5, d, 3, c));
+	printf("\treturn :%d\n", ft_printf("t%*-ces%*-ct", 5, d, 3, c));
+
 	//! implement flags with repeated flags chars
 	/*
 	printf("\n---- string whit no flag ----\n");

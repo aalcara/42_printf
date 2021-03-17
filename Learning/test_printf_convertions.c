@@ -16,20 +16,20 @@ int main(void)
 	//printf("\treturn: %d", printf("%c", "asda"));
 
 	printf("\n\n============ char ============");
-	//printf("\treturn: %d", printf("\nflag     c:\tch = |%c|", ch));
-	// printf("\treturn: %d", printf("\nflag    -c:\tch = |%-c|", ch));
-	// printf("\treturn: %d", printf("\nflag    *c:\tch = |%*c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag     c:\tch = |%c|", ch));
+	printf("\treturn: %d", printf("\nflag    -c:\tch = |%-c|", ch));
+	printf("\treturn: %d", printf("\nflag    *c:\tch = |%*c|", 10, ch));
 	printf("\treturn: %d", printf("\nflag   *0c:\tch = |%*0c|", 10, ch));
 	printf("\treturn: %d", printf("\nflag   0*c:\tch = |%0*c|", 10, ch));
 	printf("\treturn: %d", printf("\nflag  -0*c:\tch = |%-0*c|", 10, ch));
-	// printf("\treturn: %d", printf("\nflag   *-c:\tch = |%*-c|", 10, ch));
-	// printf("\treturn: %d", printf("\nflag   10c:\tch = |%10c|", ch));
-	// printf("\treturn: %d", printf("\nflag  -10c:\tch = |%-10c|", ch));
-	// printf("\treturn: %d", printf("\nflag  10-c:\tch = |%10-c|", ch));
-	// printf("\treturn: %d", printf("\nflag  *5-c:\tch = |%*5-c|", 10, ch));
-	// printf("\treturn: %d", printf("\nflag  5*-c:\tch = |%5*-c|", 10, ch));
-	// printf("\treturn: %d", printf("\nflag *5*-c:\tch = |%*5*-c|", 10, 22, ch));
-	// printf("\treturn: %d", printf("\nflag *55-c:\tch = |%*55-c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag   *-c:\tch = |%*-c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag   10c:\tch = |%10c|", ch));
+	printf("\treturn: %d", printf("\nflag  -10c:\tch = |%-10c|", ch));
+	printf("\treturn: %d", printf("\nflag  10-c:\tch = |%10-c|", ch));
+	printf("\treturn: %d", printf("\nflag  *5-c:\tch = |%*5-c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag  5*-c:\tch = |%5*-c|", 10, ch));
+	printf("\treturn: %d", printf("\nflag *5*-c:\tch = |%*5*-c|", 10, 22, ch));
+	printf("\treturn: %d", printf("\nflag *55-c:\tch = |%*55-c|", 10, ch));
 	/*
 	printf("\n\n============ string ============");
 	printf("\nflag     s:\td = |%s|", d);
