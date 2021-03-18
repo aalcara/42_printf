@@ -6,14 +6,14 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:28:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/17 19:28:16 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/18 20:43:08 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h> //!excluir
 
-int			putstr_before_percent(const char *str)
+int				putstr_before_percent(const char *str)
 {
 	int			i;
 
@@ -27,7 +27,7 @@ int			putstr_before_percent(const char *str)
 	return (i);
 }
 
-int			recursive_printf(const char *str, va_list args, int lenght)
+int				recursive_printf(const char *str, va_list args, int lenght)
 {
 	char		*percent_sign;
 
@@ -44,8 +44,7 @@ int			recursive_printf(const char *str, va_list args, int lenght)
 	return (lenght);
 }
 
-
-int			ft_printf(const char *str, ...)
+int				ft_printf(const char *str, ...)
 {
 	va_list			args;
 	int				lenght;
