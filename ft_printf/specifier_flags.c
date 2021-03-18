@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/17 19:27:07 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/18 20:38:14 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ int				select_specifier(char specifier, t_flags flags, va_list args)
 	// printf("\nl:27\tEntrou funcao select_specifier");//
 	if (specifier == 'c')
 		return (printf_char(flags, args));
+	if (specifier == 's')
+		return (printf_str(flags, args));
+	// if (specifier == '%')
+		// return (printf_percent_sign(flags, args));
 	return (0);
 }
 
-int				select_flags(char **percent_sign, va_list args)
+int				select_flags(char **str, va_list args)
 {
 	// printf("\nl:36\tentrou select_flags");
 	//printf("\nl:37\tpercent_sign=%s", *percent_sign);
@@ -40,17 +44,19 @@ int				select_flags(char **percent_sign, va_list args)
 	i = 1;
 	reset_flags(&flags);
 	// printf("\nl:45\tInício while");//
-	while (ft_strchr("-*.", *((*percent_sign) + i)))
+	while (ft_strchr("-*.0123456789", *((*str) + i)))
 	{
-		if (*((*percent_sign) + i) == '-')
+		if (*((*str) + i) == '-')
 			flags.left_aligned = 1;
-		else if (*((*percent_sign) + i) == '*')
+		else if (*((*str) + i) == '*')
 			flags.min_width = va_arg(args, int);
+		else if (*((*str) + i) >= '1' && *((*str) + i) <= '9')
+			flags.min_width = ft_atoi((*str) + i);
 		i++;
 	}
-	specifier = *((*percent_sign) + i);
+	specifier = *((*str) + i);
 	// printf("\nl:51\tspecifier = %c", specifier);//
 	lenght = select_specifier(specifier, flags, args);
-	*percent_sign = ((*percent_sign) + i + 1);
+	*str = ((*str) + i + 1);
 	return (lenght);
 }
