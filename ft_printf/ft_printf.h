@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:20:03 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/18 22:14:16 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/19 10:34:17 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef	struct	ft_printf_flags
 	int			left_aligned;
 	int			min_width;
 	int			precision;
+	int			zero_padded;
 }				t_flags;
 
 int				ft_printf(const char *str, ...);
@@ -28,5 +29,6 @@ int				select_flags(char **percent_sign, va_list args);
 int				printf_char(t_flags flags, va_list args);
 int				printf_str(t_flags flags, va_list args);
 int				printf_percent_sign(t_flags flags);
+int				printf_integer(t_flags flags, va_list args);
 
 #endif

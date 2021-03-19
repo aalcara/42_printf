@@ -8,7 +8,7 @@ int main(void)
 	char *str = "9876";
 	char *str2 = "ABC";
 	int i = 456;
-
+	/*
 	printf("\n---- only input str ---- \n");
 	printf("\treturn :%d\n", printf("test"));
 	printf("\treturn :%d\n", ft_printf("test"));
@@ -68,7 +68,7 @@ int main(void)
 	// printf("\n---- %% with flag -*num ----\n");
 	// printf("\treturn :%d\n", printf("t%*%es%-3%t", 3));
 	// printf("\treturn :%d\n", ft_printf("t%*%es%-3%t", 3));
-
+	*/
 	printf("\n");
 	printf("\n --------------------------------------");
 	printf("\n|                INTEGER               |");
@@ -83,8 +83,20 @@ int main(void)
 	printf("\treturn :%d\n", ft_printf("tes%*dt", 5, i));
 
 	printf("\n---- negative int with * flag ----\n");
-	printf("\treturn :%d\n", printf("tes%*dt", 5, -i));
-	printf("\treturn :%d\n", ft_printf("tes%*dt", 5, -i));
+	printf("\treturn :%d\n", printf("tes%*dt", 7, -i));
+	printf("\treturn :%d\n", ft_printf("tes%*dt", 7, -i));
+
+	printf("\n---- negative int with - flag ----\n");
+	printf("\treturn :%d\n", printf("tes%-dt", -i));
+	printf("\treturn :%d\n", ft_printf("tes%-dt", -i));
+
+	printf("\n---- negative int with -* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%-*dt", 5, -i));
+	printf("\treturn :%d\n", ft_printf("tes%-*dt", 5, -i));
+
+		printf("\n---- negative int with 0* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%0*dt", 7, -i));
+	printf("\treturn :%d\n", ft_printf("tes%0*dt", 7, -i));
 
 	return (0);
 }
