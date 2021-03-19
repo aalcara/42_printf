@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/19 20:27:10 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/19 20:57:48 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 		return (ft_strjoin(pre_str, str_num));
 	}
 	pre_str_len = flags.precision + neg_signal - length;
-	if(!(pre_str = malloc(sizeof(char) * (pre_str_len + 1))))
+	if(!(pre_str = ft_calloc(sizeof(char) , (pre_str_len + 1))))
 		return (NULL);
 	ft_memset((char *)pre_str, '0', pre_str_len);
 	if (neg_signal == 1)
