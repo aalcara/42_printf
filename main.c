@@ -79,6 +79,10 @@ int main(void)
 	printf("\treturn :%d\n", ft_printf("tes%dt", i));
 
 	printf("\n---- int with * flag ----\n");
+	printf("\treturn :%d\n", printf("tes%*dt", 5, i));
+	printf("\treturn :%d\n", ft_printf("tes%*dt", 5, i));
+
+	printf("\n---- negative int with * flag ----\n");
 	printf("\treturn :%d\n", printf("tes%*dt", 5, -i));
 	printf("\treturn :%d\n", ft_printf("tes%*dt", 5, -i));
 
