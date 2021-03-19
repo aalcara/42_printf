@@ -94,9 +94,17 @@ int main(void)
 	printf("\treturn :%d\n", printf("tes%-*dt", 5, -i));
 	printf("\treturn :%d\n", ft_printf("tes%-*dt", 5, -i));
 
-		printf("\n---- negative int with 0* flag ----\n");
+	printf("\n---- negative int with 0* flag ----\n");
 	printf("\treturn :%d\n", printf("tes%0*dt", 7, -i));
 	printf("\treturn :%d\n", ft_printf("tes%0*dt", 7, -i));
+
+	// printf("\n---- int with 5.8 flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%5.8dt", i));
+	// printf("\treturn :%d\n", ft_printf("tes%5.8dt", i));
+
+		printf("\n---- int with 8.* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%5.*dt", 8, i));
+	printf("\treturn :%d\n", ft_printf("tes%5.*dt", 8, i));
 
 	return (0);
 }
