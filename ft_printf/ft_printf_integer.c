@@ -6,11 +6,16 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/19 11:27:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/19 12:03:00 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static char		*printf_precision_itoa(long int number, t_flags flags)
+{
+
+}
 
 static char		*printf_itoa(long int number, t_flags flags)
 {
@@ -18,10 +23,16 @@ static char		*printf_itoa(long int number, t_flags flags)
 	long int	negative_number;
 
 	negative_number = -number;
-	if (flags.zero_padded == 1 && number < 0)
-		str = ft_itoa(negative_number);
+	if (flags.precision == 0)
+	{
+		if (flags.zero_padded == 1 && number < 0)
+			str = ft_itoa(negative_number);
+		else
+			str = ft_itoa(number);
+	}
 	else
-		str = ft_itoa(number);
+	str = printf_precision_itoa(number, flags);
+	//! função para considerar precision
 	return (str);
 }
 
@@ -33,7 +44,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 
 	number_str = printf_itoa(number, flags);
 	length = ft_strlen(number_str);
-	if (flags.zero_padded == 1)
+	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
 		padded = '0';
 		ft_putchar('-');

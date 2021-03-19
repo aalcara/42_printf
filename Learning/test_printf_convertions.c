@@ -57,6 +57,8 @@ int main(void)
 	printf("\nflag  5.*i:\tnum = |%5.*i| (* = 10)", 10, num);
 	printf("\nflag 10.*i:\tnum = |%10.*i| (* = 5)", 5, num);
 	printf("\nflag -8.5i:\tnum = |%-8.5i|", num);
+	printf("\nflag  8.5i:\tnum = |%8.5i|", num);
+	printf("\nflag 08.5i:\tnum = |%08.5i|", num);
 	printf("\nflag   0*i:\tnum = |%0*i| (* = 10)", 10, num);
 	printf("\nflag   -*i:\tnum = |%-*i| (* = 10)", 10, num);
 
@@ -67,7 +69,9 @@ int main(void)
 	printf("\nflag -5.*i:\tnum = |%-5.*i| (* = 3)", 3, -num);
 	printf("\nflag  5.*i:\tnum = |%5.*i| (* = 10)", 10, -num);
 	printf("\nflag 10.*i:\tnum = |%10.*i| (* = 5)", 5, -num);
+	printf("\nflag  8.5i:\tnum = |%8.5i|", -num);
 	printf("\nflag -8.5i:\tnum = |%-8.5i|", -num);
+	printf("\nflag 08.5i:\tnum = |%08.5i|", -num);
 	printf("\nflag   0*i:\tnum = |%0*i| (* = 10)", 10, -num);
 	printf("\nflag   -*i:\tnum = |%-*i| (* = 10)", 10, -num);
 
