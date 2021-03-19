@@ -10,8 +10,8 @@ int main(void)
 	char			ch = 65;
 	char			*d = "ABCDEFGH";
 	int				num = 12;
-	unsigned int	unsignum = 15.1;
-	float			pi = 3.14159265;
+	unsigned int	unsignum = 66;
+	// float			pi = 3.14159265;
 
 	//printf("\treturn: %d", printf("%c", "asda"));
 
