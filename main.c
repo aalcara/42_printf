@@ -93,29 +93,29 @@ int main(void)
 	// printf("\treturn :%d\n", printf("tes%0*dt", 7, -i));
 	// printf("\treturn :%d\n", ft_printf("tes%0*dt", 7, -i));
 
-	printf("\n---- negative int with 0*.* flag ----\n");
-	printf("\treturn :%d\n", printf("tes%0*.*dt", 7, 5, -i));
-	printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 7, 5, -i));
+	// printf("\n---- negative int with 0*.* flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%0*.*dt", 7, 5, -i));
+	// printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 7, 5, -i));
 
-		printf("\n---- negative int with 0*.* flag ----\n");
-	printf("\treturn :%d\n", printf("tes%0*.*dt", 7, 5, -i));
-	printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 7, 5, -i));
+	// printf("\n---- negative int with 0*.* flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%0*.*dt", 7, 5, -i));
+	// printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 7, 5, -i));
 
 	printf("\n---- int with 29.19 flag ----\n");
 	printf("\treturn :%d\n", printf("tes%29.19dt", i));
 	printf("\treturn :%d\n", ft_printf("tes%29.19dt", i));
 
-	printf("\n---- int with 11.* flag ----\n");
-	printf("\treturn :%d\n", printf("tes%11.*dt", 5, i));
-	printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, i));
+	// printf("\n---- int with 11.* flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, i));
+	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, i));
 
-	printf("\n---- negative int with 29.19 flag ----\n");
-	printf("\treturn :%d\n", printf("tes%29.19dt", -i));
-	printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
+	// printf("\n---- negative int with 29.19 flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%29.19dt", -i));
+	// printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
 
-	printf("\n---- negative int with 11.* flag ----\n");
-	printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
-	printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
+	// printf("\n---- negative int with 11.* flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
+	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
 
 	int a = 1;
 	int b = 1;
