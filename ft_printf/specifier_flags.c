@@ -6,14 +6,14 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/18 21:01:28 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/18 21:12:58 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
 
-int				printf_percent_sign(t_flags flags, va_list args)
+int				printf_percent_sign(t_flags flags)
 {
 	char		c;
 	int			i;
@@ -47,7 +47,7 @@ int				select_specifier(char specifier, t_flags flags, va_list args)
 	if (specifier == 's')
 		return (printf_str(flags, args));
 	if (specifier == '%')
-		return (printf_percent_sign(flags, args));
+		return (printf_percent_sign(flags));
 	return (0);
 }
 

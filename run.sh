@@ -1,3 +1,3 @@
 
-#gcc -Wall -Wextra -Werror main.c ft_printf/*.c libft/*.c && ./a.out
-clang main.c ft_printf/*.c libft/*.c && ./a.out
+gcc -Wall -Wextra -Werror main.c ft_printf/*.c libft/*.c && ./a.out
+#lang main.c ft_printf/*.c libft/*.c && ./a.out
