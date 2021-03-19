@@ -7,7 +7,7 @@ int main(void)
 	char d = '!';
 	char *str = "9876";
 	char *str2 = "ABC";
-	/*
+
 	printf("\n---- only input str ---- \n");
 	printf("\treturn :%d\n", printf("test"));
 	printf("\treturn :%d\n", ft_printf("test"));
@@ -40,7 +40,7 @@ int main(void)
 	printf("\n---- chars with flag -num ----\n");
 	printf("\treturn :%d\n", printf("t%-2ces%-2ct", d, c));
 	printf("\treturn :%d\n", ft_printf("t%-2ces%-2ct", d, c));
-	*/
+
 	printf("\n");
 	printf("\n --------------------------------------");
 	printf("\n|                STRING                |");
@@ -62,6 +62,12 @@ int main(void)
 	printf("\n---- %% without flag ----\n");
 	printf("\treturn :%d\n", printf("tes%%t"));
 	printf("\treturn :%d\n", ft_printf("tes%%t"));
+
+	printf("\n---- %% with flag -*num ----\n");
+	printf("\treturn :%d\n", printf("t%-3%es%*%t%-*%", 5, 7));
+	printf("\treturn :%d\n", ft_printf("t%-3%es%*%t%-*%", 5, 7));
+
+
 
 	return (0);
 }

@@ -6,12 +6,32 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/18 20:38:14 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/18 21:01:28 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
+
+int				printf_percent_sign(t_flags flags, va_list args)
+{
+	char		c;
+	int			i;
+
+	// printf("\nl:20\tEntrou funcao print_char");//
+	i = 0;
+	c = '%';
+	if (flags.left_aligned == 1)
+		ft_putchar(c);
+	while (i < flags.min_width - 1)
+	{
+		ft_putchar(' ');
+		i++;
+	}
+	if (flags.left_aligned == 0)
+		ft_putchar(c);
+	return (i + 1);
+}
 
 static void		reset_flags(t_flags *flags)
 {
@@ -26,8 +46,8 @@ int				select_specifier(char specifier, t_flags flags, va_list args)
 		return (printf_char(flags, args));
 	if (specifier == 's')
 		return (printf_str(flags, args));
-	// if (specifier == '%')
-		// return (printf_percent_sign(flags, args));
+	if (specifier == '%')
+		return (printf_percent_sign(flags, args));
 	return (0);
 }
 
