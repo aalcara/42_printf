@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/19 15:39:38 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/19 15:50:47 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void		reset_flags(t_flags *flags)
 
 static int		select_specifier(char specifier, t_flags flags, va_list args)
 {
+	printf("\nl:28\tselect_specifier");//
 	if (specifier == 'c')
 		return (printf_char(flags, args));
 	if (specifier == 's')
@@ -54,14 +55,12 @@ int				select_flags(char **str, va_list args)
 		else if (*((*str) + i) == '0')
 			flags.zero_padded = 1;
 		else if (*((*str) + i) == '*')
-		{
-			if (flags.precision == 0)
-				flags.min_width = va_arg(args, int);
-		}
+			flags.min_width = va_arg(args, int);
 		else if (*((*str) + i) >= '1' && *((*str) + i) <= '9')
 			flags.min_width = ft_atoi((*str) + i);
 		i++;
 	}
+	printf("\nl:62\tflags.precision = %d", flags.precision);//
 	specifier = *((*str) + i);
 	lenght = select_specifier(specifier, flags, args);
 	*str = ((*str) + i + 1);
