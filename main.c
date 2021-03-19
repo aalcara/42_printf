@@ -7,6 +7,7 @@ int main(void)
 	char d = '!';
 	char *str = "9876";
 	char *str2 = "ABC";
+	int i = 456;
 
 	printf("\n---- only input str ---- \n");
 	printf("\treturn :%d\n", printf("test"));
@@ -68,7 +69,18 @@ int main(void)
 	// printf("\treturn :%d\n", printf("t%*%es%-3%t", 3));
 	// printf("\treturn :%d\n", ft_printf("t%*%es%-3%t", 3));
 
+	printf("\n");
+	printf("\n --------------------------------------");
+	printf("\n|                INTEGER               |");
+	printf("\n --------------------------------------\n");
 
+	printf("\n---- int without flag ----\n");
+	printf("\treturn :%d\n", printf("tes%dt", i));
+	printf("\treturn :%d\n", ft_printf("tes%dt", i));
+
+	printf("\n---- int with * flag ----\n");
+	printf("\treturn :%d\n", printf("tes%*dt", 5, -i));
+	printf("\treturn :%d\n", ft_printf("tes%*dt", 5, -i));
 
 	return (0);
 }

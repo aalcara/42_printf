@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/18 22:27:04 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/19 00:19:59 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,20 @@
 int				printf_integer(t_flags flags, va_list args)
 {
 	int			length;
+	char		*number;
 
-
-	return (0);
+	number = ft_itoa(va_arg(args, int));
+	length = ft_strlen(number);
+	if (flags.left_aligned == 1)
+		ft_putstr(number);
+	while (length < flags.min_width)
+	{
+		ft_putchar(' ');
+		length++;
+	}
+	if (flags.left_aligned == 0)
+		ft_putstr(number);
+	return (length);
 }
 
 static void		reset_flags(t_flags *flags)
@@ -65,7 +76,7 @@ int				select_flags(char **str, va_list args)
 			flags.min_width = ft_atoi((*str) + i);
 		else if (*((*str) + i) == '.')
 			flags.precision = ft_atoi((*str) + i + 1);
-		printf("l:78\tprecision = %d", flags.precision);//
+		// printf("l:78\tprecision = %d", flags.precision);//
 		i++;
 	}
 	specifier = *((*str) + i);
