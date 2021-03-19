@@ -6,37 +6,26 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/18 21:12:58 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/18 22:27:04 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
 
-int				printf_percent_sign(t_flags flags)
+int				printf_integer(t_flags flags, va_list args)
 {
-	char		c;
-	int			i;
+	int			length;
 
-	// printf("\nl:20\tEntrou funcao print_char");//
-	i = 0;
-	c = '%';
-	if (flags.left_aligned == 1)
-		ft_putchar(c);
-	while (i < flags.min_width - 1)
-	{
-		ft_putchar(' ');
-		i++;
-	}
-	if (flags.left_aligned == 0)
-		ft_putchar(c);
-	return (i + 1);
+
+	return (0);
 }
 
 static void		reset_flags(t_flags *flags)
 {
 	flags->left_aligned = 0;
 	flags->min_width = 0;
+	flags->precision = 0;
 }
 
 int				select_specifier(char specifier, t_flags flags, va_list args)
@@ -48,6 +37,8 @@ int				select_specifier(char specifier, t_flags flags, va_list args)
 		return (printf_str(flags, args));
 	if (specifier == '%')
 		return (printf_percent_sign(flags));
+	if (specifier == 'd' || specifier == 'i')
+		return (printf_integer(flags, args));
 	return (0);
 }
 
@@ -72,6 +63,9 @@ int				select_flags(char **str, va_list args)
 			flags.min_width = va_arg(args, int);
 		else if (*((*str) + i) >= '1' && *((*str) + i) <= '9')
 			flags.min_width = ft_atoi((*str) + i);
+		else if (*((*str) + i) == '.')
+			flags.precision = ft_atoi((*str) + i + 1);
+		printf("l:78\tprecision = %d", flags.precision);//
 		i++;
 	}
 	specifier = *((*str) + i);
