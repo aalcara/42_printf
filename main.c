@@ -22,6 +22,30 @@ int main(void)
 	// printf("\n|                 CHAR                 |");
 	// printf("\n --------------------------------------\n");
 
+	printf("\n---- tests Tripouille ----\n");
+	printf("\n4\n");
+	printf("\treturn :%d\n", printf("|%10c|", '0'));
+	printf("\treturn :%d\n", ft_printf("|%10c|", '0'));
+	printf("\n6\n");
+	printf("\treturn :%d\n", printf("|%-10c|", '0'));
+	printf("\treturn :%d\n", ft_printf("|%-10c|", '0'));
+	printf("\n11\n");
+	printf("\treturn :%d\n", printf("|%*c|", -2, '0'));
+	printf("\treturn :%d\n", ft_printf("|%*c|", -2, '0'));
+	printf("\n14\n");
+	printf("\treturn :%d\n", printf("|%*c|", -10, '0'));
+	printf("\treturn :%d\n", ft_printf("|%*c|", -10, '0'));
+	printf("\n15\n");
+	printf("\treturn :%d\n", printf("|%*c%*c|", -10, '0', 10, '1'));
+	printf("\treturn :%d\n", ft_printf("|%*c%*c|", -10, '0', 10, '1'));
+	printf("\n17\n");
+	printf("\treturn :%d\n", printf("|%*c%c|", -10, '0', '1'));
+	printf("\treturn :%d\n", ft_printf("|%*c%c|", -10, '0', '1'));
+	printf("\n30\n");
+	printf("\treturn :%d\n", printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
+	printf("\treturn :%d\n", ft_printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
+
+
 	// printf("\n---- one char without flag ----\n");
 	// printf("\treturn :%d\n", printf("test%c",d));
 	// printf("\treturn :%d\n", ft_printf("test%c",d));
@@ -137,28 +161,28 @@ int main(void)
 	// 	b++;
 	// }
 
-	printf("\n");
-	printf("\n --------------------------------------");
-	printf("\n|              HEXADECIMAL             |");
-	printf("\n --------------------------------------\n");
+	// printf("\n");
+	// printf("\n --------------------------------------");
+	// printf("\n|              HEXADECIMAL             |");
+	// printf("\n --------------------------------------\n");
 
-	a = 1;
-	b = 1;
-	while (b <= 10)
-	{
-		printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-		printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-		printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-		b++;
-	}
-	while (a <= 10)
-	{
-		printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-		printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-		printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-		a++;
-		b--;
-	}
+	// a = 1;
+	// b = 1;
+	// while (b <= 10)
+	// {
+	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
+	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
+	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
+	// 	b++;
+	// }
+	// while (a <= 10)
+	// {
+	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
+	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
+	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
+	// 	a++;
+	// 	b--;
+	// }
 
 	// while (b < 20)
 	// {

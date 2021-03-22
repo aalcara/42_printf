@@ -6,14 +6,14 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 11:03:01 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 13:25:00 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
 
-static int		get_flag_num(char **str, int *i, va_list args)
+static int		get_flag_num(char **str, int *i, va_list args, t_flags *flags)
 {
 	int			length;
 	int			number;
@@ -24,7 +24,12 @@ static int		get_flag_num(char **str, int *i, va_list args)
 		*i = *i + 1;
 	if (*((*str) + *i) == '*')
 	{
-		return (va_arg(args, int));
+		if ((number = va_arg(args, int)) < 0)
+		{
+			flags->left_aligned = 1;
+			return (-number);
+		}
+		return (number);
 	}
 	else if (*((*str) + *i) >= '1' && *((*str) + *i) <= '9')
 	{
@@ -74,13 +79,13 @@ int				select_flags(char **str, va_list args)
 		if (*((*str) + i) == '-')
 			flags.left_aligned = 1;
 		else if (*((*str) + i) == '.')
-			flags.precision = get_flag_num(str, &i, args);
+			flags.precision = get_flag_num(str, &i, args, &flags);
 		else if (*((*str) + i) == '0')
 			flags.zero_padded = 1;
 		else if (*((*str) + i) == '*')
-			flags.min_width = get_flag_num(str, &i, args);
+			flags.min_width = get_flag_num(str, &i, args, &flags);
 		else if (*((*str) + i) >= '1' && *((*str) + i) <= '9')
-			flags.min_width = get_flag_num(str, &i, args);
+			flags.min_width = get_flag_num(str, &i, args, &flags);
 		i++;
 	}
 	specifier = *((*str) + i);
