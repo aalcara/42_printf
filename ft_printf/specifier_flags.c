@@ -6,12 +6,25 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 13:25:00 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 13:41:12 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
+
+static int		num_length(int number)
+{
+	int 		num_len;
+
+	num_len = 0;
+	while (number > 0)
+	{
+		number = number / 10;
+		num_len++;
+	}
+	return (num_len);
+}
 
 static int		get_flag_num(char **str, int *i, va_list args, t_flags *flags)
 {
@@ -34,7 +47,7 @@ static int		get_flag_num(char **str, int *i, va_list args, t_flags *flags)
 	else if (*((*str) + *i) >= '1' && *((*str) + *i) <= '9')
 	{
 		number = ft_atoi((*str) + *i);
-		length = ft_strlen(ft_itoa(number));
+		length = num_length(number);
 		*i = *i + length - 1;
 	}
 	return (number);
