@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:25:14 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 16:30:41 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 16:42:13 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,12 @@ static char		*precision_str(t_flags flags, va_list args)
 	char		*str;
 	char		*aux_str;
 	int			aux_len;
+	char		*str_arg;
 
-	aux_str = va_arg(args, char*);
+	if (!(str_arg = va_arg(args, char*)))
+		aux_str = "(null)";
+	else
+		aux_str = str_arg;
 	aux_len = ft_strlen(aux_str);
 	if (flags.true_precision == 1 && flags.precision == 0)
 		return ("\0");

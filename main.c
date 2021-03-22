@@ -88,15 +88,23 @@ int main(void)
 
 	printf("\n34\n");
 	printf("\treturn :%d\n", printf("|%-3.s|", NULL));
-	// printf("\treturn :%d\n", ft_printf("|%-3.s|", NULL));
+	printf("\treturn :%d\n", ft_printf("|%-3.s|", NULL));
 
 	printf("\n35\n");
 	printf("\treturn :%d\n", printf("|%-9.1s|", NULL));
-	// printf("\treturn :%d\n", ft_printf("|%-9.1s|", NULL));
+	printf("\treturn :%d\n", ft_printf("|%-9.1s|", NULL));
 
 	printf("\n36\n");
 	printf("\treturn :%d\n", printf("|%.*s|", -2, NULL));
-	// printf("\treturn :%d\n", ft_printf("|%.*s|", -2, NULL));
+	printf("\treturn :%d\n", ft_printf("|%.*s|", -2, NULL));
+
+	printf("\n36\n");
+	printf("\treturn :%d\n", printf("|%.*s|", -1, NULL));
+	printf("\treturn :%d\n", ft_printf("|%.*s|", -1, NULL));
+
+	printf("\n36\n");
+	printf("\treturn :%d\n", printf("|%.*s|", -80000, NULL));
+	printf("\treturn :%d\n", ft_printf("|%.*s|", -80000, NULL));
 
 	// printf("\n---- multiplus str without flag ----\n");
 	// printf("\treturn :%d\n", printf("%st%se%ss%st", str, str2, str, str2));

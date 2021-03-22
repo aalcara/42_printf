@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 15:29:04 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 16:57:49 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ static int		get_precision(char **str, int *i, va_list args, t_flags *flags)
 		*i = *i - 1;
 		number = 0;
 	}
-	return (number);
+	if (number >= 0)
+		return (number);
+	flags->true_precision = 0;
+	return (0);
 }
 
 static int		get_min_width(char **str, int *i, va_list args, t_flags *flags)
