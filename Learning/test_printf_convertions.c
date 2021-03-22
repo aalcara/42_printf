@@ -119,10 +119,12 @@ int main(void)
 	printf("\n\n=========== pointer ============");
 	printf("\nflag     p:\tp = |%p|", p);
 	printf("\nflag    *p:\tp = |%*p|", 20, p);
-	printf("\nflag 20.*p:\tp = |%5.*p| (* = 15)", 15, p);
-	printf("\nflag-20.*p:\tp = |%-5.*p| (* = 15)", 15, p);
+	printf("\nflag 20.*p:\tp = |%20.*p| (* = 15)", 15, p);
+	// printf("\nflag-20.*p:\tp = |%-5.*p| (* = 15)", 15, p);
 	printf("\nflag   -*p:\tp = |%-*p| (* = 20)", 20, p);
-	printf("\nflag  -0*p:\t&num = |%-0*p| (* = 20)", 20, &num);
+	// printf("\nflag  -0*p:\t&num = |%-0*p| (* = 20)", 20, &num);
+	printf("\nflag   0*p:\t&num = |%0*p| (* = 20)", 20, &num);
+
 
 
 	return (printf("\n"));

@@ -6,11 +6,36 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 02:26:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 10:52:44 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>//
+
+static char		*ptr_hex(char *hexa_str, t_flags flags)
+{
+	int			length;
+	int			pre_str_len;
+	char		*pre_str;
+	char		*full_ptr_str;
+	char		*full_str;
+
+	// printf("\nl:24\tprecision = %d\n", flags.precision);//
+	length = ft_strlen(hexa_str) + 2;
+	// printf("\nl:26\tlength = %d\n", length);//
+	if (flags.precision <= length)
+		return (ft_strjoin("0x", hexa_str));
+	pre_str_len = flags.precision - length + 2;
+	// printf("l:30\tpre_str_len = %d\n", pre_str_len);//
+	if(!(pre_str = ft_calloc(sizeof(char) , (pre_str_len + 1))))
+		return (NULL);
+	ft_memset(pre_str, '0', pre_str_len);
+	full_str = ft_strjoin(pre_str, hexa_str);
+	free(pre_str);
+	full_ptr_str = ft_strjoin("0x", full_str);
+	return (full_ptr_str);
+}
 
 static char		*precision_hex(char *hexa_str, t_flags flags)
 {
@@ -20,6 +45,7 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 	char		*full_str;
 
 	length = ft_strlen(hexa_str);
+	printf("\nl:43\tprecision = %d", flags.precision);//
 	if (flags.precision <= length)
 		return (hexa_str);
 	pre_str_len = flags.precision - length;
@@ -61,11 +87,19 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 		if ((aux_num = nbr % 16) < 10)
 			hexa_str[num_len - 1] = aux_num + '0';
 		else
-			hexa_str[num_len - 1] = aux_num + specifier - 33;
+		{
+			if (specifier == 'X')
+				hexa_str[num_len - 1] = aux_num + 55;
+			else
+				hexa_str[num_len - 1] = aux_num + 87;
+		}
 		nbr = nbr / 16;
 		num_len--;
 	}
-	hexa_ret = precision_hex(hexa_str, flags);
+	if (specifier == 'p')
+		hexa_ret = ptr_hex(hexa_str, flags);
+	else
+		hexa_ret = precision_hex(hexa_str, flags);
 	return (hexa_ret);
 }
 

@@ -197,5 +197,13 @@ int main(void)
 	a++;
 	}
 
+	printf("\n---- pointer with %%25.20p flag ----\n");
+	printf("\treturn :%d\n", printf("|%25.20p|", &i));
+	printf("\treturn :%d\n", ft_printf("|%25.20p|", &i));
+
+	printf("\n---- pointer with %%025.20p flag ----\n");
+	printf("\treturn :%d\n", printf("|%025.20p|", &i));
+	printf("\treturn :%d\n", ft_printf("|%025.20p|", &i));
+
 	return (0);
 }

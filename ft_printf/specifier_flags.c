@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 01:35:15 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 10:26:43 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ static int		select_specifier(char specifier, t_flags flags, va_list args)
 		return (printf_percent_sign(flags));
 	if (specifier == 'd' || specifier == 'i')
 		return (printf_integer(flags, args));
-	if (specifier == 'x' || specifier == 'X')
+	if (specifier == 'x' || specifier == 'X' || specifier == 'p')
 		return (printf_hexadecimal(flags, args, specifier)); //todo	               incompleta
-	if (specifier == 'p')
-		return (printf_hexadecimal(flags, args, 'x'));
+	// if (specifier == 'p')
+	// 	return (printf_hexadecimal(flags, args, 'x'));
 	return (0);
 }
 
