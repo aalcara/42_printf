@@ -12,6 +12,7 @@ int main(void)
 	int				num = 649489451;
 	unsigned int	unsignum = 66;
 	int				exa = 0xa9f6d4;
+	int				*p = &num;
 	// float			pi = 3.14159265;
 
 	//printf("\treturn: %d", printf("%c", "asda"));
@@ -91,7 +92,7 @@ int main(void)
 	// printf("\nflag 0*.*f:\tpi = |%0*.*f|", 10, 5, pi);
 	// printf("\nflag -*.*f:\tpi = |%-*.*f|", 10, 5, pi);
 
-	printf("\n\n=========== exadecimal ============");
+	printf("\n\n=========== hexadecimal ============");
 	printf("\nflag     x:\texa = |%x|", exa);
 	printf("\nflag     x:\tnum = |%x|", num);
 	printf("\nflag     X:\texa = |%X|", exa);
@@ -115,6 +116,14 @@ int main(void)
 		printf("\nte:\t%%x: %x   \t%%(x%%16): %x\t(d%%16):%d", exa, exa%16, exa%16);
 		exa=exa/16;
 	}
+	printf("\n\n=========== pointer ============");
+	printf("\nflag     p:\tp = |%p|", p);
+	printf("\nflag    *p:\tp = |%*p|", 20, p);
+	printf("\nflag 20.*p:\tp = |%5.*p| (* = 15)", 15, p);
+	printf("\nflag-20.*p:\tp = |%-5.*p| (* = 15)", 15, p);
+	printf("\nflag   -*p:\tp = |%-*p| (* = 20)", 20, p);
+	printf("\nflag  -0*p:\t&num = |%-0*p| (* = 20)", 20, &num);
+
 
 	return (printf("\n"));
 }
