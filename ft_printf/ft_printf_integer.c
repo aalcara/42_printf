@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 19:49:51 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 19:50:21 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,8 @@ static int		printf_positive_integer(long int number, t_flags flags)
 		padded = ' ';
 	// if (flags.true_precision == 1 && flags.precision == 0)
 	// 	number_str = "\0";
-	else
-		number_str = printf_itoa(number, flags);
+	// else
+	number_str = printf_itoa(number, flags);
 	length = ft_strlen(number_str);
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);
