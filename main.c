@@ -22,28 +22,28 @@ int main(void)
 	// printf("\n|                 CHAR                 |");
 	// printf("\n --------------------------------------\n");
 
-	printf("\n---- tests Tripouille ----\n");
-	printf("\n4\n");
-	printf("\treturn :%d\n", printf("|%10c|", '0'));
-	printf("\treturn :%d\n", ft_printf("|%10c|", '0'));
-	printf("\n6\n");
-	printf("\treturn :%d\n", printf("|%-10c|", '0'));
-	printf("\treturn :%d\n", ft_printf("|%-10c|", '0'));
-	printf("\n11\n");
-	printf("\treturn :%d\n", printf("|%*c|", -2, '0'));
-	printf("\treturn :%d\n", ft_printf("|%*c|", -2, '0'));
-	printf("\n14\n");
-	printf("\treturn :%d\n", printf("|%*c|", -10, '0'));
-	printf("\treturn :%d\n", ft_printf("|%*c|", -10, '0'));
-	printf("\n15\n");
-	printf("\treturn :%d\n", printf("|%*c%*c|", -10, '0', 10, '1'));
-	printf("\treturn :%d\n", ft_printf("|%*c%*c|", -10, '0', 10, '1'));
-	printf("\n17\n");
-	printf("\treturn :%d\n", printf("|%*c%c|", -10, '0', '1'));
-	printf("\treturn :%d\n", ft_printf("|%*c%c|", -10, '0', '1'));
-	printf("\n30\n");
-	printf("\treturn :%d\n", printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
-	printf("\treturn :%d\n", ft_printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
+	// printf("\n---- tests Tripouille ----\n");
+	// printf("\n4\n");
+	// printf("\treturn :%d\n", printf("|%10c|", '0'));
+	// printf("\treturn :%d\n", ft_printf("|%10c|", '0'));
+	// printf("\n6\n");
+	// printf("\treturn :%d\n", printf("|%-10c|", '0'));
+	// printf("\treturn :%d\n", ft_printf("|%-10c|", '0'));
+	// printf("\n11\n");
+	// printf("\treturn :%d\n", printf("|%*c|", -2, '0'));
+	// printf("\treturn :%d\n", ft_printf("|%*c|", -2, '0'));
+	// printf("\n14\n");
+	// printf("\treturn :%d\n", printf("|%*c|", -10, '0'));
+	// printf("\treturn :%d\n", ft_printf("|%*c|", -10, '0'));
+	// printf("\n15\n");
+	// printf("\treturn :%d\n", printf("|%*c%*c|", -10, '0', 10, '1'));
+	// printf("\treturn :%d\n", ft_printf("|%*c%*c|", -10, '0', 10, '1'));
+	// printf("\n17\n");
+	// printf("\treturn :%d\n", printf("|%*c%c|", -10, '0', '1'));
+	// printf("\treturn :%d\n", ft_printf("|%*c%c|", -10, '0', '1'));
+	// printf("\n30\n");
+	// printf("\treturn :%d\n", printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
+	// printf("\treturn :%d\n", ft_printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
 
 
 	// printf("\n---- one char without flag ----\n");
@@ -70,10 +70,21 @@ int main(void)
 	// printf("\treturn :%d\n", printf("t%-2ces%-2ct", d, c));
 	// printf("\treturn :%d\n", ft_printf("t%-2ces%-2ct", d, c));
 
-	// printf("\n");
-	// printf("\n --------------------------------------");
-	// printf("\n|                STRING                |");
-	// printf("\n --------------------------------------\n");
+	printf("\n");
+	printf("\n --------------------------------------");
+	printf("\n|                STRING                |");
+	printf("\n --------------------------------------\n");
+
+	printf("\n---- tests Tripouille ----\n");
+	printf("\n16\n");
+	printf("\treturn :%d\n", printf("|%*.s %.1s|", 10, "2222", "9999"));
+	printf("\treturn :%d\n", ft_printf("|%*.s %.1s|", 10, "2222", "9999"));
+	// printf("\n17\n");
+	// printf("\treturn :%d\n", printf("|%*.0s %.2s|", 10, "123", "4567"));
+	// printf("\treturn :%d\n", ft_printf("|%*.0s %.2s|", 10, "123", "4567"));
+	// printf("\n18\n");
+	// printf("\treturn :%d\n", printf("|%*.3s %.3s|", 10, "123", "4567"));
+	// printf("\treturn :%d\n", ft_printf("|%*.3s %.3s|", 10, "123", "4567"));
 
 	// printf("\n---- multiplus str without flag ----\n");
 	// printf("\treturn :%d\n", printf("%st%se%ss%st", str, str2, str, str2));

@@ -33,10 +33,14 @@ int main(void)
 	// printf("\treturn: %d", printf("\nflag *5*-c:\tch = |%*5*-c|", 10, 22, ch));
 	// printf("\treturn: %d", printf("\nflag *55-c:\tch = |%*55-c|", 10, ch));
 
-	// printf("\n\n============ string ============");
-	// printf("\nflag     s:\td = |%s|", d);
-	// printf("\nflag    *s:\td = |%*s|", 10, d);
-	// printf("\nflag   -*s:\td = |%-*s|", 10, d);
+	printf("\n\n============ string ============");
+	printf("\nflag     s:\td = |%s|", d);
+	printf("\nflag    *s:\td = |%*s|", 10, d);
+	printf("\nflag   -*s:\td = |%-*s|", 10, d);
+	printf("\nflag  *.5s:\td = |%*.5s|", 10, d);
+	printf("\nflag -*.5s:\td = |%-*.5s|", 10, d);
+	printf("\nflag *.15s:\td = |%*.15s|", 10, d);
+	printf("\nflag-*.15s:\td = |%-*.15s|", 10, d);
 
 	// printf("\n\n============ pointer ============");
 	// printf("\nflag     p:\td = |%p|", d);
@@ -92,38 +96,38 @@ int main(void)
 	// printf("\nflag 0*.*f:\tpi = |%0*.*f|", 10, 5, pi);
 	// printf("\nflag -*.*f:\tpi = |%-*.*f|", 10, 5, pi);
 
-	printf("\n\n=========== hexadecimal ============");
-	printf("\nflag     x:\texa = |%x|", exa);
-	printf("\nflag     x:\tnum = |%x|", num);
-	printf("\nflag     X:\texa = |%X|", exa);
-	printf("\nflag    *x:\texa = |%*x|", 10, exa);
-	printf("\nflag  5.*x:\texa = |%5.*x| (* = 3)", 3, exa);
-	printf("\nflag -5.*x:\texa = |%-5.*x| (* = 3)", 3, exa);
-	printf("\nflag  5.*x:\texa = |%5.*x| (* = 10)", 10, exa);
-	printf("\nflag 10.*x:\texa = |%10.*x| (* = 5)", 5, exa);
-	printf("\nflag -8.5x:\texa = |%-8.5x|", exa);
-	printf("\nflag  8.5x:\texa = |%8.5x|", exa);
-	// printf("\nflag 08.5x:\texa = |%08.5x| *** flag '0' ignored with precision", exa);
-	printf("\nflag   0*x:\texa = |%0*x| (* = 10)", 10, exa);
-	printf("\nflag   -*x:\texa = |%-*x| (* = 10)", 10, exa);
-	printf("\nflag     x:\t-exa = |%x|", -exa);
-	printf("\nflag   0*x:\t-exa = |%0*x| (* = 10)", 10, -exa);
-	printf("\nflag  5.*x:\t-exa = |%5.*x| (* = 10)", 10, -exa);
+	// printf("\n\n=========== hexadecimal ============");
+	// printf("\nflag     x:\texa = |%x|", exa);
+	// printf("\nflag     x:\tnum = |%x|", num);
+	// printf("\nflag     X:\texa = |%X|", exa);
+	// printf("\nflag    *x:\texa = |%*x|", 10, exa);
+	// printf("\nflag  5.*x:\texa = |%5.*x| (* = 3)", 3, exa);
+	// printf("\nflag -5.*x:\texa = |%-5.*x| (* = 3)", 3, exa);
+	// printf("\nflag  5.*x:\texa = |%5.*x| (* = 10)", 10, exa);
+	// printf("\nflag 10.*x:\texa = |%10.*x| (* = 5)", 5, exa);
+	// printf("\nflag -8.5x:\texa = |%-8.5x|", exa);
+	// printf("\nflag  8.5x:\texa = |%8.5x|", exa);
+	// // printf("\nflag 08.5x:\texa = |%08.5x| *** flag '0' ignored with precision", exa);
+	// printf("\nflag   0*x:\texa = |%0*x| (* = 10)", 10, exa);
+	// printf("\nflag   -*x:\texa = |%-*x| (* = 10)", 10, exa);
+	// printf("\nflag     x:\t-exa = |%x|", -exa);
+	// printf("\nflag   0*x:\t-exa = |%0*x| (* = 10)", 10, -exa);
+	// printf("\nflag  5.*x:\t-exa = |%5.*x| (* = 10)", 10, -exa);
 
-	int te = 0xa1b2c3;
-	while (exa>0)
-	{
-		printf("\nte:\t%%x: %x   \t%%(x%%16): %x\t(d%%16):%d", exa, exa%16, exa%16);
-		exa=exa/16;
-	}
-	printf("\n\n=========== pointer ============");
-	printf("\nflag     p:\tp = |%p|", p);
-	printf("\nflag    *p:\tp = |%*p|", 20, p);
-	printf("\nflag 20.*p:\tp = |%20.*p| (* = 15)", 15, p);
-	// printf("\nflag-20.*p:\tp = |%-5.*p| (* = 15)", 15, p);
-	printf("\nflag   -*p:\tp = |%-*p| (* = 20)", 20, p);
-	// printf("\nflag  -0*p:\t&num = |%-0*p| (* = 20)", 20, &num);
-	printf("\nflag   0*p:\t&num = |%0*p| (* = 20)", 20, &num);
+	// int te = 0xa1b2c3;
+	// while (exa>0)
+	// {
+	// 	printf("\nte:\t%%x: %x   \t%%(x%%16): %x\t(d%%16):%d", exa, exa%16, exa%16);
+	// 	exa=exa/16;
+	// }
+	// printf("\n\n=========== pointer ============");
+	// printf("\nflag     p:\tp = |%p|", p);
+	// printf("\nflag    *p:\tp = |%*p|", 20, p);
+	// printf("\nflag 20.*p:\tp = |%20.*p| (* = 15)", 15, p);
+	// // printf("\nflag-20.*p:\tp = |%-5.*p| (* = 15)", 15, p);
+	// printf("\nflag   -*p:\tp = |%-*p| (* = 20)", 20, p);
+	// // printf("\nflag  -0*p:\t&num = |%-0*p| (* = 20)", 20, &num);
+	// printf("\nflag   0*p:\t&num = |%0*p| (* = 20)", 20, &num);
 
 
 
