@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:25:14 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 15:51:43 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 16:15:53 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char		*precision_str(t_flags flags, va_list args)
 		// str = ft_substr(aux_str, 0, flags.precision);
 		// result_str = str;
 		// free(str);
-		// return (result_str);
+		// return (str);
 		str = ft_calloc((flags.precision), sizeof(char));
 		i = 0;
 		while (i < flags.precision)
