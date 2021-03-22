@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 18:33:07 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 18:34:10 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ static char		*printf_itoa(long int number, t_flags flags)
 	if (flags.precision == 0)
 	{
 		if (flags.zero_padded == 1 && number < 0)
-			str = ft_itoa(negative_number));
+			str = ft_itoa(negative_number);
 		else
-			str = ft_itoa(number));
+			str = ft_itoa(number);
 		freed_str = str;
 		free(str);
 		return (freed_str);
