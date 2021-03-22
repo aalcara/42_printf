@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:25:14 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 15:07:43 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 15:31:51 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static char		*precision_str(t_flags flags, va_list args)
 	char		*str;
 	char		*aux_str;
 	int			aux_len;
+	char		*result_str;
 
 	aux_str = va_arg(args, char*);
 	aux_len = ft_strlen(aux_str);
@@ -29,7 +30,9 @@ static char		*precision_str(t_flags flags, va_list args)
 	}
 	else
 		str = aux_str;
-	return (str);
+	result_str = str;
+	free(str);
+	return (result_str);
 }
 
 int				printf_str(t_flags flags, va_list args)
