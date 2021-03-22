@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 17:56:55 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 18:03:09 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	if (neg_signal == 1)
 		pre_str[0] = '-';
 	full_str = ft_strjoin(pre_str, str_num);
+	free(str_num);
 	free(pre_str);
 	return (full_str);
 }
