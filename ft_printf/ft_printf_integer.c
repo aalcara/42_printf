@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 17:37:45 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 17:56:55 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 			return (str_num);
 		else
 			pre_str = "-";
-		// return (ft_strjoin(pre_str, str_num));
-		return (ft_stjoin_mllc(pre_str, str_num, ft_strlen(pre_str), length));
+		return (ft_strjoin(pre_str, str_num));
 	}
 	pre_str_len = flags.precision + neg_signal - length;
 	if(!(pre_str = ft_calloc(sizeof(char) , (pre_str_len + 1))))
@@ -37,7 +36,7 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	ft_memset((char *)pre_str, '0', pre_str_len);
 	if (neg_signal == 1)
 		pre_str[0] = '-';
-	full_str = ft_stjoin_mllc(pre_str, str_num, ft_strlen(pre_str), length);
+	full_str = ft_strjoin(pre_str, str_num);
 	free(pre_str);
 	return (full_str);
 }
