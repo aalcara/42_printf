@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 18:09:45 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 18:33:07 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,45 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	free(full_str);
 	return (full_freed);
 }
+/*
+static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
+{
+	int			length;
+	char		*str_num;
+	char		*pre_str;
+	int			pre_str_len;
+	char		*full_str;
+	char		*full_freed;
 
+	length = ft_strlen(str_num = ft_itoa(number));
+	if ((flags.precision + neg_signal) <= length)
+	{
+		if (neg_signal == 0)
+			return (str_num);
+		else
+			pre_str = "-";
+		return (ft_strjoin(pre_str, str_num));
+	}
+	pre_str_len = flags.precision + neg_signal - length;
+	if(!(pre_str = ft_calloc(sizeof(char) , (pre_str_len + 1))))
+		return (NULL);
+	ft_memset((char *)pre_str, '0', pre_str_len);
+	if (neg_signal == 1)
+		pre_str[0] = '-';
+	full_str = ft_strjoin(pre_str, str_num);
+	free(str_num);
+	free(pre_str);
+	full_freed = full_str;
+	free(full_str);
+	return (full_freed);
+}
+*/
 static char		*printf_itoa(long int number, t_flags flags)
 {
 	char		*str;
 	long int	negative_number;
 	int			neg_signal;
+	char		*freed_str;
 
 	// printf("\nl:48\tEntrou printf_itoa");//
 	neg_signal = 0;
@@ -57,9 +90,12 @@ static char		*printf_itoa(long int number, t_flags flags)
 	if (flags.precision == 0)
 	{
 		if (flags.zero_padded == 1 && number < 0)
-			return (str = ft_itoa(negative_number));
+			str = ft_itoa(negative_number));
 		else
-			return (str = ft_itoa(number));
+			str = ft_itoa(number));
+		freed_str = str;
+		free(str);
+		return (freed_str);
 	}
 	if (number < 0)
 	{
