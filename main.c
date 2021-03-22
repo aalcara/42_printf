@@ -132,6 +132,15 @@ int main(void)
 	printf("\treturn :%d\n", printf("|%.d|", 0));
 	printf("\treturn :%d\n", ft_printf("|%.d|", 0));
 
+	printf("\n---- 70 ----\n");
+	printf("\treturn :%d\n", printf("|%.0d|", 5));
+	printf("\treturn :%d\n", ft_printf("|%.0d|", 5));
+
+	printf("\n---- 71 ----\n");
+	printf("\treturn :%d\n", printf("|%.0d|", 10));
+	printf("\treturn :%d\n", ft_printf("|%.0d|", 10));
+
+
 	printf("\n---- 72 ----\n");
 	printf("\treturn :%d\n", printf("|%1.d|", 0));
 	printf("\treturn :%d\n", ft_printf("|%1.d|", 0));
