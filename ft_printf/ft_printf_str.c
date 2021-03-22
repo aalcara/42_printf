@@ -6,12 +6,29 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:25:14 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 16:15:53 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 16:27:22 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
+
+static char		*get_str(t_flags flags, char *aux_str)
+{
+	char		str[flags.precision];
+	int				i;
+	static char		*str_ret;
+
+	i = 0;
+	while (i < flags.precision)
+	{
+		str[i] = aux_str[i];
+		i++;
+	}
+	str[i] = '\0';
+	str_ret = str;
+	return (str_ret);
+}
 
 static char		*precision_str(t_flags flags, va_list args)
 {
@@ -28,16 +45,19 @@ static char		*precision_str(t_flags flags, va_list args)
 	if (flags.true_precision == 1 && flags.precision < aux_len)
 	{
 		// str = ft_substr(aux_str, 0, flags.precision);
+
+		str = get_str(flags, aux_str);
+
+		// ft_calloc((flags.precision), sizeof(char));
+		// i = 0;
+		// while (i < flags.precision)
+		// {
+		// 	str[i] = aux_str[i];
+		// 	i++;
+		// }
 		// result_str = str;
 		// free(str);
-		// return (str);
-		str = ft_calloc((flags.precision), sizeof(char));
-		i = 0;
-		while (i < flags.precision)
-		{
-			str[i] = aux_str[i];
-			i++;
-		}
+
 	}
 	else
 		str = aux_str;
