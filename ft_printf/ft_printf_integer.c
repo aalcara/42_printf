@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/19 21:24:59 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/21 20:59:45 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,10 +123,10 @@ static int		printf_positive_integer(long int number, t_flags flags)
 int				printf_integer(t_flags flags, va_list args)
 {
 	int			length;
-	int			number;
+	long int	number;
 
 	// printf("\nl:121\tEntrou printf_integer");//
-	number = va_arg(args, int);
+	number = va_arg(args, long int);
 	// printf("\nl:123 number = %d", number);//
 	if (number < 0)
 		length = printf_negative_integer(number, flags);
