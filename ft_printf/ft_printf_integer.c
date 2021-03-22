@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 02:36:53 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 11:08:27 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,14 +120,17 @@ static int		printf_positive_integer(long int number, t_flags flags)
 	return (length);
 }
 
-int				printf_integer(t_flags flags, va_list args)
+int				printf_integer(t_flags flags, va_list args, int specifier)
 {
 	int			length;
 	long int	number;
 
 	// printf("\nl:121\tEntrou printf_integer");//
-	number = (long int)va_arg(args, int);
-	// printf("\nl:130 number = %d", number);//
+	if (specifier == 'u')
+		number = va_arg(args, unsigned int);
+	else
+		number = (long int)va_arg(args, int);
+		// printf("\nl:130 number = %d", number);//
 	// printf("\nl:131 number =(long int) %ld", (long int)number);//
 	if (number < 0)
 		length = printf_negative_integer(number, flags);
