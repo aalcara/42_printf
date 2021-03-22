@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_no_malloc.c                             :+:      :+:    :+:   */
+/*   ft_hexa_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:05:58 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 17:43:04 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 20:50:49 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char			*ft_stjoin_mllc(char *s1, char *s2, int lens1, int lens2)
+int			ft_hexa_len(unsigned long int number)
 {
-	char		aux_str[lens1 + lens2 + 1];
-	char		*result;
-	int			i;
+	int 		num_len;
 
-	i = 0;
-	while (i < lens1)
+	num_len = 0;
+	while (number > 0)
 	{
-		aux_str[i] = s1[i];
-		i++;
+		number = number / 16;
+		num_len++;
 	}
-	while (i < lens1 + lens2)
-	{
-		aux_str[i] = s2[i - lens1];
-		i++;
-	}
-	aux_str[lens1 + lens2] = '\0';
-	result = aux_str;
-	return (result);
+	return (num_len);
 }

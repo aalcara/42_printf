@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 20:45:57 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 20:54:45 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	char		*full_str;
 	char		*full_freed;
 
-	printf("\nl:48\tnumber = %ld", number);//
 	str_num = ft_itoa(number);
 	pre_str = ft_pre_str(str_num, flags, neg_signal);
 	full_str = ft_strjoin(pre_str, str_num);
@@ -61,9 +60,9 @@ static char		*printf_itoa(long int number, t_flags flags)
 	char		*str;
 	long int	negative_number;
 	int			neg_signal;
-	char		*freed_str;
+	// char		*freed_str;
 
-	printf("\nl:66\tEntrou printf_itoa number = %ld\n", number);//
+	// printf("\nl:48\tEntrou printf_itoa");//
 	neg_signal = 0;
 	negative_number = -number;
 	if (flags.precision == 0)
@@ -72,12 +71,10 @@ static char		*printf_itoa(long int number, t_flags flags)
 			str = ft_itoa(negative_number);
 		else
 			str = ft_itoa(number);
-		printf("\nl:75\tstr = %s\n", str);//
-		// printf("\nl:78\tfreedstr = %s\n", freed_str);//
-		freed_str = str;
-		free(str);
-		return (freed_str);
-		// return (str);
+		// freed_str = str;
+		// free(str);
+		// return (freed_str);
+		return (str);
 	}
 	if (number < 0)
 	{
@@ -134,7 +131,6 @@ static int		printf_positive_integer(long int number, t_flags flags)
 		number_str = "\0";
 	else
 		number_str = printf_itoa(number, flags);
-	printf("\nl:137\treturn de printfitoa = %s", number_str);//
 	length = ft_strlen(number_str);
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);

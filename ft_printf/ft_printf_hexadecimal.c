@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 10:52:44 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 20:53:49 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,6 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 	return (full_str);
 }
 
-static int		hexa_lenght(unsigned long int number)
-{
-	int 		num_len;
-
-	num_len = 0;
-	while (number > 0)
-	{
-		number = number / 16;
-		num_len++;
-	}
-	return (num_len);
-}
-
 static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 {
 	int			num_len;
@@ -77,7 +64,7 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 	char		*hexa_str;
 	char		*hexa_ret;
 
-	num_len = hexa_lenght(nbr);
+	num_len = ft_hexa_len(nbr);
 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
 		return (NULL);
 	if (nbr == 0)
