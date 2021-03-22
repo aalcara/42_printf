@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 14:35:15 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/13 19:13:00 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 17:32:15 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void			ft_putnbr_fd(int n, int fd);
 */
 void			ft_putstr(char const *s);
 void			ft_putchar(char c);
+char			*ft_stjoin_mllc(char *s1, char *s2, int lens1, int lens2);
 
 #endif
