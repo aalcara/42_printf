@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 18:34:10 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 19:03:53 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,19 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	char		*full_freed;
 
 	length = ft_strlen(str_num = ft_itoa(number));
-	if ((flags.precision + neg_signal) <= length)
-	{
-		if (neg_signal == 0)
-			return (str_num);
-		else
-			pre_str = "-";
-		return (ft_strjoin(pre_str, str_num));
-	}
 	pre_str_len = flags.precision + neg_signal - length;
-	if(!(pre_str = ft_calloc(sizeof(char) , (pre_str_len + 1))))
+	if ((flags.precision + neg_signal) <= length)
+		if (neg_signal == 0)
+			pre_str = ft_calloc(1, sizeof(char));
+		else
+			pre_str = ft_calloc(2, sizeof(char));
+	else
+	{
+		(pre_str = ft_calloc(sizeof(char) , (pre_str_len + 1)));
+		ft_memset((char *)pre_str, '0', pre_str_len);
+	}
+	if (!pre_str)
 		return (NULL);
-	ft_memset((char *)pre_str, '0', pre_str_len);
 	if (neg_signal == 1)
 		pre_str[0] = '-';
 	full_str = ft_strjoin(pre_str, str_num);
