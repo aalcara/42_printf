@@ -79,20 +79,20 @@ int main(void)
 	printf("\n16\n");
 	printf("\treturn :%d\n", printf("|%*.s %.1s|", 10, "2222", "9999"));
 	printf("\treturn :%d\n", ft_printf("|%*.s %.1s|", 10, "2222", "9999"));
-	// printf("\n17\n");
-	// printf("\treturn :%d\n", printf("|%*.0s %.2s|", 10, "123", "4567"));
-	// printf("\treturn :%d\n", ft_printf("|%*.0s %.2s|", 10, "123", "4567"));
-	// printf("\n18\n");
-	// printf("\treturn :%d\n", printf("|%*.3s %.3s|", 10, "123", "4567"));
-	// printf("\treturn :%d\n", ft_printf("|%*.3s %.3s|", 10, "123", "4567"));
+	printf("\n17\n");
+	printf("\treturn :%d\n", printf("|%*.0s %.2s|", 10, "123", "4567"));
+	printf("\treturn :%d\n", ft_printf("|%*.0s %.2s|", 10, "123", "4567"));
+	printf("\n18\n");
+	printf("\treturn :%d\n", printf("|%*.3s %.3s|", 10, "123", "4567"));
+	printf("\treturn :%d\n", ft_printf("|%*.3s %.3s|", 10, "123", "4567"));
 
-	// printf("\n---- multiplus str without flag ----\n");
-	// printf("\treturn :%d\n", printf("%st%se%ss%st", str, str2, str, str2));
-	// printf("\treturn :%d\n", ft_printf("%st%se%ss%st", str, str2, str, str2));
+	printf("\n---- multiplus str without flag ----\n");
+	printf("\treturn :%d\n", printf("%st%se%ss%st", str, str2, str, str2));
+	printf("\treturn :%d\n", ft_printf("%st%se%ss%st", str, str2, str, str2));
 
-	// printf("\n---- multiplus str with -*num flag ----\n");
-	// printf("\treturn :%d\n", printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
-	// printf("\treturn :%d\n", ft_printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
+	printf("\n---- multiplus str with -*num flag ----\n");
+	printf("\treturn :%d\n", printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
+	printf("\treturn :%d\n", ft_printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
 
 	// printf("\n");
 	// printf("\n --------------------------------------");
