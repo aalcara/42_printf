@@ -3,15 +3,15 @@
 
 int main(void)
 {
-	char c = 'A';
-	char d = '!';
-	char *str = "9876";
-	char *str2 = "ABC";
+	// char c = 'A';
+	// char d = '!';
+	// char *str = "9876";
+	// char *str2 = "ABC";
 	int i = 0x3a9b7d;
 	int a = 1;
 	int b = 1;
-	int *p = &a;
-	int *q = &b;
+	// int *p = &a;
+	// int *q = &b;
 
 	// printf("\n---- only input str ---- \n");
 	// printf("\treturn :%d\n", printf("test"));
@@ -70,12 +70,12 @@ int main(void)
 	// printf("\treturn :%d\n", printf("t%-2ces%-2ct", d, c));
 	// printf("\treturn :%d\n", ft_printf("t%-2ces%-2ct", d, c));
 
-	printf("\n");
-	printf("\n --------------------------------------");
-	printf("\n|                STRING                |");
-	printf("\n --------------------------------------\n");
+	// printf("\n");
+	// printf("\n --------------------------------------");
+	// printf("\n|                STRING                |");
+	// printf("\n --------------------------------------\n");
 
-	printf("\n---- tests Tripouille ----\n");
+	// printf("\n---- tests Tripouille ----\n");
 	// printf("\n16\n");
 	// printf("\treturn :%d\n", printf("|%*.s %.1s|", 10, "2222", "9999"));
 	// printf("\treturn :%d\n", ft_printf("|%*.s %.1s|", 10, "2222", "9999"));
@@ -86,25 +86,25 @@ int main(void)
 	// printf("\treturn :%d\n", printf("|%*.3s %.3s|", 10, "123", "4567"));
 	// printf("\treturn :%d\n", ft_printf("|%*.3s %.3s|", 10, "123", "4567"));
 
-	printf("\n34\n");
-	printf("\treturn :%d\n", printf("|%-3.s|", NULL));
-	printf("\treturn :%d\n", ft_printf("|%-3.s|", NULL));
+	// printf("\n34\n");
+	// printf("\treturn :%d\n", printf("|%-3.s|", NULL));
+	// printf("\treturn :%d\n", ft_printf("|%-3.s|", NULL));
 
-	printf("\n35\n");
-	printf("\treturn :%d\n", printf("|%-9.1s|", NULL));
-	printf("\treturn :%d\n", ft_printf("|%-9.1s|", NULL));
+	// printf("\n35\n");
+	// printf("\treturn :%d\n", printf("|%-9.1s|", NULL));
+	// printf("\treturn :%d\n", ft_printf("|%-9.1s|", NULL));
 
-	printf("\n36\n");
-	printf("\treturn :%d\n", printf("|%.*s|", -2, NULL));
-	printf("\treturn :%d\n", ft_printf("|%.*s|", -2, NULL));
+	// printf("\n36\n");
+	// printf("\treturn :%d\n", printf("|%.*s|", -2, NULL));
+	// printf("\treturn :%d\n", ft_printf("|%.*s|", -2, NULL));
 
-	printf("\n36\n");
-	printf("\treturn :%d\n", printf("|%.*s|", -1, NULL));
-	printf("\treturn :%d\n", ft_printf("|%.*s|", -1, NULL));
+	// printf("\n36\n");
+	// printf("\treturn :%d\n", printf("|%.*s|", -1, NULL));
+	// printf("\treturn :%d\n", ft_printf("|%.*s|", -1, NULL));
 
-	printf("\n36\n");
-	printf("\treturn :%d\n", printf("|%.*s|", -80000, NULL));
-	printf("\treturn :%d\n", ft_printf("|%.*s|", -80000, NULL));
+	// printf("\n36\n");
+	// printf("\treturn :%d\n", printf("|%.*s|", -80000, NULL));
+	// printf("\treturn :%d\n", ft_printf("|%.*s|", -80000, NULL));
 
 	// printf("\n---- multiplus str without flag ----\n");
 	// printf("\treturn :%d\n", printf("%st%se%ss%st", str, str2, str, str2));
@@ -123,34 +123,34 @@ int main(void)
 	// printf("\treturn :%d\n", printf("tes%%t"));
 	// printf("\treturn :%d\n", ft_printf("tes%%t"));
 
-	// printf("\n");
-	// printf("\n --------------------------------------");
-	// printf("\n|                INTEGER               |");
-	// printf("\n --------------------------------------\n");
+	printf("\n");
+	printf("\n --------------------------------------");
+	printf("\n|                INTEGER               |");
+	printf("\n --------------------------------------\n");
 
-	// printf("\n---- int without flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%dt", i));
-	// printf("\treturn :%d\n", ft_printf("tes%dt", i));
+	printf("\n---- int without flag ----\n");
+	printf("\treturn :%d\n", printf("tes%dt", i));
+	printf("\treturn :%d\n", ft_printf("tes%dt", i));
 
-	// printf("\n---- int with * flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%*dt", 5, i));
-	// printf("\treturn :%d\n", ft_printf("tes%*dt", 5, i));
+	printf("\n---- int with * flag ----\n");
+	printf("\treturn :%d\n", printf("tes%*dt", 5, i));
+	printf("\treturn :%d\n", ft_printf("tes%*dt", 5, i));
 
-	// printf("\n---- negative int with * flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%*dt", 7, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%*dt", 7, -i));
+	printf("\n---- negative int with * flag ----\n");
+	printf("\treturn :%d\n", printf("tes%*dt", 7, -i));
+	printf("\treturn :%d\n", ft_printf("tes%*dt", 7, -i));
 
-	// printf("\n---- negative int with - flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%-dt", -i));
-	// printf("\treturn :%d\n", ft_printf("tes%-dt", -i));
+	printf("\n---- negative int with - flag ----\n");
+	printf("\treturn :%d\n", printf("tes%-dt", -i));
+	printf("\treturn :%d\n", ft_printf("tes%-dt", -i));
 
-	// printf("\n---- negative int with -* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%-*dt", 12, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%-*dt", 12, -i));
+	printf("\n---- negative int with -* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%-*dt", 12, -i));
+	printf("\treturn :%d\n", ft_printf("tes%-*dt", 12, -i));
 
-	// printf("\n---- negative int with 0* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%0*dt", 12, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%0*dt", 12, -i));
+	printf("\n---- negative int with 0* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%0*dt", 12, -i));
+	printf("\treturn :%d\n", ft_printf("tes%0*dt", 12, -i));
 
 	// printf("\n---- negative int with 0*.* flag ----\n");
 	// printf("\treturn :%d\n", printf("tes%0*.*dt", 22, 10, -i));
@@ -160,37 +160,37 @@ int main(void)
 	// printf("\treturn :%d\n", printf("tes%0*.*dt", 7, 5, -i));
 	// printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 7, 5, -i));
 
-	// printf("\n---- int with 29.19 flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%29.19dt", i));
-	// printf("\treturn :%d\n", ft_printf("tes%29.19dt", i));
+	printf("\n---- int with 29.19 flag ----\n");
+	printf("\treturn :%d\n", printf("tes%29.19dt", i));
+	printf("\treturn :%d\n", ft_printf("tes%29.19dt", i));
 
-	// printf("\n---- int with 11.* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, i));
-	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, i));
+	printf("\n---- int with 11.* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%11.*dt", 5, i));
+	printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, i));
 
-	// printf("\n---- negative int with 29.19 flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%29.19dt", -i));
-	// printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
+	printf("\n---- negative int with 29.19 flag ----\n");
+	printf("\treturn :%d\n", printf("tes%29.19dt", -i));
+	printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
 
-	// printf("\n---- negative int with 11.* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
+	printf("\n---- negative int with 11.* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
+	printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
 
 
-	// while (a <= 7)
-	// {
-	// 	printf("\n---- negative int with *.* flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%*.*d|", a, b, -i));
-	// 	printf("\treturn :%d\n", ft_printf("|%*.*d|", a, b, -i));
-	// 	a++;
-	// }
-	// while (b <= 8)
-	// {
-	// 	printf("\n---- negative int with *.* flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%*.*d|", a, b, -i));
-	// 	printf("\treturn :%d\n", ft_printf("|%*.*d|", a, b, -i));
-	// 	b++;
-	// }
+	while (a <= 7)
+	{
+		printf("\n---- negative int with *.* flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%*.*d|", a, b, -i));
+		printf("\treturn :%d\n", ft_printf("|%*.*d|", a, b, -i));
+		a++;
+	}
+	while (b <= 8)
+	{
+		printf("\n---- negative int with *.* flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%*.*d|", a, b, -i));
+		printf("\treturn :%d\n", ft_printf("|%*.*d|", a, b, -i));
+		b++;
+	}
 
 	// printf("\n");
 	// printf("\n --------------------------------------");
