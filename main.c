@@ -128,6 +128,10 @@ int main(void)
 	printf("\n|                INTEGER               |");
 	printf("\n --------------------------------------\n");
 
+	printf("\n---- 2 ----\n");
+	printf("\treturn :%d\n", printf("|%.d|", 0));
+	printf("\treturn :%d\n", ft_printf("|%.d|", 0));
+
 	printf("\n---- 72 ----\n");
 	printf("\treturn :%d\n", printf("|%1.d|", 0));
 	printf("\treturn :%d\n", ft_printf("|%1.d|", 0));
