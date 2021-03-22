@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/21 20:59:45 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 02:36:53 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 	char 		padded;
 
 	// printf("\nl:97\tEntrou printf_positive");//
-	if (flags.zero_padded == 1)
+	if (flags.zero_padded == 1 && flags.precision == 0)
 		padded = '0';
 	else
 		padded = ' ';
@@ -126,8 +126,9 @@ int				printf_integer(t_flags flags, va_list args)
 	long int	number;
 
 	// printf("\nl:121\tEntrou printf_integer");//
-	number = va_arg(args, long int);
-	// printf("\nl:123 number = %d", number);//
+	number = (long int)va_arg(args, int);
+	// printf("\nl:130 number = %d", number);//
+	// printf("\nl:131 number =(long int) %ld", (long int)number);//
 	if (number < 0)
 		length = printf_negative_integer(number, flags);
 	else
