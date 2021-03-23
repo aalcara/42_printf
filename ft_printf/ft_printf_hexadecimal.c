@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 17:22:02 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 17:49:19 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 	num_len = ft_hexa_len(nbr);
 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
 		return (NULL);
-	if (nbr == 0)
-		return ("0");
+	 if (nbr == 0)
+	 	hexa_str = "0";
 	while (nbr > 0)
 	{
 		if ((aux_num = nbr % 16) < 10)
@@ -99,11 +99,14 @@ int				printf_hexadecimal(t_flags flags, va_list args, int specifier)
 
 	number = va_arg(args, unsigned long int);
 	// printf("\nl:97\tEntrou printf_positive");//
-	if (flags.zero_padded == 1 && flags.precision == 0)
+	if (flags.zero_padded == 1 && flags.true_precision == 0)
 		padded = '0';
 	else
 		padded = ' ';
-	number_str = itoa_hex(number, flags, specifier);//!!!!!!!!!!
+	if (flags.true_precision == 1 && flags.precision == 0)
+		number_str = "\0";
+	else
+		number_str = itoa_hex(number, flags, specifier);//!!!!!!!!!!
 	length = ft_strlen(number_str);
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);
