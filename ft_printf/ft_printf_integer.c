@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 14:55:48 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 15:30:22 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ char			*ft_pre_str(char *str_num, t_flags flags, int neg_signal)
 	char		*pre_str;
 	int			pre_str_len;
 
+	// printf("\nl:40\tEntrou printf_positive");//
 	length = ft_strlen(str_num);
 	pre_str_len = flags.precision + neg_signal - length;
 	if ((flags.precision + neg_signal) <= length)
 		if (neg_signal == 0)
-			pre_str = ft_calloc(1, sizeof(char));
+			pre_str = ft_calloc(2, sizeof(char));
 		else
 			pre_str = ft_calloc(2, sizeof(char));
 	else
@@ -53,6 +54,8 @@ char			*ft_pre_str(char *str_num, t_flags flags, int neg_signal)
 		return (NULL);
 	if (neg_signal == 1)
 		pre_str[0] = '-';
+	// printf("\nl:57\tneg_signal = %d\n", neg_signal);//
+	// printf("\nl:58\tpre_str = %s\n", pre_str);//
 	return (pre_str);
 }
 
@@ -84,11 +87,11 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 	char		freed_str[length + 1];
 	static char	*freed_str_ptr;
 
-	// printf("\nl:87\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
+	// printf("\nl:90\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
 	neg_signal = 0;
 	negative_number = -number;
-	if ((flags.precision == 0 && flags.true_precision == 1) || flags.zero_padded == 1)
-	// if (flags.true_precision == 1 || flags.zero_padded == 1)
+	// if ((flags.precision == 0 && flags.true_precision == 1) || flags.zero_padded == 1)
+	if (flags.zero_padded == 1)
 	{
 		if (number < 0)
 			str = ft_itoa(negative_number);
@@ -101,6 +104,7 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 		return (freed_str_ptr);
 		// return (str);
 	}
+	// printf("\nl:107\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
 	if (number < 0)
 	{
 		neg_signal = 1;
@@ -117,14 +121,13 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	int			length;
 	char 		padded;
 
-	// printf("l:68\tEntrou printf_negative");//
-	// printf("\nl:99\tprintf_negative number = %ld\n", number);//
+	// printf("\nl:124\tEntrou printf_negative\n");//
+	// printf("\nl:125\tprintf_negative number = %ld\n", number);//
 	length = ft_num_len(number);
 	// printf("\nl:101\tprintf_negative length = %d\n", length);//
 	number_str = printf_itoa(number, flags, length);
 	length = ft_strlen(number_str);
-	if (flags.zero_padded == 1 && flags.precision == 0 && flags.left_aligned == 0)//!
-	// if ((flags.precision == 0 && flags.true_precision == 1) || flags.zero_padded == 1)
+	if (flags.zero_padded == 1 && flags.precision == 0)//!
 	{
 		padded = '0';
 		ft_putchar('-');
@@ -132,6 +135,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	}
 	else
 		padded = ' ';
+	// printf("\nl:138\tprintf_negative number_str = %s\n", number_str);//
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);
 	while (length < flags.min_width)
@@ -151,7 +155,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 	char 		padded;
 
 
-	// printf("\nl:97\tEntrou printf_positive");//
+	// printf("\nl:158\tEntrou printf_positive\n");//
 	length = ft_num_len(number);
 	if (flags.zero_padded == 1 && flags.true_precision == 0 && flags.left_aligned == 0)
 		padded = '0';

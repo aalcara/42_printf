@@ -128,43 +128,47 @@ int main(void)
 	printf("\n|                INTEGER               |");
 	printf("\n --------------------------------------\n");
 
-	printf("\n---- 1 ----\n");
-	printf("\treturn :%d\n", printf("|%d|", 0));
-	printf("\treturn :%d\n", ft_printf("|%d|", 0));
+	// printf("\n---- 1 ----\n");
+	// printf("\treturn :%d\n", printf("|%d|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%d|", 0));
 
-	printf("\n---- 2 ----\n");
-	printf("\treturn :%d\n", printf("|%.d|", 0));
-	printf("\treturn :%d\n", ft_printf("|%.d|", 0));
+	// printf("\n---- 2 ----\n");
+	// printf("\treturn :%d\n", printf("|%.d|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%.d|", 0));
 
-	printf("\n---- 14 ----\n");
-	printf("\treturn :%d\n", printf("|0*%0-*d*0 0*%0*d*0|", 21, 1021, 21, -1011));
-	printf("\treturn :%d\n", ft_printf("|0*%0-*d*0 0*%0*d*0|", 21, 1021, 21, -1011));
+	// printf("\n---- 14 ----\n");
+	// printf("\treturn :%d\n", printf("|0*%0-*d*0 0*%0*d*0|", 21, 1021, 21, -1011));
+	// printf("\treturn :%d\n", ft_printf("|0*%0-*d*0 0*%0*d*0|", 21, 1021, 21, -1011));
 
-	printf("\n---- 70 ----\n");
-	printf("\treturn :%d\n", printf("|%.0d|", 5));
-	printf("\treturn :%d\n", ft_printf("|%.0d|", 5));
+	printf("\n---- 15 ----\n");
+	printf("\treturn :%d\n", printf("|0*%-0*.10d*0 0*%-0*.0d*0|", 21, 1021, 21, -1011));
+	printf("\treturn :%d\n", ft_printf("|0*%-0*.10d*0 0*%-0*.0d*0|", 21, 1021, 21, -1011));
 
-	printf("\n---- 71 ----\n");
-	printf("\treturn :%d\n", printf("|%.0d|", 10));
-	printf("\treturn :%d\n", ft_printf("|%.0d|", 10));
+	// printf("\n---- 70 ----\n");
+	// printf("\treturn :%d\n", printf("|%.0d|", 5));
+	// printf("\treturn :%d\n", ft_printf("|%.0d|", 5));
 
-
-	printf("\n---- 72 ----\n");
-	printf("\treturn :%d\n", printf("|%1.d|", 0));
-	printf("\treturn :%d\n", ft_printf("|%1.d|", 0));
-
-	printf("\n---- 73 ----\n");
-	printf("\treturn :%d\n", printf("|%2.d|", 0));
-	printf("\treturn :%d\n", ft_printf("|%2.d|", 0));
-
-	printf("\n---- 74 ----\n");
-	printf("\treturn :%d\n", printf("|%3.d|", 0));
-	printf("\treturn :%d\n", ft_printf("|%3.d|", 0));
+	// printf("\n---- 71 ----\n");
+	// printf("\treturn :%d\n", printf("|%.0d|", 10));
+	// printf("\treturn :%d\n", ft_printf("|%.0d|", 10));
 
 
-	printf("\n---- int without flag ----\n");
-	printf("\treturn :%d\n", printf("tes%dt", i));
-	printf("\treturn :%d\n", ft_printf("tes%dt", i));
+	// printf("\n---- 72 ----\n");
+	// printf("\treturn :%d\n", printf("|%1.d|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%1.d|", 0));
+
+	// printf("\n---- 73 ----\n");
+	// printf("\treturn :%d\n", printf("|%2.d|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%2.d|", 0));
+
+	// printf("\n---- 74 ----\n");
+	// printf("\treturn :%d\n", printf("|%3.d|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%3.d|", 0));
+
+
+	// printf("\n---- int without flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%dt", i));
+	// printf("\treturn :%d\n", ft_printf("tes%dt", i));
 
 	printf("\n---- int with * flag ----\n");
 	printf("\treturn :%d\n", printf("tes%*dt", 5, i));
