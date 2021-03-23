@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 18:35:18 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 18:36:36 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 	int			pre_str_len;
 	char		*pre_str;
 	char		*full_str;
-	// char		*free_full_str;
+	char		*free_full_str;
 
 	length = ft_strlen(hexa_str);
 	// printf("\nl:43\tprecision = %d\n", flags.precision);//
@@ -54,10 +54,10 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 		return (NULL);
 	ft_memset((char *)pre_str, '0', pre_str_len);
 	full_str = ft_strjoin(pre_str, hexa_str);
-	// free(pre_str);
-	// free_full_str = ft_free(full_str, ft_strlen (full_str));
-	// return (free_full_str);
-	return (full_str);
+	free(pre_str);
+	free_full_str = ft_free(full_str, ft_strlen (full_str));
+	return (free_full_str);
+	// return (full_str);
 }
 
 static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
