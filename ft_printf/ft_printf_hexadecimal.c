@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 18:29:50 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 18:30:33 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 	int			pre_str_len;
 	char		*pre_str;
 	char		*full_str;
-	char		*free_full_str;
+	// char		*free_full_str;
 
 	length = ft_strlen(hexa_str);
 	// printf("\nl:43\tprecision = %d\n", flags.precision);//
