@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 20:54:45 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 21:08:52 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,13 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	return (full_freed);
 }
 
-static char		*printf_itoa(long int number, t_flags flags)
+static char		*printf_itoa(long int number, t_flags flags, int length)
 {
 	char		*str;
 	long int	negative_number;
 	int			neg_signal;
-	// char		*freed_str;
+	char		freed_str[length + 1];
+	static char	*freed_str_ptr;
 
 	// printf("\nl:48\tEntrou printf_itoa");//
 	neg_signal = 0;
@@ -71,10 +72,12 @@ static char		*printf_itoa(long int number, t_flags flags)
 			str = ft_itoa(negative_number);
 		else
 			str = ft_itoa(number);
-		// freed_str = str;
-		// free(str);
-		// return (freed_str);
-		return (str);
+		ft_memcpy((void *)freed_str, (void *)str, length);
+		freed_str[length] = '\0';
+		free(str);
+		freed_str_ptr = freed_str;
+		return (freed_str_ptr);
+		// return (str);
 	}
 	if (number < 0)
 	{
@@ -93,7 +96,8 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	char 		padded;
 
 	// printf("l:68\tEntrou printf_negative");//
-	length = ft_strlen(number_str = printf_itoa(number, flags));
+	length = ft_num_len(number);
+	number_str = printf_itoa(number, flags, length);
 	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
 		padded = '0';
@@ -122,7 +126,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 
 
 	// printf("\nl:97\tEntrou printf_positive");//
-
+	length = ft_num_len(number);
 	if (flags.zero_padded == 1 && flags.true_precision == 0)
 		padded = '0';
 	else
@@ -130,8 +134,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 	if (flags.true_precision == 1 && flags.precision == 0 && number == 0)
 		number_str = "\0";
 	else
-		number_str = printf_itoa(number, flags);
-	length = ft_strlen(number_str);
+		number_str = printf_itoa(number, flags, length);
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);
 	while (length < flags.min_width)
