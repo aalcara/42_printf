@@ -254,13 +254,19 @@ int main(void)
 	printf("\treturn :%d\n", printf("|%-2.2x|", 0));
 	printf("\treturn :%d\n", ft_printf("|%-2.2x|", 0));
 
-	printf("\n---- 5 --  %%-2.2x   ----\n");
+	printf("\n---- 5 --  %%-3.2x   ----\n");
 	printf("\treturn :%d\n", printf("|%-3.2x|", 0));
 	printf("\treturn :%d\n", ft_printf("|%-3.2x|", 0));
 
 	printf("\n---- 6 --  %%-3.2x %%10.42x   ----\n");
 	printf("\treturn :%d\n", printf(" %-3.2x %10.42x ", 0, 0));
 	printf("\treturn :%d\n", ft_printf(" %-3.2x %10.42x ", 0, 0));
+
+	printf("\n---- 9   ----\n");
+	printf("\treturn :%d\n", printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
+	printf("\treturn :%d\n", ft_printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
+
+
 	// a = 1;
 	// b = 1;
 	// while (b <= 10)

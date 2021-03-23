@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 18:55:38 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 20:46:51 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static char		*ptr_hex(char *hexa_str, t_flags flags)
 	ft_memset(pre_str, '0', pre_str_len);
 	full_str = ft_strjoin(pre_str, hexa_str);
 	free(pre_str);
+	free(hexa_str);
 	full_ptr_str = ft_strjoin("0x", full_str);
 	return (full_ptr_str);
 }
@@ -43,7 +44,7 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 	int			pre_str_len;
 	char		*pre_str;
 	char		*full_str;
-	// char		*free_full_str;
+	char		*full_freed_str;
 
 	length = ft_strlen(hexa_str);
 	// printf("\nl:43\tprecision = %d\n", flags.precision);//
@@ -54,10 +55,10 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 		return (NULL);
 	ft_memset((char *)pre_str, '0', pre_str_len);
 	full_str = ft_strjoin(pre_str, hexa_str);
-	// free_full_str = ft_free(full_str, ft_strlen(full_str));
-	free(pre_str);
-	// return (free_full_str);
-	return (full_str);
+	// free(pre_str);
+	// return (full_str);
+	full_freed_str = ft_free(full_str, ft_strlen(full_str));
+	return (full_freed_str);
 }
 
 static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
@@ -66,6 +67,7 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 	int			aux_num;
 	char		*hexa_str;
 	char		*hexa_ret;
+	char		*freed_hexa_str;//!
 
 	num_len = ft_hexa_len(nbr);
 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
@@ -92,6 +94,8 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 		hexa_ret = precision_hex(hexa_str, flags);
 	// free(hexa_str);
 	return (hexa_ret);
+	// freed_hexa_str = ft_free(hexa_str, ft_strlen(hexa_str));
+	// return (freed_hexa_str);
 }
 
 int				printf_hexadecimal(t_flags flags, va_list args, int specifier)
