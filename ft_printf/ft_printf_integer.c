@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 21:29:35 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 13:19:34 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	char		*str_num;
 	char		*pre_str;
 	char		*full_str;
-	char		*full_freed;
+	static char	*full_freed;
 
 	str_num = ft_itoa(number);
 	pre_str = ft_pre_str(str_num, flags, neg_signal);
@@ -51,8 +51,11 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	free(str_num);
 	free(pre_str);
 	full_freed = full_str;
-	free(full_str);
-	return (full_freed);
+	// printf("\nbefore free: %s", full_freed);
+	// free(full_str);
+	// printf("\nafter free: %s\n", full_freed);
+	// return (full_freed);
+	return (full_str);
 }
 
 static char		*printf_itoa(long int number, t_flags flags, int length)
@@ -66,7 +69,7 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 	// printf("\nl:48\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
 	neg_signal = 0;
 	negative_number = -number;
-	if (flags.precision == 0)
+	if (flags.precision == 0 && flags.true_precision == 1)
 	{
 		if (flags.zero_padded == 1 && number < 0)
 			str = ft_itoa(negative_number);
@@ -100,6 +103,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	length = ft_num_len(number);
 	// printf("\nl:101\tprintf_negative length = %d\n", length);//
 	number_str = printf_itoa(number, flags, length);
+	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
 		padded = '0';
@@ -139,6 +143,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 		number_str = printf_itoa(number, flags, length);
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);
+	length = ft_strlen(number_str);
 	while (length < flags.min_width)
 	{
 		ft_putchar(padded);
