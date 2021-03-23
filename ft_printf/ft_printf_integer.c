@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 21:23:44 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 21:29:35 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 	char		freed_str[length + 1];
 	static char	*freed_str_ptr;
 
-	printf("\nl:48\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
+	// printf("\nl:48\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
 	neg_signal = 0;
 	negative_number = -number;
 	if (flags.precision == 0)
@@ -96,9 +96,9 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	char 		padded;
 
 	// printf("l:68\tEntrou printf_negative");//
-	printf("\nl:99\tprintf_negative number = %ld\n", number);//
+	// printf("\nl:99\tprintf_negative number = %ld\n", number);//
 	length = ft_num_len(number);
-	printf("\nl:101\tprintf_negative length = %d\n", length);//
+	// printf("\nl:101\tprintf_negative length = %d\n", length);//
 	number_str = printf_itoa(number, flags, length);
 	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
