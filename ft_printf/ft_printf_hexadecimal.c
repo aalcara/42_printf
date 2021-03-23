@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 18:34:22 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 18:35:18 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 		hexa_ret = ptr_hex(hexa_str, flags);
 	else
 		hexa_ret = precision_hex(hexa_str, flags);
-	// free(hexa_str);
+	free(hexa_str);
 	return (hexa_ret);
 }
 
