@@ -6,30 +6,12 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 16:58:18 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 17:11:58 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
-
-char			*ft_free(char *str, int len)
-{
-	char			str_aux[len + 1];
-	static char		*str_ret;
-	int				i;
-
-	i = 0;
-	while (i < len)
-	{
-		str_aux[i] = str[i];
-		i++;
-	}
-	str_aux[len] = '\0';
-	str_ret = str_aux;
-	free(str);
-	return (str_ret);
-}
 
 char			*ft_pre_str(char *str_num, t_flags flags, int neg_signal)
 {
@@ -59,12 +41,21 @@ char			*ft_pre_str(char *str_num, t_flags flags, int neg_signal)
 	return (pre_str);
 }
 
-static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
+static char		*precision_itoa(long int number, t_flags flags)
 {
 	char		*str_num;
 	char		*pre_str;
 	char		*full_str;
 	char		*full_freed;
+	int			neg_signal;
+
+
+	neg_signal = 0;
+	if (number < 0)
+	{
+		neg_signal = 1;
+		number = - number;
+	}
 	// printf("\nl:68\tnumber = %ld########################", number);
 	str_num = ft_itoa(number);
 	// printf("\nl:70\tstr_num = %s#########################\n", str_num);
@@ -84,14 +75,12 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 {
 	char		*str;
 	long int	negative_number;
-	int			neg_signal;
+	// int			neg_signal;
 	char		freed_str[length + 1];
 	static char	*freed_str_ptr;
 
-	// printf("\nl:90\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
-	neg_signal = 0;
+	// neg_signal = 0;
 	negative_number = -number;
-	// if ((flags.precision == 0 && flags.true_precision == 1) || flags.zero_padded == 1)
 	if (flags.zero_padded == 1)
 	{
 		if (number < 0)
@@ -103,17 +92,16 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 		free(str);
 		freed_str_ptr = freed_str;
 		return (freed_str_ptr);
-		// return (str);
 	}
-	// printf("\nl:107\t number = %ld, length = %d\n", number, length);//
-	if (number < 0)
-	{
-		// printf("\nl:107\t number = %ld, length = %d\n", number, length);//
-		neg_signal = 1;
-		str = precision_itoa(negative_number, flags, neg_signal);
-	}
-	else
-		str = precision_itoa(number, flags, neg_signal);
+	str = precision_itoa(number, flags);
+	// str = precision_itoa(number, flags, neg_signal);
+	// if (number < 0)
+	// {
+	// 	neg_signal = 1;
+	// 	str = precision_itoa(negative_number, flags, neg_signal);
+	// }
+	// else
+	// 	str = precision_itoa(number, flags, neg_signal);
 	return (str);
 }
 
