@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 18:00:35 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 18:24:51 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,12 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 	int			aux_num;
 	char		*hexa_str;
 	char		*hexa_ret;
-	char		*free_hexa;
 
 	num_len = ft_hexa_len(nbr);
 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
 		return (NULL);
-	 if (nbr == 0)
-	 	hexa_str = "0";
+	if (nbr == 0)
+	 	ft_strlcpy(hexa_str, "0", 1);
 	while (nbr > 0)
 	{
 		if ((aux_num = nbr % 16) < 10)
@@ -90,8 +89,7 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 		hexa_ret = ptr_hex(hexa_str, flags);
 	else
 		hexa_ret = precision_hex(hexa_str, flags);
-	if (nbr > 0)
-		free_hexa = ft_free(hexa_ret, ft_strlen(hexa_ret));
+	free(hexa_str);
 	return (hexa_ret);
 }
 
