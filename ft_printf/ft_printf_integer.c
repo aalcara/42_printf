@@ -6,17 +6,30 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 13:25:11 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 13:34:08 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//
 
-// char			*ft_free(char *str);
-// {
-// 	char *str_ret
-// }
+char			*ft_free(char *str, int len)
+{
+	char			str_aux[len + 1];
+	static char		*str_ret;
+	int				i;
+
+	i = 0;
+	while (i < len)
+	{
+		str_aux[i] = str[i];
+		i++;
+	}
+	str_aux[len] = '\0';
+	str_ret = str_aux;
+	free(str);
+	return (str_ret);
+}
 
 char			*ft_pre_str(char *str_num, t_flags flags, int neg_signal)
 {
@@ -48,19 +61,19 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	char		*str_num;
 	char		*pre_str;
 	char		*full_str;
-	// static char	*full_freed;
+	static char	*full_freed;
 
 	str_num = ft_itoa(number);
 	pre_str = ft_pre_str(str_num, flags, neg_signal);
 	full_str = ft_strjoin(pre_str, str_num);
 	free(str_num);
 	free(pre_str);
-	// full_freed = full_str;
+	full_freed = ft_free(full_str, ft_strlen(full_str));
 	// printf("\nbefore free: %s", full_freed);
-	// free(full_str);
+
 	// printf("\nafter free: %s\n", full_freed);
-	// return (full_freed);
-	return (full_str);
+	return (full_freed);
+	// return (full_str);
 }
 
 static char		*printf_itoa(long int number, t_flags flags, int length)
