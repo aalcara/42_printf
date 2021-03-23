@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:37:47 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/02/21 02:13:49 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 16:56:50 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char			*whyyy(long int new_n, char *result, long int len, long int div)
 	return (result);
 }
 
-char			*ft_itoa(int n)
+char			*ft_itoa(long int n)
 {
 	char			*result;
 	long int		len;
