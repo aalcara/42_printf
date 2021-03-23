@@ -144,71 +144,71 @@ int main(void)
 	printf("\treturn :%d\n", printf("|%.0d|", 5));
 	printf("\treturn :%d\n", ft_printf("|%.0d|", 5));
 
-	// printf("\n---- 71 ----\n");
-	// printf("\treturn :%d\n", printf("|%.0d|", 10));
-	// printf("\treturn :%d\n", ft_printf("|%.0d|", 10));
+	printf("\n---- 71 ----\n");
+	printf("\treturn :%d\n", printf("|%.0d|", 10));
+	printf("\treturn :%d\n", ft_printf("|%.0d|", 10));
 
 
-	// printf("\n---- 72 ----\n");
-	// printf("\treturn :%d\n", printf("|%1.d|", 0));
-	// printf("\treturn :%d\n", ft_printf("|%1.d|", 0));
+	printf("\n---- 72 ----\n");
+	printf("\treturn :%d\n", printf("|%1.d|", 0));
+	printf("\treturn :%d\n", ft_printf("|%1.d|", 0));
 
-	// printf("\n---- 73 ----\n");
-	// printf("\treturn :%d\n", printf("|%2.d|", 0));
-	// printf("\treturn :%d\n", ft_printf("|%2.d|", 0));
+	printf("\n---- 73 ----\n");
+	printf("\treturn :%d\n", printf("|%2.d|", 0));
+	printf("\treturn :%d\n", ft_printf("|%2.d|", 0));
 
-	// printf("\n---- 74 ----\n");
-	// printf("\treturn :%d\n", printf("|%3.d|", 0));
-	// printf("\treturn :%d\n", ft_printf("|%3.d|", 0));
+	printf("\n---- 74 ----\n");
+	printf("\treturn :%d\n", printf("|%3.d|", 0));
+	printf("\treturn :%d\n", ft_printf("|%3.d|", 0));
 
 
 	printf("\n---- int without flag ----\n");
 	printf("\treturn :%d\n", printf("tes%dt", i));
 	printf("\treturn :%d\n", ft_printf("tes%dt", i));
 
-	// printf("\n---- int with * flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%*dt", 5, i));
-	// printf("\treturn :%d\n", ft_printf("tes%*dt", 5, i));
+	printf("\n---- int with * flag ----\n");
+	printf("\treturn :%d\n", printf("tes%*dt", 5, i));
+	printf("\treturn :%d\n", ft_printf("tes%*dt", 5, i));
 
-	// printf("\n---- negative int with * flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%*dt", 7, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%*dt", 7, -i));
+	printf("\n---- negative int with * flag ----\n");
+	printf("\treturn :%d\n", printf("tes%*dt", 7, -i));
+	printf("\treturn :%d\n", ft_printf("tes%*dt", 7, -i));
 
-	// printf("\n---- negative int with - flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%-dt", -i));
-	// printf("\treturn :%d\n", ft_printf("tes%-dt", -i));
+	printf("\n---- negative int with - flag ----\n");
+	printf("\treturn :%d\n", printf("tes%-dt", -i));
+	printf("\treturn :%d\n", ft_printf("tes%-dt", -i));
 
-	// printf("\n---- negative int with -* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%-*dt", 12, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%-*dt", 12, -i));
+	printf("\n---- negative int with -* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%-*dt", 12, -i));
+	printf("\treturn :%d\n", ft_printf("tes%-*dt", 12, -i));
 
-	// printf("\n---- negative int with 0* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%0*dt", 12, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%0*dt", 12, -i));
+	printf("\n---- negative int with 0* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%0*dt", 12, -i));
+	printf("\treturn :%d\n", ft_printf("tes%0*dt", 12, -i));
 
-	// printf("\n---- negative int with 0*.* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%0*.*dt", 22, 10, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 22, 10, -i));
+	printf("\n---- negative int with 0*.* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%0*.*dt", 22, 10, -i));
+	printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 22, 10, -i));
 
-	// printf("\n---- negative int with 0*.* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%0*.*dt", 7, 5, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 7, 5, -i));
+	printf("\n---- negative int with 0*.* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%0*.*dt", 7, 5, -i));
+	printf("\treturn :%d\n", ft_printf("tes%0*.*dt", 7, 5, -i));
 
-	// printf("\n---- int with 29.19 flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%29.19dt", i));
-	// printf("\treturn :%d\n", ft_printf("tes%29.19dt", i));
+	printf("\n---- int with 29.19 flag ----\n");
+	printf("\treturn :%d\n", printf("tes%29.19dt", i));
+	printf("\treturn :%d\n", ft_printf("tes%29.19dt", i));
 
-	// printf("\n---- int with 11.* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, i));
-	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, i));
+	printf("\n---- int with 11.* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%11.*dt", 5, i));
+	printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, i));
 
-	// printf("\n---- negative int with 29.19 flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%29.19dt", -i));
-	// printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
+	printf("\n---- negative int with 29.19 flag ----\n");
+	printf("\treturn :%d\n", printf("tes%29.19dt", -i));
+	printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
 
-	// printf("\n---- negative int with 11.* flag ----\n");
-	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
-	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
+	printf("\n---- negative int with 11.* flag ----\n");
+	printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
+	printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
 
 
 	// while (a <= 7)

@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 14:42:36 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 14:55:48 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,10 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 	// printf("\nl:87\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
 	neg_signal = 0;
 	negative_number = -number;
-	// if (flags.precision == 0 && flags.true_precision == 1)
-	if (flags.true_precision == 1 || flags.zero_padded == 1)
+	if ((flags.precision == 0 && flags.true_precision == 1) || flags.zero_padded == 1)
+	// if (flags.true_precision == 1 || flags.zero_padded == 1)
 	{
-		if (flags.zero_padded == 1 && number < 0)
-		// if (number < 0)
+		if (number < 0)
 			str = ft_itoa(negative_number);
 		else
 			str = ft_itoa(number);
@@ -125,6 +124,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	number_str = printf_itoa(number, flags, length);
 	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0 && flags.left_aligned == 0)//!
+	// if ((flags.precision == 0 && flags.true_precision == 1) || flags.zero_padded == 1)
 	{
 		padded = '0';
 		ft_putchar('-');
@@ -180,6 +180,8 @@ int				printf_integer(t_flags flags, va_list args, int specifier)
 	long int	number;
 
 	// printf("\nl:121\tEntrou printf_integer");//
+	if (flags.true_precision == 1)
+		flags.zero_padded = 0;
 	if (specifier == 'u')
 		number = va_arg(args, unsigned int);
 	else
