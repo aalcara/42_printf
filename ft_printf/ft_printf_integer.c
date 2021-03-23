@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 13:34:08 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 13:53:51 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char		*precision_itoa(long int number, t_flags flags, int neg_signal)
 	char		*str_num;
 	char		*pre_str;
 	char		*full_str;
-	static char	*full_freed;
+	char		*full_freed;
 
 	str_num = ft_itoa(number);
 	pre_str = ft_pre_str(str_num, flags, neg_signal);
