@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:05:58 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 20:52:11 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/22 21:27:03 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int			ft_num_len(long int number)
 	int 		num_len;
 
 	num_len = 0;
-	while (number > 0)
+	if (number < 0)
+		num_len++;
+	while (number != 0)
 	{
 		number = number / 10;
 		num_len++;
