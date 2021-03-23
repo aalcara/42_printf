@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 18:32:09 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 18:34:22 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
 		return (NULL);
 	if (nbr == 0)
-	 	ft_strlcpy(hexa_str, "0", 1);
+	 	ft_memset((char *)hexa_str, '0', 1);
 	while (nbr > 0)
 	{
 		if ((aux_num = nbr % 16) < 10)
