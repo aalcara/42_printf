@@ -33,14 +33,14 @@ int main(void)
 	// printf("\treturn: %d", printf("\nflag *5*-c:\tch = |%*5*-c|", 10, 22, ch));
 	// printf("\treturn: %d", printf("\nflag *55-c:\tch = |%*55-c|", 10, ch));
 
-	printf("\n\n============ string ============");
-	printf("\nflag     s:\td = |%s|", d);
-	printf("\nflag    *s:\td = |%*s|", 10, d);
-	printf("\nflag   -*s:\td = |%-*s|", 10, d);
-	printf("\nflag  *.5s:\td = |%*.5s|", 10, d);
-	printf("\nflag -*.5s:\td = |%-*.5s|", 10, d);
-	printf("\nflag *.15s:\td = |%*.15s|", 10, d);
-	printf("\nflag-*.15s:\td = |%-*.15s|", 10, d);
+	// printf("\n\n============ string ============");
+	// printf("\nflag     s:\td = |%s|", d);
+	// printf("\nflag    *s:\td = |%*s|", 10, d);
+	// printf("\nflag   -*s:\td = |%-*s|", 10, d);
+	// printf("\nflag  *.5s:\td = |%*.5s|", 10, d);
+	// printf("\nflag -*.5s:\td = |%-*.5s|", 10, d);
+	// printf("\nflag *.15s:\td = |%*.15s|", 10, d);
+	// printf("\nflag-*.15s:\td = |%-*.15s|", 10, d);
 
 	// printf("\n\n============ pointer ============");
 	// printf("\nflag     p:\td = |%p|", d);
@@ -55,31 +55,33 @@ int main(void)
 	// printf("\nflag   -*d:\tnum = |%-*d|", 10, num);
 
 
-	// printf("\n\n============ i ============");
-	// printf("\nflag     i:\tnum = |%i|", num);
-	// printf("\nflag    *i:\tnum = |%*i|", 10, num);
-	// printf("\nflag  5.*i:\tnum = |%5.*i| (* = 3)", 3, num);
-	// printf("\nflag -5.*i:\tnum = |%-5.*i| (* = 3)", 3, num);
-	// printf("\nflag  5.*i:\tnum = |%5.*i| (* = 10)", 10, num);
-	// printf("\nflag 10.*i:\tnum = |%10.*i| (* = 5)", 5, num);
-	// printf("\nflag -8.5i:\tnum = |%-8.5i|", num);
-	// printf("\nflag  8.5i:\tnum = |%8.5i|", num);
+	printf("\n\n============ i ============");
+	printf("\nflag     i:\tnum = |%i|", num);
+	printf("\nflag    *i:\tnum = |%*i|", 10, num);
+	printf("\nflag  5.*i:\tnum = |%5.*i| (* = 3)", 3, num);
+	printf("\nflag -5.*i:\tnum = |%-5.*i| (* = 3)", 3, num);
+	printf("\nflag  5.*i:\tnum = |%5.*i| (* = 10)", 10, num);
+	printf("\nflag 10.*i:\tnum = |%10.*i| (* = 5)", 5, num);
+	printf("\nflag -8.5i:\tnum = |%-8.5i|", num);
+	printf("\nflag  8.5i:\tnum = |%8.5i|", num);
 	// printf("\nflag 08.5i:\tnum = |%08.5i|", num);
-	// printf("\nflag   0*i:\tnum = |%0*i| (* = 10)", 10, num);
-	// printf("\nflag   -*i:\tnum = |%-*i| (* = 10)", 10, num);
+	printf("\nflag   0*i:\tnum = |%0*i| (* = 10)", 10, num);
+		printf("\nflag   0*i:\tnum = |%0*i| (* = 20)", 20, num);
+	printf("\nflag   -*i:\tnum = |%-*i| (* = 10)", 10, num);
 
-	// printf("\n\n============ -i ============");
-	// printf("\nflag     i:\tnum = |%i|", -num);
-	// printf("\nflag    *i:\tnum = |%*i|", 10, -num);
-	// printf("\nflag  5.*i:\tnum = |%5.*i| (* = 3)", 3, -num);
-	// printf("\nflag -5.*i:\tnum = |%-5.*i| (* = 3)", 3, -num);
-	// printf("\nflag  5.*i:\tnum = |%5.*i| (* = 10)", 10, -num);
-	// printf("\nflag 10.*i:\tnum = |%10.*i| (* = 5)", 5, -num);
-	// printf("\nflag  8.5i:\tnum = |%8.5i|", -num);
-	// printf("\nflag -8.5i:\tnum = |%-8.5i|", -num);
+	printf("\n\n============ -i ============");
+	printf("\nflag     i:\tnum = |%i|", -num);
+	printf("\nflag    *i:\tnum = |%*i|", 10, -num);
+	printf("\nflag  5.*i:\tnum = |%5.*i| (* = 3)", 3, -num);
+	printf("\nflag -5.*i:\tnum = |%-5.*i| (* = 3)", 3, -num);
+	printf("\nflag  5.*i:\tnum = |%5.*i| (* = 10)", 10, -num);
+	printf("\nflag 10.*i:\tnum = |%10.*i| (* = 5)", 5, -num);
+	printf("\nflag  8.5i:\tnum = |%8.5i|", -num);
+	printf("\nflag -8.5i:\tnum = |%-8.5i|", -num);
 	// printf("\nflag 08.5i:\tnum = |%08.5i|", -num);
-	// printf("\nflag   0*i:\tnum = |%0*i| (* = 10)", 10, -num);
-	// printf("\nflag   -*i:\tnum = |%-*i| (* = 10)", 10, -num);
+	printf("\nflag   0*i:\tnum = |%0*i| (* = 10)", 10, -num);
+	printf("\nflag   0*i:\tnum = |%0*i| (* = 20)", 20, -num);
+	printf("\nflag   -*i:\tnum = |%-*i| (* = 10)", 10, -num);
 
 	// printf("\n\n============ unsigned ============");
 	// printf("\nflag     u:\tunsignum = |%i|", unsignum);

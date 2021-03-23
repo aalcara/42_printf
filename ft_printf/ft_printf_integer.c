@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 13:53:51 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/23 14:42:36 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,14 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 	char		freed_str[length + 1];
 	static char	*freed_str_ptr;
 
-	// printf("\nl:48\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
+	// printf("\nl:87\tEntrou printf_itoa number = %ld, length = %d\n", number, length);//
 	neg_signal = 0;
 	negative_number = -number;
-	if (flags.precision == 0 && flags.true_precision == 1)
+	// if (flags.precision == 0 && flags.true_precision == 1)
+	if (flags.true_precision == 1 || flags.zero_padded == 1)
 	{
 		if (flags.zero_padded == 1 && number < 0)
+		// if (number < 0)
 			str = ft_itoa(negative_number);
 		else
 			str = ft_itoa(number);
@@ -122,7 +124,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	// printf("\nl:101\tprintf_negative length = %d\n", length);//
 	number_str = printf_itoa(number, flags, length);
 	length = ft_strlen(number_str);
-	if (flags.zero_padded == 1 && flags.precision == 0)
+	if (flags.zero_padded == 1 && flags.precision == 0 && flags.left_aligned == 0)//!
 	{
 		padded = '0';
 		ft_putchar('-');
@@ -151,7 +153,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 
 	// printf("\nl:97\tEntrou printf_positive");//
 	length = ft_num_len(number);
-	if (flags.zero_padded == 1 && flags.true_precision == 0)
+	if (flags.zero_padded == 1 && flags.true_precision == 0 && flags.left_aligned == 0)
 		padded = '0';
 	else
 		padded = ' ';
