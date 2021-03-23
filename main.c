@@ -126,10 +126,10 @@ int main(void)
 	// printf("\treturn :%d\n", printf("tes%%t"));
 	// printf("\treturn :%d\n", ft_printf("tes%%t"));
 
-	printf("\n");
-	printf("\n --------------------------------------");
-	printf("\n|                INTEGER               |");
-	printf("\n --------------------------------------\n");
+	// printf("\n");
+	// printf("\n --------------------------------------");
+	// printf("\n|                INTEGER               |");
+	// printf("\n --------------------------------------\n");
 
 	// printf("\n---- 1 ----\n");
 	// printf("\treturn :%d\n", printf("|%d|", 0));
@@ -143,13 +143,13 @@ int main(void)
 	// printf("\treturn :%d\n", printf("|0*%0-*d*0 0*%0*d*0|", 21, 1021, 21, -1011));
 	// printf("\treturn :%d\n", ft_printf("|0*%0-*d*0 0*%0*d*0|", 21, 1021, 21, -1011));
 
-	printf("\n---- 15 ----\n");
-	printf("\treturn :%d\n", printf("|0*%-0*.10d*0 0*%-0*.0d*0|", 21, 1021, 21, -1011));
-	printf("\treturn :%d\n", ft_printf("|0*%-0*.10d*0 0*%-0*.0d*0|", 21, 1021, 21, -1011));
+	// printf("\n---- 15 ----\n");
+	// printf("\treturn :%d\n", printf("|0*%-0*.10d*0 0*%-0*.0d*0|", 21, 1021, 21, -1011));
+	// printf("\treturn :%d\n", ft_printf("|0*%-0*.10d*0 0*%-0*.0d*0|", 21, 1021, 21, -1011));
 
-	printf("\n---- 17 ----\n");
-	printf("\treturn :%d\n", printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, INT_MAX, 21, INT_MIN));
-	printf("\treturn :%d\n", ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, INT_MAX, 21, INT_MIN));
+	// printf("\n---- 17 ----\n");
+	// printf("\treturn :%d\n", printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, INT_MAX, 21, INT_MIN));
+	// printf("\treturn :%d\n", ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- ", -21, INT_MAX, 21, INT_MIN));
 
 	// printf("\n---- 70 ----\n");
 	// printf("\treturn :%d\n", printf("|%.0d|", 5));
@@ -213,13 +213,13 @@ int main(void)
 	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, i));
 	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, i));
 
-	printf("\n---- negative int with 29.19 flag ----\n");
-	printf("\treturn :%d\n", printf("tes%29.19dt", -i));
-	printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
+	// printf("\n---- negative int with 29.19 flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%29.19dt", -i));
+	// printf("\treturn :%d\n", ft_printf("tes%29.19dt", -i));
 
-	printf("\n---- negative int with 11.* flag ----\n");
-	printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
-	printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
+	// printf("\n---- negative int with 11.* flag ----\n");
+	// printf("\treturn :%d\n", printf("tes%11.*dt", 5, -i));
+	// printf("\treturn :%d\n", ft_printf("tes%11.*dt", 5, -i));
 
 
 	// while (a <= 7)
@@ -237,65 +237,65 @@ int main(void)
 	// 	b++;
 	// }
 
-	// printf("\n");
-	// printf("\n --------------------------------------");
-	// printf("\n|              HEXADECIMAL             |");
-	// printf("\n --------------------------------------\n");
+	printf("\n");
+	printf("\n --------------------------------------");
+	printf("\n|              HEXADECIMAL             |");
+	printf("\n --------------------------------------\n");
 
-	// a = 1;
-	// b = 1;
-	// while (b <= 10)
-	// {
-	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-	// 	b++;
-	// }
-	// while (a <= 10)
-	// {
-	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-	// 	a++;
-	// 	b--;
-	// }
+	a = 1;
+	b = 1;
+	while (b <= 10)
+	{
+		printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
+		printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
+		b++;
+	}
+	while (a <= 10)
+	{
+		printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
+		printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
+		a++;
+		b--;
+	}
 
-	// while (b < 20)
-	// {
-	// 	printf("\n---- positive int with %%*.*x flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%*.*x|", a, b, i));
-	// 	printf("\treturn :%d\n", ft_printf("|%*.*x|", a, b, i));
-	// 	b++;
-	// }
-	// while (a < 20)
-	// {
-	// 	printf("\n---- positive int with %%-*.*x flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%-*.*x|", a, b, i));
-	// 	printf("\treturn :%d\n", ft_printf("|%-*.*x|", a, b, i));
-	// 	a++;
-	// 	b--;
-	// }
+	while (b < 20)
+	{
+		printf("\n---- positive int with %%*.*x flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%*.*x|", a, b, i));
+		printf("\treturn :%d\n", ft_printf("|%*.*x|", a, b, i));
+		b++;
+	}
+	while (a < 20)
+	{
+		printf("\n---- positive int with %%-*.*x flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%-*.*x|", a, b, i));
+		printf("\treturn :%d\n", ft_printf("|%-*.*x|", a, b, i));
+		a++;
+		b--;
+	}
 
-	// printf("\n---- positive int with %%0*.*X flag (%d.%d)----\n", a, b);
-	// printf("\treturn :%d\n", printf("|%0*.*X|", a, b, i));
-	// printf("\treturn :%d\n", ft_printf("|%0*.*X|", a, b, i));
+	printf("\n---- positive int with %%0*.*X flag (%d.%d)----\n", a, b);
+	printf("\treturn :%d\n", printf("|%0*.*X|", a, b, i));
+	printf("\treturn :%d\n", ft_printf("|%0*.*X|", a, b, i));
 
-	// printf("\n---- positive int with %%020X flag ----\n");
-	// printf("\treturn :%d\n", printf("|%020X|", i));
-	// printf("\treturn :%d\n", ft_printf("|%020X|", i));
+	printf("\n---- positive int with %%020X flag ----\n");
+	printf("\treturn :%d\n", printf("|%020X|", i));
+	printf("\treturn :%d\n", ft_printf("|%020X|", i));
 
-	// printf("\n");
-	// printf("\n --------------------------------------");
-	// printf("\n|                POINTER               |");
-	// printf("\n --------------------------------------\n");
-	// a = 10;
-	// while (a < 20)
-	// {
-	// printf("\n---- pointer with %%%dp flag ----\n", a);
-	// printf("\treturn :%d\n", printf("|%*p|", a, &i));
-	// printf("\treturn :%d\n", ft_printf("|%*p|", a, &i));
-	// a++;
-	// }
+	printf("\n");
+	printf("\n --------------------------------------");
+	printf("\n|                POINTER               |");
+	printf("\n --------------------------------------\n");
+	a = 10;
+	while (a < 20)
+	{
+	printf("\n---- pointer with %%%dp flag ----\n", a);
+	printf("\treturn :%d\n", printf("|%*p|", a, &i));
+	printf("\treturn :%d\n", ft_printf("|%*p|", a, &i));
+	a++;
+	}
 
 	// printf("\n---- pointer with %%25.20p flag ----\n");
 	// printf("\treturn :%d\n", printf("|%25.20p|", &i));
