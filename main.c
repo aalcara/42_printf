@@ -261,23 +261,23 @@ int main(void)
 	printf("\n---- 6 --  %%-3.2x %%10.42x   ----\n");
 	printf("\treturn :%d\n", printf(" %-3.2x %10.42x ", 0, 0));
 	printf("\treturn :%d\n", ft_printf(" %-3.2x %10.42x ", 0, 0));
-	a = 1;
-	b = 1;
-	while (b <= 10)
-	{
-		printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-		printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-		printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-		b++;
-	}
-	while (a <= 10)
-	{
-		printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-		printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-		printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-		a++;
-		b--;
-	}
+	// a = 1;
+	// b = 1;
+	// while (b <= 10)
+	// {
+	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
+	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
+	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
+	// 	b++;
+	// }
+	// while (a <= 10)
+	// {
+	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
+	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
+	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
+	// 	a++;
+	// 	b--;
+	// }
 
 	// while (b < 20)
 	// {
