@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 20:48:28 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:48:28 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,27 @@ static char		*precision_hex(char *hexa_str, t_flags flags)
 	int			pre_str_len;
 	char		*pre_str;
 	char		*full_str;
-	char		*full_freed_str;
+	// char		*full_freed_str;
+	// char		*hexa_str;
 
+	// printf("\nl:50\told_hexa_str = %s\n", old_hexa_str);//
+	// hexa_str = ft_free(old_hexa_str, ft_strlen(old_hexa_str));
+	// printf("l:52\thexa_str = %s\n", hexa_str);//
 	length = ft_strlen(hexa_str);
 	// printf("\nl:43\tprecision = %d\n", flags.precision);//
 	if (flags.precision <= length)
 		return (hexa_str);
 	pre_str_len = flags.precision - length;
-	if(!(pre_str = ft_calloc(sizeof(char) , (pre_str_len + 1))))
+	if(!(pre_str = ft_calloc(sizeof(char) , (pre_str_len))))
 		return (NULL);
 	ft_memset((char *)pre_str, '0', pre_str_len);
 	full_str = ft_strjoin(pre_str, hexa_str);
-	// free(pre_str);
-	// return (full_str);
-	full_freed_str = ft_free(full_str, ft_strlen(full_str));
-	return (full_freed_str);
+	// printf("\nl:62\tfull_str = %s\n", full_str);//
+	free(pre_str);
+	// printf("l:64\tfull_str = %s\n", full_str);//
+	return (full_str);
+	// full_freed_str = ft_free(full_str, ft_strlen(full_str));
+	// return (full_freed_str);
 }
 
 static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
@@ -67,7 +73,8 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 	int			aux_num;
 	char		*hexa_str;
 	char		*hexa_ret;
-	// char		*freed_hexa_str;//!
+	char		*freed_hexa_str;//!
+	// char		freed_hexa_str[ft_hexa_len(nbr) + 1];//!
 
 	num_len = ft_hexa_len(nbr);
 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
@@ -88,14 +95,20 @@ static char		*itoa_hex(unsigned long int nbr, t_flags flags, int specifier)
 		nbr = nbr / 16;
 		num_len--;
 	}
+	// if (specifier == 'p')
+	// 	hexa_ret = ptr_hex(hexa_str, flags);
+	// else
+		// hexa_ret = precision_hex(hexa_str, flags);
+	// printf("\nl:103\thexa_str = %s\n", hexa_str);//
+	freed_hexa_str = ft_free(hexa_str, ft_strlen(hexa_str));
+	// printf("\nl:92\tfreed_hexa_str = %s\n", freed_hexa_str);
 	if (specifier == 'p')
-		hexa_ret = ptr_hex(hexa_str, flags);
+		hexa_ret = ptr_hex(freed_hexa_str, flags);
 	else
-		hexa_ret = precision_hex(hexa_str, flags);
+		hexa_ret = precision_hex(freed_hexa_str, flags);
 	// free(hexa_str);
+	// printf("l:105\thexa_str = %s\n", hexa_str);//
 	return (hexa_ret);
-	// freed_hexa_str = ft_free(hexa_str, ft_strlen(hexa_str));
-	// return (freed_hexa_str);
 }
 
 int				printf_hexadecimal(t_flags flags, va_list args, int specifier)
@@ -125,5 +138,6 @@ int				printf_hexadecimal(t_flags flags, va_list args, int specifier)
 	}
 	if (flags.left_aligned == 0)
 		ft_putstr(number_str);
+	// free(number_str);
 	return (length);
 }

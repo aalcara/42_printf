@@ -3,18 +3,18 @@
 
 int main(void)
 {
-	char c = 'A';
-	char d = '!';
-	char *str = "9876";
-	char *str2 = "ABC";
+	// char c = 'A';
+	// char d = '!';
+	// char *str = "9876";
+	// char *str2 = "ABC";
 	int i = 0x3a9b7d;
 	int a = 1;
 	int b = 1;
-	int *p = &a;
-	int *q = &b;
+	// int *p = &a;
+	// int *q = &b;
 
-	int INT_MAX = +2147483647;
-	int INT_MIN = -2147483648;
+	// int INT_MAX = +2147483647;
+	// int INT_MIN = -2147483648;
 
 	// printf("\n---- only input str ---- \n");
 	// printf("\treturn :%d\n", printf("test"));
@@ -267,47 +267,32 @@ int main(void)
 	printf("\treturn :%d\n", ft_printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
 
 
-	// a = 1;
-	// b = 1;
-	// while (b <= 10)
-	// {
-	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-	// 	b++;
-	// }
-	// while (a <= 10)
-	// {
-	// 	printf("\n---- negative int with -*.* flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%-*.*d|", a, b, -i));
-	// 	printf("\treturn :%d\n", ft_printf("|%-*.*d|", a, b, -i));
-	// 	a++;
-	// 	b--;
-	// }
+	a = 1;
+	b = 1;
 
-	// while (b < 20)
-	// {
-	// 	printf("\n---- positive int with %%*.*x flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%*.*x|", a, b, i));
-	// 	printf("\treturn :%d\n", ft_printf("|%*.*x|", a, b, i));
-	// 	b++;
-	// }
-	// while (a < 20)
-	// {
-	// 	printf("\n---- positive int with %%-*.*x flag (%d.%d)----\n", a, b);
-	// 	printf("\treturn :%d\n", printf("|%-*.*x|", a, b, i));
-	// 	printf("\treturn :%d\n", ft_printf("|%-*.*x|", a, b, i));
-	// 	a++;
-	// 	b--;
-	// }
+	while (b < 20)
+	{
+		printf("\n---- positive int with %%*.*x flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%*.*x|", a, b, i));
+		printf("\treturn :%d\n", ft_printf("|%*.*x|", a, b, i));
+		b++;
+	}
+	while (a < 20)
+	{
+		printf("\n---- positive int with %%-*.*x flag (%d.%d)----\n", a, b);
+		printf("\treturn :%d\n", printf("|%-*.*x|", a, b, i));
+		printf("\treturn :%d\n", ft_printf("|%-*.*x|", a, b, i));
+		a++;
+		b--;
+	}
 
 	// printf("\n---- positive int with %%0*.*X flag (%d.%d)----\n", a, b);
 	// printf("\treturn :%d\n", printf("|%0*.*X|", a, b, i));
 	// printf("\treturn :%d\n", ft_printf("|%0*.*X|", a, b, i));
 
-	// printf("\n---- positive int with %%020X flag ----\n");
-	// printf("\treturn :%d\n", printf("|%020X|", i));
-	// printf("\treturn :%d\n", ft_printf("|%020X|", i));
+	printf("\n---- positive int with %%020X flag ----\n");
+	printf("\treturn :%d\n", printf("|%020X|", i));
+	printf("\treturn :%d\n", ft_printf("|%020X|", i));
 
 	// printf("\n");
 	// printf("\n --------------------------------------");
