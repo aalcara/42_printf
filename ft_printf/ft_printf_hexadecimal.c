@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 15:55:10 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:05:38 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,7 +183,9 @@ int				printf_hexadecimal(t_flags flags, va_list args)
 	long int	number;
 
 	number = va_arg(args, unsigned int);
-	if (flags.zero_padded == 1 && flags.true_precision == 0)
+	if (flags.true_precision == 1)
+		flags.zero_padded = 0;
+	if (flags.zero_padded == 1 && flags.left_aligned == 0)
 		flags.padded = '0';
 
 	total_len = get_hexa_num(number, flags);

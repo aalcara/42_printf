@@ -266,6 +266,10 @@ int main(void)
 	printf("\treturn :%d\n", printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
 	printf("\treturn :%d\n", ft_printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
 
+	printf("\n---- 14   ----\n");
+	printf("\treturn :%d\n", printf(" 0*%0-*x*0 0*%0*x*0 ", 21, 1021, 21, -1011));
+	printf("\treturn :%d\n", ft_printf(" 0*%0-*x*0 0*%0*x*0 ", 21, 1021, 21, -1011));
+
 
 	// a = 1;
 	// b = 1;
