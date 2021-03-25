@@ -81,32 +81,32 @@ int main(void)
 	static char *s_hidden = "hi low\0don't print me lol\0";
 
 	printf("\n---- tests PTF_2019 ----\n");
-	printf("\treturn :%d\n", printf("|%.03s|", s_hidden));
-	printf("\treturn :%d\n", ft_printf("|%.03s|", s_hidden));
+	// printf("\treturn :%d\n", printf("|%.03s|", s_hidden));
+	// printf("\treturn :%d\n", ft_printf("|%.03s|", s_hidden));
 
 	printf("\n");
 	printf("\treturn :%d\n", printf("|%.09s|", s_hidden));
 	printf("\treturn :%d\n", ft_printf("|%.09s|", s_hidden));
 
-	printf("\n");
-	printf("\treturn :%d\n", printf("|%.03s|", NULL));
-	printf("\treturn :%d\n", ft_printf("|%.03s|", NULL));
+	// printf("\n");
+	// printf("\treturn :%d\n", printf("|%.03s|", NULL));
+	// printf("\treturn :%d\n", ft_printf("|%.03s|", NULL));
 
-	printf("\n");
-	printf("\treturn :%d\n", printf("|%.09s|", NULL));
-	printf("\treturn :%d\n", ft_printf("|%.09s|", NULL));
+	// printf("\n");
+	// printf("\treturn :%d\n", printf("|%.09s|", NULL));
+	// printf("\treturn :%d\n", ft_printf("|%.09s|", NULL));
 
-	printf("\n");
-	printf("\treturn :%d\n", printf("|%.01s|", "\0"));
-	printf("\treturn :%d\n", ft_printf("|%.01s|", "\0"));
+	// printf("\n");
+	// printf("\treturn :%d\n", printf("|%.01s|", "\0"));
+	// printf("\treturn :%d\n", ft_printf("|%.01s|", "\0"));
 
-	printf("\n");
-	printf("\treturn :%d\n", printf("|%.03s|", "\0"));
-	printf("\treturn :%d\n", ft_printf("|%.03s|", "\0"));
+	// printf("\n");
+	// printf("\treturn :%d\n", printf("|%.03s|", "\0"));
+	// printf("\treturn :%d\n", ft_printf("|%.03s|", "\0"));
 
-	printf("\n");
-	printf("\treturn :%d\n", printf("|%.09s|", "\0"));
-	printf("\treturn :%d\n", ft_printf("|%.09s|", "\0"));
+	// printf("\n");
+	// printf("\treturn :%d\n", printf("|%.09s|", "\0"));
+	// printf("\treturn :%d\n", ft_printf("|%.09s|", "\0"));
 
 
 
@@ -151,10 +151,16 @@ int main(void)
 	// printf("\treturn :%d\n", printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
 	// printf("\treturn :%d\n", ft_printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
 
-	// printf("\n");
-	// printf("\n --------------------------------------");
-	// printf("\n|                   %%                  |");
-	// printf("\n --------------------------------------\n");
+	printf("\n");
+	printf("\n --------------------------------------");
+	printf("\n|                   %%                  |");
+	printf("\n --------------------------------------\n");
+
+
+	printf("\n---- tests PTF_2019 ----\n");
+	printf("\treturn :%d\n", printf("|%05%|"));
+	printf("\treturn :%d\n", ft_printf("|%05%|"));
+
 
 	// printf("\n---- %% without flag ----\n");
 	// printf("\treturn :%d\n", printf("tes%%t"));
