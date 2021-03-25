@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 16:23:37 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 18:43:23 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,13 +123,18 @@ static int		get_precision(int num_len, t_flags flags)
 	int			total_len;
 
 	// printf("\nl:124\tGET_PRECISION\n");//
+
 	prenum_len = num_len;
 	if (flags.precision > num_len)
 		prenum_len = flags.precision;
+	if (flags.pointer == 1)
+		prenum_len += 2;
 
 	total_len = get_left_align(prenum_len, flags);
 
 	// printf("\nl:134\treturn GET_PRECISION\n");//
+	if (flags.pointer == 1)
+		ft_putstr("0x");
 	while (num_len < flags.precision)
 	{
 		ft_putchar('0');
@@ -140,7 +145,7 @@ static int		get_precision(int num_len, t_flags flags)
 	return (total_len);
 }
 
-static int		get_hexa_num(unsigned int nbr, t_flags flags)
+static int		get_hexa_num(unsigned long int nbr, t_flags flags)
 {
 	char		*hexa_str;
 	int			num_len;
@@ -179,9 +184,9 @@ static int		get_hexa_num(unsigned int nbr, t_flags flags)
 int				printf_hexadecimal(t_flags flags, va_list args)
 {
 	int			total_len;
-	long int	number;
+	unsigned long int	number;
 
-	number = va_arg(args, unsigned int);
+	number = va_arg(args, unsigned long int);
 	if (flags.true_precision == 1)
 		flags.zero_padded = 0;
 	if (flags.zero_padded == 1 && flags.left_aligned == 0)

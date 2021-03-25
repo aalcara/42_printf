@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 14:35:15 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 16:10:10 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 18:38:07 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void			ft_putnbr_fd(int n, int fd);
 */
 void			ft_putstr(char const *s);
 void			ft_putchar(char c);
-int				ft_hexa_len(long int number);
+int				ft_hexa_len(unsigned long int number);
 int				ft_num_len(long int number);
 char			*ft_free(char *str, int len);
 
