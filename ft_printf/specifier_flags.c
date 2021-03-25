@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 16:05:49 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 19:50:01 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ static int		get_precision(char **str, int *i, va_list args, t_flags *flags)
 	flags->true_precision = 1;
 	if (*((*str) + *i) == '*')
 		number = va_arg(args, int);
-	else if (*((*str) + *i) >= '1' && *((*str) + *i) <= '9')
+	else if (*((*str) + *i) >= '0' && *((*str) + *i) <= '9')
 	{
 		number = ft_atoi((*str) + *i);
 		length = num_length(number);
+		if (*((*str) + *i) == '0')
+			length++;
 		*i = *i + length - 1;
 	}
 	else
