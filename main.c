@@ -14,7 +14,7 @@ int main(void)
 	// int *p = &a;
 	// int *q = &b;
 
-
+	static char *s_hidden = "hi low\0don't print me lol\0";
 
 	// printf("\n---- only input str ---- \n");
 	// printf("\treturn :%d\n", printf("test"));
@@ -73,20 +73,20 @@ int main(void)
 	// printf("\treturn :%d\n", printf("t%-2ces%-2ct", d, c));
 	// printf("\treturn :%d\n", ft_printf("t%-2ces%-2ct", d, c));
 
-	printf("\n");
-	printf("\n --------------------------------------");
-	printf("\n|                STRING                |");
-	printf("\n --------------------------------------\n");
+	// printf("\n");
+	// printf("\n --------------------------------------");
+	// printf("\n|                STRING                |");
+	// printf("\n --------------------------------------\n");
 
-	static char *s_hidden = "hi low\0don't print me lol\0";
 
-	printf("\n---- tests PTF_2019 ----\n");
+
+	// printf("\n---- tests PTF_2019 ----\n");
 	// printf("\treturn :%d\n", printf("|%.03s|", s_hidden));
 	// printf("\treturn :%d\n", ft_printf("|%.03s|", s_hidden));
 
-	printf("\n");
-	printf("\treturn :%d\n", printf("|%.09s|", s_hidden));
-	printf("\treturn :%d\n", ft_printf("|%.09s|", s_hidden));
+	// printf("\n");
+	// printf("\treturn :%d\n", printf("|%.09s|", s_hidden));
+	// printf("\treturn :%d\n", ft_printf("|%.09s|", s_hidden));
 
 	// printf("\n");
 	// printf("\treturn :%d\n", printf("|%.03s|", NULL));
@@ -151,15 +151,34 @@ int main(void)
 	// printf("\treturn :%d\n", printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
 	// printf("\treturn :%d\n", ft_printf("%*st%-8se%-*ss%*st%8s", 0, str, str2, 6, str, 5, str2, str));
 
-	printf("\n");
-	printf("\n --------------------------------------");
-	printf("\n|                   %%                  |");
-	printf("\n --------------------------------------\n");
+	// printf("\n");
+	// printf("\n --------------------------------------");
+	// printf("\n|                   %%                  |");
+	// printf("\n --------------------------------------\n");
+
 
 
 	printf("\n---- tests PTF_2019 ----\n");
+
+	printf("\n---- pct_5wzp ----\n");
 	printf("\treturn :%d\n", printf("|%05%|"));
 	printf("\treturn :%d\n", ft_printf("|%05%|"));
+
+	printf("\n---- pct_5wljzp ----\n");
+	printf("\treturn :%d\n", printf("|%-05%|"));
+	printf("\treturn :%d\n", ft_printf("|%-05%|"));
+
+	printf("\n---- nocrash_nullspec_5wlj ----\n");
+	printf("\treturn :%d\n", printf("|%-5|"));
+	printf("\treturn :%d\n", ft_printf("|%-5|"));
+
+	printf("\n---- s_undefbehav_0_width_9 ----\n");
+	printf("\treturn :%d\n", printf("|%09s|", s_hidden));
+	printf("\treturn :%d\n", ft_printf("|%09s|", s_hidden));
+
+	printf("\n---- new2019_negstar_9 ----\n");
+	printf("\treturn :%d\n", printf("|%0*i|", -7, -54));
+	printf("\treturn :%d\n", ft_printf("|%0*i|", -7, -54));
 
 
 	// printf("\n---- %% without flag ----\n");
