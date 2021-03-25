@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 17:11:58 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 20:35:06 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ static int		printf_negative_integer(long int number, t_flags flags)
 {
 	char		*number_str;
 	int			length;
-	char 		padded;
 
 	// printf("\nl:124\tEntrou printf_negative\n");//
 	// printf("\nl:125\tprintf_negative number = %ld\n", number);//
@@ -119,18 +118,17 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0)//!
 	{
-		padded = '0';
 		ft_putchar('-');
 		length++;
+		if (flags.left_aligned == 0)
+			flags.padded = '0';
 	}
-	else
-		padded = ' ';
 	// printf("\nl:138\tprintf_negative number_str = %s\n", number_str);//
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);
 	while (length < flags.min_width)
 	{
-		ft_putchar(padded);
+		ft_putchar(flags.padded);
 		length++;
 	}
 	if (flags.left_aligned == 0)
@@ -142,15 +140,12 @@ static int		printf_positive_integer(long int number, t_flags flags)
 {
 	char		*number_str;
 	int			length;
-	char 		padded;
 
 
 	// printf("\nl:158\tEntrou printf_positive\n");//
 	length = ft_num_len(number);
 	if (flags.zero_padded == 1 && flags.true_precision == 0 && flags.left_aligned == 0) //!excluir true_precision
-		padded = '0';
-	else
-		padded = ' ';
+		flags.padded = '0';
 	if (flags.true_precision == 1 && flags.precision == 0 && number == 0)
 		number_str = "\0";
 	else
@@ -161,7 +156,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 	length = ft_strlen(number_str);
 	while (length < flags.min_width)
 	{
-		ft_putchar(padded);
+		ft_putchar(flags.padded);
 		length++;
 	}
 	if (flags.left_aligned == 0)
