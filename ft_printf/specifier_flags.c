@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 15:27:07 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:30:58 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static void		reset_flags(t_flags *flags)
 	flags->true_precision = 0;
 	flags->specifier = 'x';
 	flags->pointer = 0;
-	flags->padded = 'Z';
+	flags->padded = ' ';
 }
 
 static int		select_specifier(char specifier, t_flags flags, va_list args)

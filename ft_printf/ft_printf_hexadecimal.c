@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 15:28:29 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:30:29 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ static int		get_hexa_num(unsigned long int nbr, t_flags flags)
 	total_len = get_precision(start_num_len, flags);
 	// printf("\nl:165\thexa_str = %s\n", hexa_str);
 	ft_putstr(hexa_str);
-	// free(hexa_str);
+	free(hexa_str);
 	return (total_len);
 }
 
