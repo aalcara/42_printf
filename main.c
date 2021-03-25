@@ -168,15 +168,15 @@ int main(void)
 	printf("\treturn :%d\n", printf("|%-05%|"));
 	printf("\treturn :%d\n", ft_printf("|%-05%|"));
 
-	printf("\n---- nocrash_nullspec_5wlj ----\n");
+	printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
 	printf("\treturn :%d\n", printf("|%-5|"));
 	printf("\treturn :%d\n", ft_printf("|%-5|"));
 
-	printf("\n---- s_undefbehav_0_width_9 ----\n");
+	printf("\n130: ---- s_undefbehav_0_width_9 ----\n");
 	printf("\treturn :%d\n", printf("|%09s|", s_hidden));
 	printf("\treturn :%d\n", ft_printf("|%09s|", s_hidden));
 
-	printf("\n15: ---- new2019_negstar_9 ----\n");
+	printf("\n744: ---- new2019_negstar_9 ----\n");
 	printf("\treturn :%d\n", printf("|%0*i|", -7, -54));
 	printf("\treturn :%d\n", ft_printf("|%0*i|", -7, -54));
 

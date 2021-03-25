@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 20:50:03 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 20:54:26 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int				select_flags(char **str, va_list args)
 	i = 1;
 	reset_flags(&flags);
 	// printf("\nl:109\ti = %d\n", i);
-	while (ft_strchr("-*.0123456789", *((*str) + i)))
+	while (ft_strchr("-*.0123456789", *((*str) + i)) && *((*str) + i) != '\0')
 	{
 		if (*((*str) + i) == '-')
 			flags.left_aligned = 1;
