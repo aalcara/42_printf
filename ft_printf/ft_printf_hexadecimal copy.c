@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_hexadecimal.c                            :+:      :+:    :+:   */
+/*   ft_printf_hexadecimal copy.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 15:28:29 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 14:16:26 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@
 // 	// char		*freed_hexa_str;//!
 
 // 	num_len = ft_hexa_len(nbr);
-// 	if (flags.true_precision == 1 && flags.precision == 0)
-// 		return ("\0");
 // 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
 // 		return (NULL);
 // 	if (nbr == 0)
@@ -100,95 +98,33 @@
 // 	return (hexa_ret);
 // }
 
-static int		get_left_align(int prenum_len, t_flags flags)
-{
-	int			total_len;
+// int				printf_hexadecimal(t_flags flags, va_list args)
+// {
+// 	int			length;
+// 	long int	number;
+// 	char		*number_str;
+// 	char 		padded;
 
-	// printf("\nl:107\tGET_LEFT_ALIGN\n");//
-	total_len = prenum_len;
-	if (flags.left_aligned == 1)
-		return (total_len);
-
-	while (total_len < flags.min_width)
-	{
-		ft_putchar(flags.padded);
-		total_len++;
-	}
-	return (total_len);
-}
-
-static int		get_precision(int num_len, t_flags flags)
-{
-	int			prenum_len;
-	int			total_len;
-
-	// printf("\nl:124\tGET_PRECISION\n");//
-	prenum_len = num_len;
-	if (flags.precision > num_len)
-		prenum_len = flags.precision;
-
-	total_len = get_left_align(prenum_len, flags);
-
-	// printf("\nl:134\treturn GET_PRECISION\n");//
-	while (num_len < flags.precision)
-	{
-		ft_putchar('0');
-		num_len++;
-	}
-
-
-	return (total_len);
-}
-
-static int		get_hexa_num(unsigned long int nbr, t_flags flags)
-{
-	char		*hexa_str;
-	int			num_len;
-	int			aux_num;
-	int			total_len;
-	int			start_num_len;
-
-	// if (flags.true_precision == 1 && flags.precision == 0)
-	// 	hexa_str = "\0";
-	// printf("\nl:150\tGET_HEXA_NUM\n");//
-	num_len = ft_hexa_len(nbr);
-	start_num_len = num_len;
-	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
-		return (0);
-	if (nbr == 0)
-	 	ft_memset((char *)hexa_str, '0', 1);
-	while (nbr > 0)
-	{
-		if ((aux_num = nbr % 16) < 10)
-			hexa_str[num_len - 1] = aux_num + '0';
-		else
-			hexa_str[num_len - 1] = aux_num + flags.specifier - 33;
-		nbr = nbr / 16;
-		num_len--;
-	}
-	total_len = get_precision(start_num_len, flags);
-	// printf("\nl:165\thexa_str = %s\n", hexa_str);
-	ft_putstr(hexa_str);
-	// free(hexa_str);
-	return (total_len);
-}
-
-int				printf_hexadecimal(t_flags flags, va_list args)
-{
-	int			total_len;
-	long int	number;
-
-	number = va_arg(args, unsigned long int);
-	if (flags.zero_padded == 1 && flags.true_precision == 0)
-		flags.padded = '0';
-
-	total_len = get_hexa_num(number, flags);
-
-	while (total_len < flags.min_width)
-	{
-		ft_putchar(flags.padded);
-		total_len++;
-	}
-
-	return (total_len);
-}
+// 	number = va_arg(args, unsigned long int);
+// 	// printf("\nl:97\tEntrou printf_positive");//
+// 	if (flags.zero_padded == 1 && flags.true_precision == 0)
+// 		padded = '0';
+// 	else
+// 		padded = ' ';
+// 	if (flags.true_precision == 1 && flags.precision == 0)
+// 		number_str = "\0";
+// 	else
+// 		number_str = itoa_hex(number, flags);//!!!!!!!!!!
+// 	length = ft_strlen(number_str);
+// 	if (flags.left_aligned == 1)
+// 		ft_putstr(number_str);
+// 	while (length < flags.min_width)
+// 	{
+// 		ft_putchar(padded);
+// 		length++;
+// 	}
+// 	if (flags.left_aligned == 0)
+// 		ft_putstr(number_str);
+// 	// free(number_str);
+// 	return (length);
+// }

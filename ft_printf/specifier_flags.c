@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/23 17:50:06 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:27:07 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,9 @@ static void		reset_flags(t_flags *flags)
 	flags->precision = 0;
 	flags->zero_padded = 0;
 	flags->true_precision = 0;
+	flags->specifier = 'x';
+	flags->pointer = 0;
+	flags->padded = 'Z';
 }
 
 static int		select_specifier(char specifier, t_flags flags, va_list args)
@@ -95,8 +98,14 @@ static int		select_specifier(char specifier, t_flags flags, va_list args)
 		return (printf_percent_sign(flags));
 	if (specifier == 'd' || specifier == 'i' || specifier == 'u')
 		return (printf_integer(flags, args, specifier));
-	if (specifier == 'x' || specifier == 'X' || specifier == 'p')
-		return (printf_hexadecimal(flags, args, specifier)); //todo	               incompleta
+	if (specifier == 'x' || specifier == 'p' || specifier == 'X')
+	{
+		if (specifier == 'p')
+			flags.pointer = 1;
+		if (specifier == 'X')
+			flags.specifier = 'X';
+		return (printf_hexadecimal(flags, args)); //todo	               incompleta
+	}
 	return (0);
 }
 
