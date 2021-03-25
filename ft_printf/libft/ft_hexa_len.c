@@ -6,20 +6,20 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:05:58 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 15:52:38 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:09:53 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_hexa_len(unsigned long int number)
+int			ft_hexa_len(long int number)
 {
 	int 		num_len;
 
 	if (number == 0)
 		return (1);
 	num_len = 0;
-	while (number != 0)
+	while (number > 0)
 	{
 		number = number / 16;
 		num_len++;
