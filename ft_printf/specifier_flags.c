@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 19:56:42 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 20:02:10 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,11 +134,11 @@ int				select_flags(char **str, va_list args)
 		else if (*((*str) + i) == '*')
 			flags.min_width = get_min_width(str, &i, args, &flags);
 		i++;
-		printf("\nl:137\tprecision = %d", flags.precision);
-		printf("\nl:138\ttrue_precision = %d", flags.true_precision);
-		printf("\nl:139\tmin_width = %d", flags.min_width);
-		printf("\nl:140\tzero_padded = %d\n", flags.zero_padded);
-		printf("l:141\ti = %d\n", i);
+		// printf("\nl:137\tprecision = %d", flags.precision);
+		// printf("\nl:138\ttrue_precision = %d", flags.true_precision);
+		// printf("\nl:139\tmin_width = %d", flags.min_width);
+		// printf("\nl:140\tzero_padded = %d\n", flags.zero_padded);
+		// printf("l:141\ti = %d\n", i);
 	}
 	specifier = *((*str) + i);
 	lenght = select_specifier(specifier, flags, args);
