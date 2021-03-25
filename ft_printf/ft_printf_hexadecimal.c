@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 20:51:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 15:42:21 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 15:55:10 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ static int		get_precision(int num_len, t_flags flags)
 	return (total_len);
 }
 
-static int		get_hexa_num(unsigned long int nbr, t_flags flags)
+static int		get_hexa_num(unsigned int nbr, t_flags flags)
 {
 	char		*hexa_str;
 	int			num_len;
@@ -153,9 +153,11 @@ static int		get_hexa_num(unsigned long int nbr, t_flags flags)
 	num_len = 0;
 	if (flags.true_precision != 1 || flags.precision != 0)
 		num_len = ft_hexa_len(nbr);
+	// printf("l:156\tnbr = %x\n", nbr);//
+	// printf("l:157\tnum_len = %d\n", num_len);//
 	start_num_len = num_len;
 	if (!(hexa_str = ft_calloc(sizeof(char), (num_len + 1))))
-		return (0);
+		return (-1);
 	if (nbr == 0)
 	 	ft_memset((char *)hexa_str, '0', 1);
 	while (nbr > 0)
@@ -180,7 +182,7 @@ int				printf_hexadecimal(t_flags flags, va_list args)
 	int			total_len;
 	long int	number;
 
-	number = va_arg(args, unsigned long int);
+	number = va_arg(args, unsigned int);
 	if (flags.zero_padded == 1 && flags.true_precision == 0)
 		flags.padded = '0';
 
