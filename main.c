@@ -266,25 +266,34 @@ int main(void)
 	printf("\treturn :%d\n", printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
 	printf("\treturn :%d\n", ft_printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
 
-	printf("\n---- 14   ----\n");
-	printf("\treturn :%d\n", printf(" 0*%0-*x*0 0*%0*x*0 ", 21, 1021, 21, -1011));
-	printf("\treturn :%d\n", ft_printf(" 0*%0-*x*0 0*%0*x*0 ", 21, 1021, 21, -1011));
+	printf("\n---- 10  ----\n");
+	printf("\treturn :%d\n", printf(" *%-*.*x* *%*.*x* ", 6, 2, 102, 10, 21, -101));
+	printf("\treturn :%d\n", ft_printf(" *%-*.*x* *%*.*x* ", 6, 2, 102, 10, 21, -101));
 
-	printf("\n---- 15   ----\n");
-	printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.0x*0 ", 21, 1021, 21, -1011));
-	printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.0x*0 ", 21, 1021, 21, -1011));
 
-	printf("\n---- .x 15   ----\n");
-	printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, -1011));
-	printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, -1011));
+	printf("\n---- 12  ----\n");
+	printf("\treturn :%d\n", printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 6, 2, 102, 10, 21, -101));
+	printf("\treturn :%d\n", ft_printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 6, 2, 102, 10, 21, -101));
 
-	printf("\n---- .x (x = 1) 15   ----\n");
-	printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 1));
-	printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 1));
+	// printf("\n---- 14   ----\n");
+	// printf("\treturn :%d\n", printf(" 0*%0-*x*0 0*%0*x*0 ", 21, 1021, 21, -1011));
+	// printf("\treturn :%d\n", ft_printf(" 0*%0-*x*0 0*%0*x*0 ", 21, 1021, 21, -1011));
 
-	printf("\n---- .x (x = 0) 15   ----\n");
-	printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 0));
-	printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 0));
+	// printf("\n---- 15   ----\n");
+	// printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.0x*0 ", 21, 1021, 21, -1011));
+	// printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.0x*0 ", 21, 1021, 21, -1011));
+
+	// printf("\n---- .x 15   ----\n");
+	// printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, -1011));
+	// printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, -1011));
+
+	// printf("\n---- .x (x = 1) 15   ----\n");
+	// printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 1));
+	// printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 1));
+
+	// printf("\n---- .x (x = 0) 15   ----\n");
+	// printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 0));
+	// printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 0));
 	// a = 1;
 	// b = 1;
 
@@ -316,14 +325,14 @@ int main(void)
 	printf("\n --------------------------------------");
 	printf("\n|                POINTER               |");
 	printf("\n --------------------------------------\n");
-	a = 10;
-	while (a < 20)
-	{
-	printf("\n---- pointer with %%%dp flag ----\n", a);
-	printf("\treturn :%d\n", printf("|%*p|", a, &i));
-	printf("\treturn :%d\n", ft_printf("|%*p|", a, &i));
-	a++;
-	}
+	// a = 10;
+	// while (a < 20)
+	// {
+	// printf("\n---- pointer with %%%dp flag ----\n", a);
+	// printf("\treturn :%d\n", printf("|%*p|", a, &i));
+	// printf("\treturn :%d\n", ft_printf("|%*p|", a, &i));
+	// a++;
+	// }
 
 	printf("\n---- pointer with %%25.20p flag ----\n");
 	printf("\treturn :%d\n", printf("|%25.20p|", &i));
