@@ -1,5 +1,6 @@
 #include "ft_printf/ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int main(void)
 {
@@ -13,8 +14,7 @@ int main(void)
 	// int *p = &a;
 	// int *q = &b;
 
-	// int INT_MAX = +2147483647;
-	// int INT_MIN = -2147483648;
+
 
 	// printf("\n---- only input str ---- \n");
 	// printf("\treturn :%d\n", printf("test"));
@@ -294,6 +294,12 @@ int main(void)
 	// printf("\n---- .x (x = 0) 15   ----\n");
 	// printf("\treturn :%d\n", printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 0));
 	// printf("\treturn :%d\n", ft_printf(" 0*%-0*.10x*0 0*%-0*.x*0 ", 21, 1021, 21, 0));
+
+
+	printf("\n---- 18  ----\n");
+	printf("\treturn :%d\n", printf(" --0*%0*.0x*0 0*%0*.10x*0-- ", -21, LONG_MAX, 21, LONG_MIN));
+	printf("\treturn :%d\n", ft_printf(" --0*%0*.0x*0 0*%0*.10x*0-- ", -21, LONG_MAX, 21, LONG_MIN));
+
 	// a = 1;
 	// b = 1;
 
