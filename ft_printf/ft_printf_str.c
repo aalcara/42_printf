@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:25:14 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 16:42:13 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/25 21:02:28 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,15 @@ int				printf_str(t_flags flags, va_list args)
 	int		len;
 	// printf("\nl:20\tprintf_str");//
 	// printf("\nl:22\tprecision = %d", flags.precision);//
+	if (flags.zero_padded == 1)
+		flags.padded = '0';
 	str = precision_str(flags, args);
 	len = ft_strlen(str);
 	if (flags.left_aligned == 1)
 		ft_putstr(str);
 	while (len < flags.min_width)
 	{
-		ft_putchar(' ');
+		ft_putchar(flags.padded);
 		len++;
 	}
 	if (flags.left_aligned == 0)
