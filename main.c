@@ -176,9 +176,17 @@ int main(void)
 	printf("\treturn :%d\n", printf("|%09s|", s_hidden));
 	printf("\treturn :%d\n", ft_printf("|%09s|", s_hidden));
 
-	printf("\n744: ---- new2019_negstar_9 ----\n");
-	printf("\treturn :%d\n", printf("|%0*i|", -7, -54));
-	printf("\treturn :%d\n", ft_printf("|%0*i|", -7, -54));
+	printf("\n132: ---- s_undefbehav_lj_0_width_9  ----\n");
+	printf("\treturn :%d\n", printf("|%-09s|", s_hidden));
+	printf("\treturn :%d\n", ft_printf("|%-09s|", s_hidden));
+
+
+
+	// printf("\n744: ---- new2019_negstar_9 ----\n");
+	// printf("\treturn :%d\n", printf("|%0*i|", -7, -54));
+	// printf("\treturn :%d\n", ft_printf("|%0*i|", -7, -54));
+
+
 
 
 	// printf("\n---- %% without flag ----\n");
