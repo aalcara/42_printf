@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:54:49 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:56:34 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ static char		*precision_itoa(long int number, t_flags flags)
 static char		*printf_itoa(long int number, t_flags flags, int length)
 {
 	char		*str;
-	// long int	negative_number;
-	char		freed_str[length + 1];
+	// char		freed_str[length + 1];
+	char		*freed_str;
 	static char	*freed_str_ptr;
 
-	// negative_number = -number;
+
 	if (flags.zero_padded == 1)
 	{
 		if (number < 0)
@@ -54,9 +54,9 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 		ft_memcpy((void *)freed_str, (void *)str, length);
 		freed_str[length] = '\0';
 		// free(str);
-		freed_str_ptr = freed_str;
-		return (freed_str_ptr);
-		// return (freed_str);
+		// freed_str_ptr = freed_str;
+		// return (freed_str_ptr);
+		return (freed_str);
 	}
 	str = precision_itoa(number, flags);
 	return (str);
