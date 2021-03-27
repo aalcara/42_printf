@@ -44,8 +44,8 @@ int main(void)
 
 
 	printf("\n---- tests ft_printf_test ----\n");
-	printf("\treturn :%d\n", printf("%i", -1));
-	printf("\treturn :%d\n", ft_printf("%i", -1));
+	printf("\treturn :%d\n", printf("|%i|",-1));
+	printf("\treturn :%d\n", ft_printf("|%i|", -1));
 
 
 
