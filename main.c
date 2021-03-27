@@ -201,13 +201,13 @@ int main(void)
 	// printf("\treturn :%d\n", ft_printf("|%-05%|"));
 
 
-	printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
-	printf("\treturn :%d\n", printf("|%-5|"));
-	printf("\treturn :%d\n", ft_printf("|%-5|"));
+	// printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
+	// printf("\treturn :%d\n", printf("|%-5|"));
+	// printf("\treturn :%d\n", ft_printf("|%-5|"));
 
-	printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
-	printf("\treturn :%d\n", printf("%-5"));
-	printf("\treturn :%d\n", ft_printf("%-5"));
+	// printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
+	// printf("\treturn :%d\n", printf("%-5"));
+	// printf("\treturn :%d\n", ft_printf("%-5"));
 
 	printf("\n---- tests ft_printf_test ----\n");
 	printf("\n15: ---- i_basic_i_onlyneg ----\n");
