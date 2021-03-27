@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:11:10 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:18:24 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
-		ft_putchar('-');
+		ft_putchar('M');
 		length++;
 		if (flags.left_aligned == 0)
 			flags.padded = '0';
@@ -96,9 +96,8 @@ static int		printf_positive_integer(long int number, t_flags flags)
 	int			length;
 
 	length = ft_num_len(number);
-	if (flags.zero_padded == 1 && flags.true_precision == 0)
-		if (flags.left_aligned == 0)
-			flags.padded = '0';
+	if (flags.zero_padded == 1 && flags.left_aligned == 0)
+		flags.padded = '0';
 	if (flags.true_precision == 1 && flags.precision == 0 && number == 0)
 		number_str = "\0";
 	else
