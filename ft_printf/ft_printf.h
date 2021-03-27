@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:20:03 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 13:08:29 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:57:32 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int				printf_char(t_flags flags, va_list args);
 int				printf_str(t_flags flags, va_list args);
 int				printf_percent_sign(t_flags flags);
 int				printf_integer(t_flags flags, va_list args, int specifier);
-char			*ft_pre_str(char *str_num, t_flags flags, int neg_signal);
 int				printf_hexadecimal(t_flags flags, va_list args);
+void			reset_flags(t_flags *flags);
 
 #endif

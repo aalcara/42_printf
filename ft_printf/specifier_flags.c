@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:10:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:07:56 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 static int		num_length(int number)
 {
 	int 		num_len;
-
 	num_len = 0;
 	while (number > 0)
 	{
@@ -77,18 +76,6 @@ static int		get_min_width(char **str, int *i, va_list args, t_flags *flags)
 	return (number);
 }
 
-static void		reset_flags(t_flags *flags)
-{
-	flags->left_aligned = 0;
-	flags->min_width = 0;
-	flags->precision = 0;
-	flags->zero_padded = 0;
-	flags->true_precision = 0;
-	flags->specifier = 'x';
-	flags->pointer = 0;
-	flags->padded = ' ';
-}
-
 static int		select_specifier(char specifier, t_flags flags, va_list args)
 {
 	if (specifier == 'c')
@@ -115,7 +102,6 @@ int				select_flags(char **str, va_list args)
 	t_flags		flags;
 	char		specifier;
 	int			i;
-	int			lenght;
 
 	i = 1;
 	reset_flags(&flags);
@@ -125,31 +111,20 @@ int				select_flags(char **str, va_list args)
 			flags.left_aligned = 1;
 		else if (*((*str) + i) == '0')
 			flags.zero_padded = 1;
-		else if (*((*str) + i) >= '1' && *((*str) + i) <= '9')
-			flags.min_width = get_min_width(str, &i, args, &flags);
+		// else if (*((*str) + i) >= '1' && *((*str) + i) <= '9')
+		// 	flags.min_width = get_min_width(str, &i, args, &flags);
 		else if (*((*str) + i) == '.')
 			flags.precision = get_precision(str, &i, args, &flags);
-		else if (*((*str) + i) == '*')
+		else
 			flags.min_width = get_min_width(str, &i, args, &flags);
 		i++;
 	}
 	specifier = *((*str) + i);
-	// printf("\nl:137\tspecifier-2 = %c\n", *((*str) + i-2));//
-	// printf("l:137\tspecifier-1 = %c\n", *((*str) + i-1));//
-	// printf("l:137\tspecifier = %c\n", specifier);//
 	if (specifier == '\0' || !(ft_strchr("csdiupxX%", specifier)))
 	{
 		*str = ((*str) + i);
 		return(i + 1);
-		// printf("\nl:144\ti = %d\n", i);//
 	}
-	lenght = select_specifier(specifier, flags, args);
-	// if (lenght == -1)
-	// {
-	// 	*str = ((*str) + i);
-	// 	return(i + 1);
-	// }
-
 	*str = ((*str) + i + 1);
-	return (lenght);
+	return (select_specifier(specifier, flags, args));
 }
