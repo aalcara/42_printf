@@ -6,35 +6,11 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 17:15:41 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:25:53 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static char		*precision_itoa(long int number, t_flags flags)
-{
-	char		*str_num;
-	char		*pre_str;
-	char		*full_str;
-	int			neg_signal;
-
-
-	neg_signal = 0;
-	if (number < 0)
-	{
-		neg_signal = 1;
-		number = - number;
-	}
-	str_num = ft_itoa(number);
-	pre_str = ft_pre_str(str_num, flags, neg_signal);
-	full_str = ft_strjoin(pre_str, str_num);
-	free(str_num);
-	free(pre_str);
-	// full_freed = ft_free(full_str, ft_strlen(full_str));
-	// return (full_freed);
-	return (full_str);
-}
 
 static char		*printf_itoa(long int number, t_flags flags)//, int length)
 {
@@ -42,7 +18,9 @@ static char		*printf_itoa(long int number, t_flags flags)//, int length)
 	// char		freed_str[length + 1];
 	// char		*freed_str;
 	// static char	*freed_str_ptr;
-
+	char		*str_num;
+	char		*pre_str;
+	int			neg_signal;
 
 	if (flags.zero_padded == 1)
 	{
@@ -57,7 +35,17 @@ static char		*printf_itoa(long int number, t_flags flags)//, int length)
 		// return (freed_str_ptr);
 		return (str);
 	}
-	str = precision_itoa(number, flags);
+	neg_signal = 0;
+	if (number < 0)
+	{
+		neg_signal = 1;
+		number = - number;
+	}
+	str_num = ft_itoa(number);
+	pre_str = ft_pre_str(str_num, flags, neg_signal);
+	str = ft_strjoin(pre_str, str_num);
+	free(str_num);
+	free(pre_str);
 	return (str);
 }
 
