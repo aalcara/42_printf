@@ -218,6 +218,11 @@ int main(void)
 	printf("\treturn :%d\n", printf("|%i|", -1));
 	printf("\treturn :%d\n", ft_printf("|%i|", -1));
 
+	printf("\n15: ---- i_zp_pos_fits ----\n");
+	printf("\treturn :%d\n", printf("|%05i|", 43));
+	printf("\treturn :%d\n", ft_printf("|%05i|", 43));
+
+
 
 	// printf("\n130: ---- s_undefbehav_0_width_9 ----\n");
 	// printf("\treturn :%d\n", printf("|%09s|", s_hidden));
