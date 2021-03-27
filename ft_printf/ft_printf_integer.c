@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:27:13 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:29:42 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static char		*precision_itoa(long int number, t_flags flags)
 	str_num = ft_itoa(number);
 	pre_str = ft_pre_str(str_num, flags, neg_signal);
 	full_str = ft_strjoin(pre_str, str_num);
+	full_freed = ft_free(full_str, ft_strlen(full_str));
 	free(str_num);
 	free(pre_str);
-	full_freed = ft_free(full_str, ft_strlen(full_str));
 	return (full_freed);
 }
 
@@ -50,9 +50,9 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 			str = ft_itoa(-number);
 		else
 			str = ft_itoa(number);
-		ft_memcpy((void *)freed_str, (void *)str, length + 1);//!!!!!!
+		ft_memcpy((void *)freed_str, (void *)str, length);
 		freed_str[length] = '\0';
-		// free(str); //!############################################
+		free(str); //!############################################
 		freed_str_ptr = freed_str;
 		return (freed_str_ptr);
 	}
