@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:49:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:52:20 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char			*ft_pre_str(char *str_num, t_flags flags, int neg_signal)
 	pre_str_len = flags.precision + neg_signal - length;
 	if ((flags.precision + neg_signal) <= length)
 		if (neg_signal == 0)
-			pre_str = ft_calloc(1, sizeof(char));
+			pre_str = ft_calloc(2, sizeof(char));
 		else
 			pre_str = ft_calloc(2, sizeof(char));
 	else
