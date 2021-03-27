@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:56:34 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:03:43 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ static char		*precision_itoa(long int number, t_flags flags)
 	return (full_str);
 }
 
-static char		*printf_itoa(long int number, t_flags flags, int length)
+static char		*printf_itoa(long int number, t_flags flags)//, int length)
 {
 	char		*str;
 	// char		freed_str[length + 1];
-	char		*freed_str;
-	static char	*freed_str_ptr;
+	// char		*freed_str;
+	// static char	*freed_str_ptr;
 
 
 	if (flags.zero_padded == 1)
@@ -51,12 +51,12 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 			str = ft_itoa(-number);
 		else
 			str = ft_itoa(number);
-		ft_memcpy((void *)freed_str, (void *)str, length);
-		freed_str[length] = '\0';
+		// ft_memcpy((void *)freed_str, (void *)str, length);
+		// freed_str[length] = '\0';
 		// free(str);
 		// freed_str_ptr = freed_str;
 		// return (freed_str_ptr);
-		return (freed_str);
+		return (str);
 	}
 	str = precision_itoa(number, flags);
 	return (str);
@@ -70,7 +70,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	length = ft_num_len(number);
 	// printf("\n\nl:69\t number = %li", number);
 	// printf("\nl:70\t length = %d\n", length);
-	number_str = printf_itoa(number, flags, length);
+	number_str = printf_itoa(number, flags);//, length);
 	// printf("l:72\t number_str = %s\n\n", number_str);
 	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0)
@@ -103,7 +103,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 	if (flags.true_precision == 1 && flags.precision == 0 && number == 0)
 		number_str = "\0";
 	else
-		number_str = printf_itoa(number, flags, length);
+		number_str = printf_itoa(number, flags);//, length);
 	if (flags.left_aligned == 1)
 		ft_putstr(number_str);
 	length = ft_strlen(number_str);
