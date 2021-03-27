@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 18:24:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:49:48 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ static int		select_specifier(char specifier, t_flags flags, va_list args)
 	if (specifier == 'x' || specifier == 'p' || specifier == 'X')
 	{
 		if (specifier == 'p')
+		{
 			flags.pointer = 1;
+			flags.specifier = 'x';
+		}
 		if (specifier == 'X')
 			flags.specifier = 'X';
 		return (printf_hexadecimal(flags, args));
