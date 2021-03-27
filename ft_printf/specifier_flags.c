@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 15:09:28 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:28:10 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int				select_flags(char **str, va_list args)
 
 	i = 1;
 	reset_flags(&flags);
-	while (ft_strchr("-*.0123456789", *((*str) + i)))
+	while (ft_strchr("-*.0123456789", *((*str) + i)) && *((*str) + i) != '\0')
 	{
 		if (*((*str) + i) == '-')
 			flags.left_aligned = 1;
@@ -134,13 +134,21 @@ int				select_flags(char **str, va_list args)
 		i++;
 	}
 	specifier = *((*str) + i);
-	if (specifier == '\0')
+	// printf("\nl:137\tspecifier-2 = %c\n", *((*str) + i-2));//
+	// printf("l:137\tspecifier-1 = %c\n", *((*str) + i-1));//
+	// printf("l:137\tspecifier = %c\n", specifier);//
+	if (specifier == '\0' || !(ft_strchr("-*.0123456789", specifier)))
 	{
 		*str = ((*str) + i);
 		return(i + 1);
+		// printf("\nl:144\ti = %d\n", i);//
 	}
 	lenght = select_specifier(specifier, flags, args);
 	// if (lenght == -1)
+	// {
+	// 	*str = ((*str) + i);
+	// 	return(i + 1);
+	// }
 
 	*str = ((*str) + i + 1);
 	return (lenght);
