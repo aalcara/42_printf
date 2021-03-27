@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 15:35:21 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:38:45 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ int				select_flags(char **str, va_list args)
 	if (specifier == '\0' || !(ft_strchr("csdiupxX%", specifier)))
 	{
 		*str = ((*str) + i);
-		return(-1);
+		return(i + 1);
 		// printf("\nl:144\ti = %d\n", i);//
 	}
 	lenght = select_specifier(specifier, flags, args);
