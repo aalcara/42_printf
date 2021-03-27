@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 13:05:43 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:53:13 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	int			length;
 
 	length = ft_num_len(number);
+	printf("\n\nl:69\t number = %li", number);
+	printf("\nl:70\t length = %d\n", length);
 	number_str = printf_itoa(number, flags, length);
+	printf("l:72\t number_str = %s\n\n", number_str);
 	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
@@ -125,7 +128,7 @@ int				printf_integer(t_flags flags, va_list args, int specifier)
 	else
 		number = (long int)va_arg(args, int);
 	if (number < 0)
-			length = printf_negative_integer(number, flags);
+		length = printf_negative_integer(number, flags);
 	else
 		length = printf_positive_integer(number, flags);
 	return (length);
