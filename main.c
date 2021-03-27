@@ -41,9 +41,6 @@ int main(void)
 	// printf("\treturn :%d\n", printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c, e, d));
 	// printf("\treturn :%d\n", ft_printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c, e, d));
 
-	printf("\n---- tests ft_printf_test ----\n");
-	printf("\treturn :%d\n", printf("|%i|",-1));
-	printf("\treturn :%d\n", ft_printf("|%i|", -1));
 
 
 
@@ -193,7 +190,7 @@ int main(void)
 
 
 
-	// printf("\n---- tests PTF_2019 ----\n");
+
 
 	// printf("\n---- pct_5wzp ----\n");
 	// printf("\treturn :%d\n", printf("|%05%|"));
@@ -203,6 +200,7 @@ int main(void)
 	// printf("\treturn :%d\n", printf("|%-05%|"));
 	// printf("\treturn :%d\n", ft_printf("|%-05%|"));
 
+
 	printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
 	printf("\treturn :%d\n", printf("|%-5|"));
 	printf("\treturn :%d\n", ft_printf("|%-5|"));
@@ -211,6 +209,7 @@ int main(void)
 	printf("\treturn :%d\n", printf("%-5"));
 	printf("\treturn :%d\n", ft_printf("%-5"));
 
+	printf("\n---- tests ft_printf_test ----\n");
 	printf("\n15: ---- i_basic_i_onlyneg ----\n");
 	printf("\treturn :%d\n", printf("%i", -1));
 	printf("\treturn :%d\n", ft_printf("%i", -1));

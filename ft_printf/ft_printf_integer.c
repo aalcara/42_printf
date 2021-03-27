@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 15:53:13 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:11:10 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ static char		*precision_itoa(long int number, t_flags flags)
 static char		*printf_itoa(long int number, t_flags flags, int length)
 {
 	char		*str;
-	long int	negative_number;
+	// long int	negative_number;
 	char		freed_str[length + 1];
 	static char	*freed_str_ptr;
 
-	negative_number = -number;
+	// negative_number = -number;
 	if (flags.zero_padded == 1)
 	{
 		if (number < 0)
-			str = ft_itoa(negative_number);
+			str = ft_itoa(-number);
 		else
 			str = ft_itoa(number);
 		ft_memcpy((void *)freed_str, (void *)str, length);
@@ -66,10 +66,10 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	int			length;
 
 	length = ft_num_len(number);
-	printf("\n\nl:69\t number = %li", number);
-	printf("\nl:70\t length = %d\n", length);
+	// printf("\n\nl:69\t number = %li", number);
+	// printf("\nl:70\t length = %d\n", length);
 	number_str = printf_itoa(number, flags, length);
-	printf("l:72\t number_str = %s\n\n", number_str);
+	// printf("l:72\t number_str = %s\n\n", number_str);
 	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
