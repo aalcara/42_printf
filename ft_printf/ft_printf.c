@@ -6,19 +6,17 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:28:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 11:59:09 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:04:20 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h> //!excluir
 
 int				putstr_before_percent(const char *str)
 {
 	int			i;
 
 	i = 0;
-	// printf("\nl:21\tentrou putstr_before_percent");//
 	while (str[i] != '%')
 	{
 		write(1, &str[i], 1);
@@ -37,9 +35,7 @@ int				recursive_printf(const char *str, va_list args, int lenght)
 		return (lenght + ft_strlen(str));
 	}
 	lenght += putstr_before_percent(str);
-	// printf("\nl:38\trecursivePrintf test");//
 	lenght += select_flags(&percent_sign, args);
-	// printf("\nl:41\tpercent_sign = %s", percent_sign);//
 	lenght = recursive_printf(percent_sign, args, lenght);
 	return (lenght);
 }

@@ -36,12 +36,10 @@ int main(void)
 	char	*t = "0x12345678";
 	char	*u = "-0";
 
-	printf("\n---- tests 42TESTERS ----\n");
-	printf("\n---- T3 ---- \n");
-	printf("\treturn :%d\n", printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c, e, d));
-	printf("\treturn :%d\n", ft_printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c, e, d));
-
-
+	// printf("\n---- tests 42TESTERS ----\n");
+	// printf("\n---- T3 ---- \n");
+	// printf("\treturn :%d\n", printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c, e, d));
+	// printf("\treturn :%d\n", ft_printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c, e, d));
 
 	printf("\n---- tests ft_printf_test ----\n");
 	printf("\treturn :%d\n", printf("|%i|",-1));
@@ -205,9 +203,9 @@ int main(void)
 	// printf("\treturn :%d\n", printf("|%-05%|"));
 	// printf("\treturn :%d\n", ft_printf("|%-05%|"));
 
-	// printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
-	// printf("\treturn :%d\n", printf("|%-5|"));
-	// printf("\treturn :%d\n", ft_printf("|%-5|"));
+	printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
+	printf("\treturn :%d\n", printf("|%-5|"));
+	printf("\treturn :%d\n", ft_printf("|%-5|"));
 
 	// printf("\n130: ---- s_undefbehav_0_width_9 ----\n");
 	// printf("\treturn :%d\n", printf("|%09s|", s_hidden));

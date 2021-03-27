@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 12:09:38 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:05:01 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static int		get_min_width(char **str, int *i, va_list args, t_flags *flags)
 	int			number;
 
 	number = 0;
-	// printf("\nl:18\ti = %d, str[i] = %c, str[i+1] = %c", *i, *((*str) + *i), *((*str) + *i + 1));
 	if (*((*str) + *i) == '*')
 	{
 		if ((number = va_arg(args, int)) < 0)
@@ -106,7 +105,7 @@ static int		select_specifier(char specifier, t_flags flags, va_list args)
 			flags.pointer = 1;
 		if (specifier == 'X')
 			flags.specifier = 'X';
-		return (printf_hexadecimal(flags, args)); //todo	               incompleta
+		return (printf_hexadecimal(flags, args));
 	}
 	return (-1);
 }
@@ -120,7 +119,6 @@ int				select_flags(char **str, va_list args)
 
 	i = 1;
 	reset_flags(&flags);
-	// printf("\nl:109\ti = %d\n", i);
 	while (ft_strchr("-*.0123456789", *((*str) + i)))
 	{
 		if (*((*str) + i) == '-')
@@ -134,11 +132,6 @@ int				select_flags(char **str, va_list args)
 		else if (*((*str) + i) == '*')
 			flags.min_width = get_min_width(str, &i, args, &flags);
 		i++;
-		// printf("\nl:137\tprecision = %d", flags.precision);
-		// printf("\nl:138\ttrue_precision = %d", flags.true_precision);
-		// printf("\nl:139\tmin_width = %d", flags.min_width);
-		// printf("\nl:140\tzero_padded = %d\n", flags.zero_padded);
-		// printf("l:141\ti = %d\n", i);
 	}
 	specifier = *((*str) + i);
 	lenght = select_specifier(specifier, flags, args);

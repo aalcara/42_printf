@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:13:27 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 20:21:18 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:05:21 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int				printf_percent_sign(t_flags flags)
 	char		c;
 	int			i;
 
-	// printf("\nl:20\tEntrou funcao print_char");//
 	if (flags.zero_padded == 1 && flags.left_aligned == 0)
 		flags.padded = '0';
 	i = 0;

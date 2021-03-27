@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 11:11:10 by aalcara-          #+#    #+#              #
-#    Updated: 2021/03/22 11:43:25 by aalcara-         ###   ########.fr        #
+#    Updated: 2021/03/27 13:06:53 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ LIBFT_PATH = ./libft/
 FTP = ft_printf
 
 FILES = $(FTP).c specifier_flags.c $(FTP)_char.c $(FTP)_str.c $(FTP)_percent.c \
-	$(FTP)_integer.c $(FTP)_hexadecimal.c
+	$(FTP)_integer.c $(FTP)_integer2.c $(FTP)_hexadecimal.c
 
 OBJ = ft_printf.o specifier_flags.o ft_printf_char.o ft_printf_str.o ft_printf_percent.o \
-	ft_printf_integer.o ft_printf_hexadecimal.o
+	ft_printf_integer.o ft_printf_integer2.o ft_printf_hexadecimal.o
 
 CC =clang
 FLAGS = -Wall -Wextra -Werror
