@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 12:07:55 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:09:38 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,7 @@ static int		select_specifier(char specifier, t_flags flags, va_list args)
 			flags.specifier = 'X';
 		return (printf_hexadecimal(flags, args)); //todo	               incompleta
 	}
-
-	return (0);
+	return (-1);
 }
 
 int				select_flags(char **str, va_list args)
@@ -143,11 +142,11 @@ int				select_flags(char **str, va_list args)
 	}
 	specifier = *((*str) + i);
 	lenght = select_specifier(specifier, flags, args);
-	// if (lenght == 0)
-	// {
-	// 	*str = ((*str) + i);
-	// 	return(i + 1);
-	// }
+	if (lenght == -1)
+	{
+		*str = ((*str) + i);
+		return(i + 1);
+	}
 	*str = ((*str) + i + 1);
 	return (lenght);
 }
