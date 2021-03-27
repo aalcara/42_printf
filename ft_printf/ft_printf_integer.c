@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:23:59 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:27:13 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 			str = ft_itoa(number);
 		ft_memcpy((void *)freed_str, (void *)str, length + 1);//!!!!!!
 		freed_str[length] = '\0';
-		free(str);
+		// free(str); //!############################################
 		freed_str_ptr = freed_str;
 		return (freed_str_ptr);
 	}
