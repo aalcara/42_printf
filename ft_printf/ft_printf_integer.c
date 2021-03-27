@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 20:35:06 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:26:36 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 	char		freed_str[length + 1];
 	static char	*freed_str_ptr;
 
-	// neg_signal = 0;
 	negative_number = -number;
 	if (flags.zero_padded == 1)
 	{
@@ -87,21 +86,15 @@ static char		*printf_itoa(long int number, t_flags flags, int length)
 			str = ft_itoa(negative_number);
 		else
 			str = ft_itoa(number);
+		// printf("\nl:89\tstr = %s\n", str);//
 		ft_memcpy((void *)freed_str, (void *)str, length);
 		freed_str[length] = '\0';
 		free(str);
 		freed_str_ptr = freed_str;
+		// printf("\nl:94\tfreed_str_ptr = %s\n", freed_str_ptr);//
 		return (freed_str_ptr);
 	}
 	str = precision_itoa(number, flags);
-	// str = precision_itoa(number, flags, neg_signal);
-	// if (number < 0)
-	// {
-	// 	neg_signal = 1;
-	// 	str = precision_itoa(negative_number, flags, neg_signal);
-	// }
-	// else
-	// 	str = precision_itoa(number, flags, neg_signal);
 	return (str);
 }
 
@@ -144,6 +137,7 @@ static int		printf_positive_integer(long int number, t_flags flags)
 
 	// printf("\nl:158\tEntrou printf_positive\n");//
 	length = ft_num_len(number);
+	// printf("\nl:140\tlength = %d\n", length);//
 	if (flags.zero_padded == 1 && flags.true_precision == 0 && flags.left_aligned == 0) //!excluir true_precision
 		flags.padded = '0';
 	if (flags.true_precision == 1 && flags.precision == 0 && number == 0)
