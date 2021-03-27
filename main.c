@@ -160,25 +160,25 @@ int main(void)
 
 	printf("\n---- tests PTF_2019 ----\n");
 
-	printf("\n---- pct_5wzp ----\n");
-	printf("\treturn :%d\n", printf("|%05%|"));
-	printf("\treturn :%d\n", ft_printf("|%05%|"));
+	// printf("\n---- pct_5wzp ----\n");
+	// printf("\treturn :%d\n", printf("|%05%|"));
+	// printf("\treturn :%d\n", ft_printf("|%05%|"));
 
-	printf("\n---- pct_5wljzp ----\n");
-	printf("\treturn :%d\n", printf("|%-05%|"));
-	printf("\treturn :%d\n", ft_printf("|%-05%|"));
+	// printf("\n---- pct_5wljzp ----\n");
+	// printf("\treturn :%d\n", printf("|%-05%|"));
+	// printf("\treturn :%d\n", ft_printf("|%-05%|"));
 
 	printf("\n15: ---- nocrash_nullspec_5wlj ----\n");
 	printf("\treturn :%d\n", printf("|%-5|"));
 	printf("\treturn :%d\n", ft_printf("|%-5|"));
 
-	printf("\n130: ---- s_undefbehav_0_width_9 ----\n");
-	printf("\treturn :%d\n", printf("|%09s|", s_hidden));
-	printf("\treturn :%d\n", ft_printf("|%09s|", s_hidden));
+	// printf("\n130: ---- s_undefbehav_0_width_9 ----\n");
+	// printf("\treturn :%d\n", printf("|%09s|", s_hidden));
+	// printf("\treturn :%d\n", ft_printf("|%09s|", s_hidden));
 
-	printf("\n132: ---- s_undefbehav_lj_0_width_9  ----\n");
-	printf("\treturn :%d\n", printf("|%-09s|", s_hidden));
-	printf("\treturn :%d\n", ft_printf("|%-09s|", s_hidden));
+	// printf("\n132: ---- s_undefbehav_lj_0_width_9  ----\n");
+	// printf("\treturn :%d\n", printf("|%-09s|", s_hidden));
+	// printf("\treturn :%d\n", ft_printf("|%-09s|", s_hidden));
 
 
 

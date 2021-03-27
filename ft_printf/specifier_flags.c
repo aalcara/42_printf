@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 21:03:50 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 11:54:13 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int				select_flags(char **str, va_list args)
 	t_flags		flags;
 	char		specifier;
 	int			i;
-	int			lenght;
+	int			length;
 
 	i = 1;
 	reset_flags(&flags);
@@ -141,10 +141,10 @@ int				select_flags(char **str, va_list args)
 		// printf("l:141\ti = %d\n", i);
 	}
 	specifier = *((*str) + i);
-	lenght = select_specifier(specifier, flags, args);
-	// if (lenght != 0)
-	*str = ((*str) + i + 1);
-	// else
-	// 	*str = ((*str) + i);
-	return (lenght);
+	length = select_specifier(specifier, flags, args);
+	if (length != 0)
+		*str = ((*str) + i + 1);
+	else
+		*str = ((*str) + i);
+	return (length);
 }
