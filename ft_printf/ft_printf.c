@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:28:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 13:16:03 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:19:35 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ int				putstr_before_percent(const char *str)
 int				recursive_printf(const char *str, va_list args, int lenght)
 {
 	char		*percent_sign;
+
+	if (!str)
+		return (lenght);
 
 	if (!(percent_sign = ft_strchr(str, '%')))
 	{
