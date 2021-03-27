@@ -42,6 +42,15 @@ int main(void)
 	printf("\treturn :%d\n", ft_printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d", i, j, k, l, m, c, e, d));
 
 
+
+	printf("\n---- tests ft_printf_test ----\n");
+	printf("\treturn :%d\n", printf("%i", -1));
+	printf("\treturn :%d\n", ft_printf("%i", -1));
+
+
+
+
+
 	static char *s_hidden = "hi low\0don't print me lol\0";
 
 	// printf("\n---- only input str ---- \n");
