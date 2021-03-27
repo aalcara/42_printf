@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 13:05:01 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:09:28 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,12 +134,14 @@ int				select_flags(char **str, va_list args)
 		i++;
 	}
 	specifier = *((*str) + i);
-	lenght = select_specifier(specifier, flags, args);
-	if (lenght == -1)
+	if (specifier == '\0')
 	{
 		*str = ((*str) + i);
 		return(i + 1);
 	}
+	lenght = select_specifier(specifier, flags, args);
+	// if (lenght == -1)
+
 	*str = ((*str) + i + 1);
 	return (lenght);
 }
