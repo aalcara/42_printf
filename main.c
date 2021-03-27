@@ -211,6 +211,13 @@ int main(void)
 	printf("\treturn :%d\n", printf("%-5"));
 	printf("\treturn :%d\n", ft_printf("%-5"));
 
+	printf("\n15: ---- i_basic_i_onlyneg ----\n");
+	printf("\treturn :%d\n", printf("%i", -1));
+	printf("\treturn :%d\n", ft_printf("%i", -1));
+
+	printf("\n15: ---- i_basic_i_onlyneg ----\n");
+	printf("\treturn :%d\n", printf("|%i|", -1));
+	printf("\treturn :%d\n", ft_printf("|%i|", -1));
 
 
 	// printf("\n130: ---- s_undefbehav_0_width_9 ----\n");
