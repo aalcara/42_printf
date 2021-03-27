@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:16:26 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 16:18:24 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:19:39 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int		printf_negative_integer(long int number, t_flags flags)
 	length = ft_strlen(number_str);
 	if (flags.zero_padded == 1 && flags.precision == 0)
 	{
-		ft_putchar('M');
+		ft_putchar('-');
 		length++;
 		if (flags.left_aligned == 0)
 			flags.padded = '0';
