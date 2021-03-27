@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:20:03 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 17:57:32 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:42:10 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-typedef	struct	ft_printf_flags
+typedef struct	s_flags
 {
 	int			left_aligned;
 	int			min_width;
@@ -36,5 +36,5 @@ int				printf_percent_sign(t_flags flags);
 int				printf_integer(t_flags flags, va_list args, int specifier);
 int				printf_hexadecimal(t_flags flags, va_list args);
 void			reset_flags(t_flags *flags);
-
+char			*ft_hexa_atoi(unsigned long int nbr, int numlen, t_flags flags);
 #endif

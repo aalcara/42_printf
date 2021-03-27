@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:37:47 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/22 15:41:30 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:17:19 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ char			*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	return (substr);
-
 }

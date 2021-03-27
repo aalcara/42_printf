@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:05:58 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/25 19:10:30 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:19:05 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_hexa_len(unsigned long int number)
 {
-	int 		num_len;
+	int		num_len;
 
 	if (number == 0)
 		return (1);

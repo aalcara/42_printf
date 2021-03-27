@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 19:27:29 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/18 19:10:26 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:25:26 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int				printf_char(t_flags flags, va_list args)
 	char		c;
 	int			i;
 
-	// printf("\nl:20\tEntrou funcao print_char");//
 	i = 0;
 	c = va_arg(args, int);
 	if (flags.left_aligned == 1)

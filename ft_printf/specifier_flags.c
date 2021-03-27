@@ -6,16 +6,16 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 11:30:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 18:07:56 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:24:54 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>//
 
 static int		num_length(int number)
 {
-	int 		num_len;
+	int			num_len;
+
 	num_len = 0;
 	while (number > 0)
 	{
@@ -100,7 +100,6 @@ static int		select_specifier(char specifier, t_flags flags, va_list args)
 int				select_flags(char **str, va_list args)
 {
 	t_flags		flags;
-	char		specifier;
 	int			i;
 
 	i = 1;
@@ -111,20 +110,18 @@ int				select_flags(char **str, va_list args)
 			flags.left_aligned = 1;
 		else if (*((*str) + i) == '0')
 			flags.zero_padded = 1;
-		// else if (*((*str) + i) >= '1' && *((*str) + i) <= '9')
-		// 	flags.min_width = get_min_width(str, &i, args, &flags);
 		else if (*((*str) + i) == '.')
 			flags.precision = get_precision(str, &i, args, &flags);
 		else
 			flags.min_width = get_min_width(str, &i, args, &flags);
 		i++;
 	}
-	specifier = *((*str) + i);
-	if (specifier == '\0' || !(ft_strchr("csdiupxX%", specifier)))
+	flags.specifier = *((*str) + i);
+	if (flags.specifier == '\0' || !(ft_strchr("csdiupxX%", flags.specifier)))
 	{
 		*str = ((*str) + i);
-		return(i + 1);
+		return (i + 1);
 	}
 	*str = ((*str) + i + 1);
-	return (select_specifier(specifier, flags, args));
+	return (select_specifier(flags.specifier, flags, args));
 }

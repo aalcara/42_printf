@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:25:14 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/27 13:05:14 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:19:44 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static char		*get_str(t_flags flags, char *aux_str)
 {
-	char		str[flags.precision];
+	char			str[flags.precision];
 	int				i;
 	static char		*str_ret;
 
@@ -53,8 +53,8 @@ static char		*precision_str(t_flags flags, va_list args)
 
 int				printf_str(t_flags flags, va_list args)
 {
-	char	*str;
-	int		len;
+	char		*str;
+	int			len;
 
 	if (flags.zero_padded == 1 && flags.left_aligned == 0)
 		flags.padded = '0';
@@ -69,6 +69,5 @@ int				printf_str(t_flags flags, va_list args)
 	}
 	if (flags.left_aligned == 0)
 		ft_putstr(str);
-
 	return (len);
 }
