@@ -57,28 +57,28 @@ int main(void)
 	// printf("\n|                 CHAR                 |");
 	// printf("\n --------------------------------------\n");
 
-	// printf("\n---- tests Tripouille ----\n");
-	// printf("\n4\n");
-	// printf("\treturn :%d\n", printf("|%10c|", '0'));
-	// printf("\treturn :%d\n", ft_printf("|%10c|", '0'));
-	// printf("\n6\n");
-	// printf("\treturn :%d\n", printf("|%-10c|", '0'));
-	// printf("\treturn :%d\n", ft_printf("|%-10c|", '0'));
-	// printf("\n11\n");
-	// printf("\treturn :%d\n", printf("|%*c|", -2, '0'));
-	// printf("\treturn :%d\n", ft_printf("|%*c|", -2, '0'));
-	// printf("\n14\n");
-	// printf("\treturn :%d\n", printf("|%*c|", -10, '0'));
-	// printf("\treturn :%d\n", ft_printf("|%*c|", -10, '0'));
-	// printf("\n15\n");
-	// printf("\treturn :%d\n", printf("|%*c%*c|", -10, '0', 10, '1'));
-	// printf("\treturn :%d\n", ft_printf("|%*c%*c|", -10, '0', 10, '1'));
-	// printf("\n17\n");
-	// printf("\treturn :%d\n", printf("|%*c%c|", -10, '0', '1'));
-	// printf("\treturn :%d\n", ft_printf("|%*c%c|", -10, '0', '1'));
-	// printf("\n30\n");
-	// printf("\treturn :%d\n", printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
-	// printf("\treturn :%d\n", ft_printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
+	printf("\n---- tests Tripouille ----\n");
+	printf("\n4\n");
+	printf("\treturn :%d\n", printf("|%10c|", '0'));
+	printf("\treturn :%d\n", ft_printf("|%10c|", '0'));
+	printf("\n6\n");
+	printf("\treturn :%d\n", printf("|%-10c|", '0'));
+	printf("\treturn :%d\n", ft_printf("|%-10c|", '0'));
+	printf("\n11\n");
+	printf("\treturn :%d\n", printf("|%*c|", -2, '0'));
+	printf("\treturn :%d\n", ft_printf("|%*c|", -2, '0'));
+	printf("\n14\n");
+	printf("\treturn :%d\n", printf("|%*c|", -10, '0'));
+	printf("\treturn :%d\n", ft_printf("|%*c|", -10, '0'));
+	printf("\n15\n");
+	printf("\treturn :%d\n", printf("|%*c%*c|", -10, '0', 10, '1'));
+	printf("\treturn :%d\n", ft_printf("|%*c%*c|", -10, '0', 10, '1'));
+	printf("\n17\n");
+	printf("\treturn :%d\n", printf("|%*c%c|", -10, '0', '1'));
+	printf("\treturn :%d\n", ft_printf("|%*c%c|", -10, '0', '1'));
+	printf("\n30\n");
+	printf("\treturn :%d\n", printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
+	printf("\treturn :%d\n", ft_printf("|-%-*c* -%-*c*|", 2, 0, -2, 0));
 
 
 	// printf("\n---- one char without flag ----\n");
@@ -209,18 +209,18 @@ int main(void)
 	// printf("\treturn :%d\n", printf("%-5"));
 	// printf("\treturn :%d\n", ft_printf("%-5"));
 
-	printf("\n---- tests ft_printf_test ----\n");
-	printf("\n15: ---- i_basic_i_onlyneg ----\n");
-	printf("\treturn :%d\n", printf("%i", -1));
-	printf("\treturn :%d\n", ft_printf("%i", -1));
+	// printf("\n---- tests ft_printf_test ----\n");
+	// printf("\n15: ---- i_basic_i_onlyneg ----\n");
+	// printf("\treturn :%d\n", printf("%i", -1));
+	// printf("\treturn :%d\n", ft_printf("%i", -1));
 
-	printf("\n15: ---- i_basic_i_onlyneg ----\n");
-	printf("\treturn :%d\n", printf("|%i|", -1));
-	printf("\treturn :%d\n", ft_printf("|%i|", -1));
+	// printf("\n15: ---- i_basic_i_onlyneg ----\n");
+	// printf("\treturn :%d\n", printf("|%i|", -1));
+	// printf("\treturn :%d\n", ft_printf("|%i|", -1));
 
-	printf("\n15: ---- i_zp_pos_fits ----\n");
-	printf("\treturn :%d\n", printf("|%05i|", 43));
-	printf("\treturn :%d\n", ft_printf("|%05i|", 43));
+	// printf("\n15: ---- i_zp_pos_fits ----\n");
+	// printf("\treturn :%d\n", printf("|%05i|", 43));
+	// printf("\treturn :%d\n", ft_printf("|%05i|", 43));
 
 
 
@@ -361,25 +361,25 @@ int main(void)
 	// printf("\n|              HEXADECIMAL             |");
 	// printf("\n --------------------------------------\n");
 
-	printf("\n---- 2 --  %%.x   ----\n");
-	printf("\treturn :%d\n", printf("|%.x|", 0));
-	printf("\treturn :%d\n", ft_printf("|%.x|", 0));
+	// printf("\n---- 2 --  %%.x   ----\n");
+	// printf("\treturn :%d\n", printf("|%.x|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%.x|", 0));
 
-	printf("\n---- 3 --  %%-.2x   ----\n");
-	printf("\treturn :%d\n", printf("|%-.2x|", 0));
-	printf("\treturn :%d\n", ft_printf("|%-.2x|", 0));
+	// printf("\n---- 3 --  %%-.2x   ----\n");
+	// printf("\treturn :%d\n", printf("|%-.2x|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%-.2x|", 0));
 
-	printf("\n---- 4 --  %%-2.2x   ----\n");
-	printf("\treturn :%d\n", printf("|%-2.2x|", 0));
-	printf("\treturn :%d\n", ft_printf("|%-2.2x|", 0));
+	// printf("\n---- 4 --  %%-2.2x   ----\n");
+	// printf("\treturn :%d\n", printf("|%-2.2x|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%-2.2x|", 0));
 
-	printf("\n---- 5 --  %%-3.2x   ----\n");
-	printf("\treturn :%d\n", printf("|%-3.2x|", 0));
-	printf("\treturn :%d\n", ft_printf("|%-3.2x|", 0));
+	// printf("\n---- 5 --  %%-3.2x   ----\n");
+	// printf("\treturn :%d\n", printf("|%-3.2x|", 0));
+	// printf("\treturn :%d\n", ft_printf("|%-3.2x|", 0));
 
-	printf("\n---- 6 --  %%-3.2x %%10.42x   ----\n");
-	printf("\treturn :%d\n", printf(" %-3.2x %10.42x ", 0, 0));
-	printf("\treturn :%d\n", ft_printf(" %-3.2x %10.42x ", 0, 0));
+	// printf("\n---- 6 --  %%-3.2x %%10.42x   ----\n");
+	// printf("\treturn :%d\n", printf(" %-3.2x %10.42x ", 0, 0));
+	// printf("\treturn :%d\n", ft_printf(" %-3.2x %10.42x ", 0, 0));
 
 	// printf("\n---- 9   ----\n");
 	// printf("\treturn :%d\n", printf(" *%-*.*x* *%*.*x* ", 4, 5, 10, 10, 21, -10));
